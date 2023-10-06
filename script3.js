@@ -1,11 +1,9 @@
-document.getElementById("openPackButton").addEventListener("click", function() {
-    // Simulate pack opening (replace with your logic)
-     const packContents = [
+const players = [
     { name: "Pelé", image: "players/peléicon.png", rating: 95 },
     { name: "Zidane", image: "players/zidaneicon.png", rating: 94 },
     { name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
     { name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 },
-	{ name: "Hamm", image: "players/hammicon.png", rating: 93 },
+    { name: "Hamm", image: "players/hammicon.png", rating: 93 },
 	{ name: "Cruyff", image: "players/cruyfficon.png", rating: 93 },
 	{ name: "Yashin", image: "players/yashinicon.png", rating: 92 },
 	{ name: "Puskás", image: "players/puskásicon.png", rating: 92 },
@@ -151,167 +149,38 @@ document.getElementById("openPackButton").addEventListener("click", function() {
 	{ name: "Vissers", image: "players/visserstotw.png", rating: 80 },
 	{ name: "de Gruiter", image: "players/degruitertotw.png", rating: 80 },
 	{ name: "Dekle", image: "players/deklebronze.png", rating: 68 },
+];
 
-    ];
+// Sort players by rating in descending order
+players.sort((a, b) => b.rating - a.rating);
 
-    const selectedPlayers = getRandomUniquePlayers(packContents, 6);
+// Function to create and populate player cards
+function createPlayerCards() {
+    const playerCardsContainer = document.getElementById('playerCards');
 
-    const packContentsDiv = document.getElementById("packContents");
-    const openPackButton = document.getElementById("openPackButton");
+    players.forEach(player => {
+        const card = document.createElement('div');
+        card.classList.add('player-card'); // Add CSS class for styling
 
-    // Function to clear existing player cards
-    function clearPlayerCards() {
-        while (packContentsDiv.firstChild) {
-            packContentsDiv.removeChild(packContentsDiv.firstChild);
-        }
-    }
+        const playerImage = document.createElement('img');
+        playerImage.src = player.image;
+        playerImage.alt = player.name;
 
-    // Function to create a professional pop-up at the bottom of the page
-function createPopup(message) {
-    const popup = document.createElement("div");
-    popup.classList.add("popup");
-    
-    const popupMessage = document.createElement("p");
-    popupMessage.textContent = message;
-    
-    const closeButton = document.createElement("span");
-    closeButton.addEventListener("click", function () {
-        popup.remove(); // Close the pop-up when the close button is clicked
+        const playerName = document.createElement('p');
+        playerName.textContent = player.name;
+
+        const playerRating = document.createElement('p');
+        playerRating.textContent = `Rating: ${player.rating}`;
+
+        // Append elements to the card
+        card.appendChild(playerImage);
+        card.appendChild(playerName);
+        card.appendChild(playerRating);
+
+        // Append the card to the container
+        playerCardsContainer.appendChild(card);
     });
-    
-    popup.appendChild(popupMessage);
-    popup.appendChild(closeButton);
-    
-    document.body.appendChild(popup);
-
-    // Auto-close the popup after 3 seconds
-    setTimeout(() => {
-        popup.remove();
-    }, 3000); // 3000 milliseconds = 3 seconds
 }
 
-    // Disable the "Open Pack" button to prevent multiple clicks
-    openPackButton.disabled = true;
-
-    // Clear existing player cards
-    clearPlayerCards();
-
-    // Function to select random unique players from the array
-    function getRandomUniquePlayers(array, numPlayers) {
-        const uniquePlayers = [];
-        const shuffled = array.slice().sort(() => 0.5 - Math.random());
-
-        for (const player of shuffled) {
-            if (uniquePlayers.length === numPlayers) {
-                break; // Stop when you have enough unique players
-            }
-
-            if (!uniquePlayers.some(p => p.name === player.name)) {
-                // Adjust the probabilities based on player ratings
-                const probability = Math.random(); // Random number between 0 and 1
-                if (player.rating <= 80) {
-                    // 80 and lower have a 100% chance
-                    uniquePlayers.push(player);
-                } else if (player.rating <= 85) {
-                    // 81 to 85 have a 75% chance
-                    if (probability < 0.75) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 89) {
-                    // 86 to 89 have a 30% chance
-                    if (probability < 0.3) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 93) {
-                    // 90 to 93 have a 15% chance
-                    if (probability < 0.15) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 96) {
-                    // 94 to 96 have a 10% chance
-                    if (probability < 0.1) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 98) {
-                    // 97 to 98 have a 5% chance
-                    if (probability < 0.05) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating === 99) {
-                    // 99 has a 1% chance
-                    if (probability < 0.01) {
-                        uniquePlayers.push(player);
-                    }
-                }
-            }
-        }
-
-        return uniquePlayers;
-    }
-
-    // Function to determine if a player is a walkout
-    function isWalkout(player) {
-        // Add or remove conditions to customize walkout logic
-        // In this example, all players are considered walkouts
-        return true;
-    }
-
-    // Function to reveal player cards with animations
-    function revealPlayerCards() {
-        // Sort selectedPlayers by rating in descending order
-        selectedPlayers.sort((a, b) => b.rating - a.rating);
-
-        let highestWalkout = null; // Track the highest-rated walkout
-
-        selectedPlayers.forEach((player, index) => {
-            const isPlayerWalkout = isWalkout(player); // Check if it's a walkout player
-
-            // Create card element with animation
-            const card = document.createElement("div");
-            card.classList.add("player-card");
-            card.innerHTML = `
-                <div class="card-front">
-                    <img src="${player.image}" alt="${player.name}" width="90" height="120">
-                    <p>${player.name}</p>
-                </div>
-                <div class="card-back">
-                    <p>Rating: ${player.rating}</p>
-                </div>
-            `;
-
-            // Append the card to the packContentsDiv with animation
-            setTimeout(() => {
-                card.classList.add("reveal-animation");
-                packContentsDiv.appendChild(card);
-                // Scroll to the newly added card
-                card.scrollIntoView({ behavior: "smooth" });
-
-                // Enable the "Open Pack" button after animation is complete
-                if (index === 5) { // Only enable after the last card for a maximum of 3 cards
-                    openPackButton.disabled = false;
-                    // Display a professional pop-up with the name of the highest-rated walkout
-                    if (highestWalkout) {
-                        createPopup(`Highest Walkout: ${highestWalkout.name}`);
-                    }
-                }
-            }, 1000 * index); // Adjust the delay as needed for your animation
-
-            // Update the highestWalkout if the current player is higher-rated
-            if (isPlayerWalkout && (!highestWalkout || player.rating > highestWalkout.rating)) {
-                highestWalkout = player;
-            }
-        });
-    }
-
-    // Start revealing player cards
-    revealPlayerCards();
-});
-
-document.getElementById("refreshCardsButton").addEventListener("click", function () {
-    // Reload the webpage when the "Refresh Cards" button is clicked
-    location.reload();
-});
-document.getElementById("refreshPageButton").addEventListener("click", function () {
-    // Reload the webpage when the "Refresh Page" button is clicked
-    location.reload();
-});
+// Call the function to create player cards when the page loads
+window.addEventListener('load', createPlayerCards);

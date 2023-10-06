@@ -1,0 +1,345 @@
+/* Example CSS styles for player cards */
+.player-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.player-card img {
+    max-width: 100%;
+    height: 200px;
+}
+
+.player-card p {
+    margin: 5px 0;
+}
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px; /* Add padding to create a border */
+            display: flex; /* Use flexbox for positioning */
+            align-items: center; /* Center items vertically within the header */
+        }
+
+        #logo {
+            width: 50px; /* Adjust the width of your logo as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Add some space to the right of the logo */
+        }
+
+        h1 {
+            margin: 0; /* Remove margin around the h1 element */
+	    text-shadow: 4px 4px 10px green;
+	    font-style: italic;
+        }
+
+	h2 {
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
+        }
+
+	p {
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
+        }
+
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: Black;
+            color: white;
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
+            border: none;
+	    border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+                background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 240px; /* Onderaan de pagina */
+    left: 0; /* Links uitgelijnd */
+    width: 100%; /* Volledige breedte van de pagina */
+    z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
+        }
+
+	footer2 {
+                background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0px; /* Onderaan de pagina */
+    left: 0; /* Links uitgelijnd */
+    width: 100%; /* Volledige breedte van de pagina */
+    z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
+        }
+
+        .pack-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pack-feed {
+            margin-bottom: 10px;
+        }
+
+        .player-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            max-width: 250px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add styles for the button container */
+        .buttoncards-container {
+            position: absolute;
+            top: 290px; /* Adjust the top position to your liking */
+            right: 10px; /* Adjust the right position to your liking */
+            z-index: 1; /* Ensure it's on top of other elements */
+        }
+
+	 /* Add styles for the button container */
+        .buttonpage-container {
+            position: absolute;
+            top: 290px; /* Adjust the top position to your liking */
+            left: 10px; /* Adjust the right position to your liking */
+            z-index: 1; /* Ensure it's on top of other elements */
+        }
+
+	.openPackButton {
+            background-color: Black; /* Black background */
+            color: white; /* White text color */
+        }
+
+        /* Style the Refresh Cards button */
+        .refreshcards-button {
+    background-color: Black; /* Black background */
+    color: white; /* White text color */
+    border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed;
+    border-radius: 5px;
+    bottom: 10px; /* Adjust the bottom position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    z-index: 1; /* Ensure it's on top of other elements */
+}
+
+/* Style the Refresh Page button */
+.refreshpage-button {
+    background-color: Black; /* Black background */
+    color: white; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px; /* Adjust the bottom position as needed */
+    left: 10px; /* Adjust the left position as needed */
+    z-index: 1; /* Ensure it's on top of other elements */
+}
+
+
+/* Style the pop-up container */
+/* Style the pop-up container */
+.popup {
+    background-color: Black; /* Add a background color with transparency */
+    color: white;
+    position: fixed;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    bottom: 195px;
+    height: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px; /* Set the width of the pop-up as needed */
+    z-index: 1;
+}
+
+
+/* Style the close button within the pop-up */
+.popup span {
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+    /* Add CSS styles for the time display */
+    #time {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+	text-shadow: 4px 4px 10px green;
+	font-weight: bold;
+	font-style: italic;
+        font-size: 30px;
+        color: White;
+    }
+
+.fixed-text-box {
+    background-color: black;
+    color: white; /* Pas de tekstkleur naar wens aan */
+    border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 11px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px; /* Pas de breedte aan naar wens */
+    height: 230px; /* Stel de hoogte in op een waarde die overeenkomt met de hoogte van de spelerkaarten */
+    overflow: none; /* Voeg scrollen toe als de inhoud groter is dan het tekstvak */
+    position: fixed;
+    top: 235px; /* Pas de bovenste positie aan naar wens */
+    left: 10px; /* Pas de linker positie aan naar wens */
+    z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
+}
+
+  /* Stijl voor de tabel binnen het tekstvak */
+  .fixed-text-box table {
+    width: 100%;
+    border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border-collapse: collapse;
+  }
+
+  .fixed-text-box table, .fixed-text-box th, .fixed-text-box td {
+    border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 5px;
+  }
+
+  .fixed-text-box th, .fixed-text-box td {
+    padding: 8px;
+    text-align: left;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .fixed-text-box th {
+
+    background-color: black;
+    color: white;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border: none;
+    border-radius: 5px;
+  }
+
+.altumcode altumcode-middle_right widgetsquad- altumcode-clickable on-fadeIn {
+
+    top: 235px; /* Pas de bovenste positie aan naar wens */
+    right: 10px;
+}
+
+nav {
+    background-color: #333;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 4px 4px 10px green;
+}
+
+a:hover {
+    color: green; /* Change color on hover */
+}
+
+playerName {
+
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
+}
+
+/* Add this CSS rule to make player images smaller */
+#playerImage img {
+    width: 200px; /* Adjust the width as per your preference */
+    height: auto; /* To maintain the aspect ratio */
+}
+
+/* CSS for the logout button */
+.logout-button {
+    position: absolute;
+    top: 195px; /* Adjust the top position to move the button higher */
+    right: 540px; /* Adjust the right position to move the button to the upper right corner */
+    padding: 10px 20px;
+    background-color: Black;
+    color: white;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2; /* Ensure it's on top of other elements */
+}
+
+.logout-button:hover {
+    /* You can adjust the hover styles as needed */
+    background-color: Green; /* Change the background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+
+
+	

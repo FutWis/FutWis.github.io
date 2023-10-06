@@ -17,31 +17,24 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
             <li><a href="search.html">Player Search</a></li>
         </ul>
     </nav>
     <main>
-        <section id="accessSection">
-            <h2>Access Code</h2>
-            <input type="password" id="accessCode" placeholder="Enter access code...">
-            <button id="accessButton">Enter</button>
-        </section>
-        <section id="playerSearchSection" style="display: none;">
+        <section id="playerSearchSection">
             <h2>Player Search</h2>
             <input type="text" id="playerName" placeholder="Type player name...">
             <button id="searchButton">Search</button>
             <div id="playerInfo">
                 <div id="playerImage"></div>
                 <div id="playerRating"></div>
+		<div id="playerWorth"></div>
             </div>
-            <button id="logoutButton" class="logout-button">Logout</button>
         </section>
     </main>
-    <footer2>
-        <p>&copy; 2023 FutWis</p>
-    </footer2>
     <button id="refreshCards2Button" class="refreshcards-button">Refresh Cards</button>
-    <button id="refreshPage2Button" class="refreshpage-button">Refresh Page</button>
+<button id="refreshPage2Button" class="refreshpage-button">Refresh Page</button>
     <script src="script2.js"></script>
     <script>
         function updateTime() {
@@ -52,33 +45,6 @@
 
         updateTime();
         setInterval(updateTime, 1000);
-
-        // Define the correct access code
-        const correctAccessCode = "FutWis2023";
-
-        // Add an event listener to the access button
-        const accessButton = document.getElementById('accessButton');
-        accessButton.addEventListener('click', function() {
-            const enteredCode = document.getElementById('accessCode').value;
-            if (enteredCode === correctAccessCode) {
-                // Correct code, hide the access section and show the player search section
-                document.getElementById('accessSection').style.display = 'none';
-                document.getElementById('playerSearchSection').style.display = 'block';
-            } else {
-                // Incorrect code, show an error message and redirect to the home page
-                alert("Incorrect access code. You will be redirected to the home page.");
-                window.location.href = "index.html"; // Redirect to the home page
-            }
-        });
-
-        // Add an event listener to the logout button
-        const logoutButton = document.getElementById('logoutButton');
-        logoutButton.addEventListener('click', function() {
-            // Reset the page to its initial state
-            document.getElementById('accessSection').style.display = 'block';
-            document.getElementById('playerSearchSection').style.display = 'none';
-            document.getElementById('accessCode').value = '';
-        });
     </script>
 </body>
 </html>
