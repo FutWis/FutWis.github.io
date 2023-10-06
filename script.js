@@ -94,7 +94,7 @@ document.getElementById("openPackButton").addEventListener("click", function() {
 	{ name: "Vinícius Jr.", image: "players/viníciusjrgold.png", rating: 89 },
 	{ name: "Diani", image: "players/dianagold.png", rating: 89 },
 	{ name: "Hegerberg", image: "players/hegerberggold.png", rating: 89 },
-	{ name: "Mapi León", image: "players/morgangold.png", rating: 89 },
+	{ name: "Mapi León", image: "players/mapileóngold.png", rating: 89 },
 	{ name: "Morgan", image: "players/morgangold.png", rating: 89 },	
 	{ name: "Rúben Dias", image: "players/rúbendiasgold.png", rating: 89 },
 	{ name: "Rodri", image: "players/rodrigold.png", rating: 89 },
