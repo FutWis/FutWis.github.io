@@ -95,7 +95,7 @@ document.getElementById("openPackButton").addEventListener("click", function() {
 	{ name: "Diani", image: "players/dianagold.png", rating: 89 },
 	{ name: "Hegerberg", image: "players/hegerberggold.png", rating: 89 },
 	{ name: "Mapi León", image: "players/morgangold.png", rating: 89 },
-	{ name: "Morgan", image: "players/kohlerutheroes.png", rating: 89 },	
+	{ name: "Morgan", image: "players/morgangold.png", rating: 89 },	
 	{ name: "Rúben Dias", image: "players/rúbendiasgold.png", rating: 89 },
 	{ name: "Rodri", image: "players/rodrigold.png", rating: 89 },
 	{ name: "ter Stegen", image: "players/terstegengold.png", rating: 89 },
