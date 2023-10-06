@@ -6,7 +6,6 @@
     <title>FutWis</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <script async src="https://www.widgetsquad.com/pixel/75l9tdr0cvmvsogcy56d69cxx1cnl6il"></script>
 </head>
 <body>
     <header>
@@ -17,7 +16,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="search.html">Player Search</a></li> <!-- Add this line -->
+            <li><a href="search.html">Player Search</a></li>
         </ul>
     </nav>
     <main>
@@ -30,12 +29,12 @@
             </div>
         </section>
 
-<div class="fixed-text-box">
-  <table>
-    <tr>
-      <th>ALG</th>
-      <th>Chance</th>
-    </tr>
+        <div class="fixed-text-box">
+            <table>
+                <tr>
+                    <th>ALG</th>
+                    <th>Chance</th>
+                </tr>
     <tr>
       <td>47 tot 80</td>
       <td>100%</td>
@@ -64,8 +63,8 @@
       <td>99</td>
       <td>1%</td>
     </tr>
-  </table>
-</div>
+              </table>
+        </div>
     </main>
     <footer>
         <p>&copy; 2023 FutWis</p>
@@ -73,16 +72,5 @@
     <button id="refreshCardsButton" class="refreshcards-button">Refresh Cards</button>
     <button id="refreshPageButton" class="refreshpage-button">Refresh Page</button>
     <script src="script.js"></script>
-    <script>
-	
-	function updateTime() {
-        const now = new Date();
-        const timeElement = document.getElementById('time');
-        timeElement.textContent = now.toLocaleTimeString();
-      }
-
-        updateTime();
-        setInterval(updateTime, 1000);
-    </script>
 </body>
 </html>
