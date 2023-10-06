@@ -149,6 +149,7 @@ const players = [
 	{ name: "Vissers", image: "players/visserstotw.png", rating: 80 },
 	{ name: "de Gruiter", image: "players/degruitertotw.png", rating: 80 },
 	{ name: "Dekle", image: "players/deklebronze.png", rating: 68 },
+	{ name: "Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
 ];
 
 // Sort players by rating in descending order
