@@ -214,28 +214,28 @@ function createPopup(message) {
                     // 80 and lower have a 100% chance
                     uniquePlayers.push(player);
                 } else if (player.rating <= 85) {
-                    // 81 to 85 have a 75% chance
-                    if (probability < 0.75) {
+                    // 81 to 85 have a 50% chance
+                    if (probability < 0.50) {
                         uniquePlayers.push(player);
                     }
                 } else if (player.rating <= 89) {
-                    // 86 to 89 have a 30% chance
-                    if (probability < 0.3) {
+                    // 86 to 89 have a 10% chance
+                    if (probability < 0.10) {
                         uniquePlayers.push(player);
                     }
                 } else if (player.rating <= 93) {
-                    // 90 to 93 have a 15% chance
-                    if (probability < 0.15) {
+                    // 90 to 93 have a 8% chance
+                    if (probability < 0.08) {
                         uniquePlayers.push(player);
                     }
                 } else if (player.rating <= 96) {
-                    // 94 to 96 have a 10% chance
-                    if (probability < 0.1) {
+                    // 94 to 96 have a 5% chance
+                    if (probability < 0.0,5) {
                         uniquePlayers.push(player);
                     }
                 } else if (player.rating <= 98) {
-                    // 97 to 98 have a 5% chance
-                    if (probability < 0.05) {
+                    // 97 to 98 have a 3% chance
+                    if (probability < 0.03) {
                         uniquePlayers.push(player);
                     }
                 } else if (player.rating === 99) {
