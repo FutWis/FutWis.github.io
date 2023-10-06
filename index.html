@@ -12,6 +12,7 @@
         <img src="futwis.png" alt="FutWis Logo" id="logo">
         <h1>Welcome to FutWis</h1>
     </header>
+    <div id="time"></div>
     <main>
         <section>
             <h2>Open a Pack</h2>
@@ -28,5 +29,16 @@
     <button id="refreshCardsButton" class="refreshcards-button">Refresh Cards</button>
     <button id="refreshPageButton" class="refreshpage-button">Refresh Page</button>
     <script src="script.js"></script>
+    <script>
+	
+	function updateTime() {
+        const now = new Date();
+        const timeElement = document.getElementById('time');
+        timeElement.textContent = now.toLocaleTimeString();
+      }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>

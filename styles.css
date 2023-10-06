@@ -22,7 +22,22 @@ body {
 
         h1 {
             margin: 0; /* Remove margin around the h1 element */
+	    text-shadow: 4px 4px 10px green;
+	    font-style: italic;
         }
+
+	h2 {
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
+        }
+
+	p {
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
+        }
+
 
         main {
             text-align: center;
@@ -31,9 +46,13 @@ body {
 
         button {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: Black;
             color: white;
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
             border: none;
+	    border-radius: 5px;
             cursor: pointer;
         }
 
@@ -61,7 +80,7 @@ body {
             padding: 10px;
             margin: 10px;
             display: inline-block;
-            max-width: 200px;
+            max-width: 250px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
 
@@ -81,16 +100,19 @@ body {
             z-index: 1; /* Ensure it's on top of other elements */
         }
 
-	.openpack-button {
-            background-color: green; /* Green background */
+	.openPackButton {
+            background-color: Black; /* Black background */
             color: white; /* White text color */
         }
 
         /* Style the Refresh Cards button */
         .refreshcards-button {
-    background-color: black; /* Black background */
+    background-color: Black; /* Black background */
     color: white; /* White text color */
     border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
     padding: 10px 20px;
     cursor: pointer;
     position: fixed;
@@ -102,11 +124,14 @@ body {
 
 /* Style the Refresh Page button */
 .refreshpage-button {
-    background-color: black; /* Black background */
+    background-color: Black; /* Black background */
     color: white; /* White text color */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
     cursor: pointer;
     position: fixed;
     bottom: 10px; /* Adjust the bottom position as needed */
@@ -141,4 +166,17 @@ body {
     font-weight: bold;
     margin-left: 10px;
 }
+
+    /* Add CSS styles for the time display */
+    #time {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+	text-shadow: 4px 4px 10px green;
+	font-weight: bold;
+	font-style: italic;
+        font-size: 30px;
+        color: White;
+    }
+
 
