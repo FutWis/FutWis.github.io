@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles4.css">
+    <title>Football VS</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="search.html">Player Search</a></li>
+            <li><a href="matches.html">Play Matches</a></li>
+        </ul>
+    </nav>
+    <div id="player-list">
+        <h2>Players:</h2>
+        <ul id="selected-players">
+            <!-- Selected players will be displayed here -->
+        </ul>
+    </div>
+    <div id="search">
+        <label for="player-name">Enter player name:</label>
+        <input type="text" id="player-name" placeholder="Player Name">
+        <button id="add-button">Add Player</button>
+        <button id="random-button">Random</button>
+        <button id="start-match-button" disabled>Start Match</button>
+    </div>
+    <div id="match-status">
+        <h2>Match Status</h2>
+        <p>Match time: <span id="match-time">0:00</span></p>
+        <p>Goals:</p>
+        <ul id="goal-list"></ul>
+        <p>Winner: <span id="match-winner">-</span></p>
+    </div>
+    <script src="script4.js"></script>
+</body>
+</html>
