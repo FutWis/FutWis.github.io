@@ -147,7 +147,7 @@ const packContents = [
 	{ name: "Nolet", image: "players/noletfbsbc.png", rating: 85 },
 	{ name: "van Bever", image: "players/vanbevertotw.png", rating: 80 },
 	{ name: "Vissers", image: "players/visserstotw.png", rating: 80 },
-	{ name: "de Gruiter", image: "players/degruitertotw.png", rating: 80 },
+	{ name: "de Gruijter", image: "players/degruitertotw.png", rating: 80 },
 	{ name: "Dekle", image: "players/deklebronze.png", rating: 68 },
 
     ];
@@ -171,19 +171,24 @@ function searchPlayer() {
     }
 
     // Find the player object with the matching name
-    const player = players.find(p => p.name.toLowerCase() === playerName.toLowerCase());
+    const player = packContents.find(p => p.name.toLowerCase() === playerName.toLowerCase());
 
     // Check if the player was found
     if (player) {
         // Display player info
         playerImage.innerHTML = `<img src="${player.image}" alt="${player.name}">`;
         playerRating.textContent = `Rating: ${player.rating}`;
+        
         // Add a pack indicator next to the player's image
-        playerImage.innerHTML += '<div class="pack-indicator">Pack</div>';
+        const packIndicator = document.createElement('div');
+        packIndicator.className = 'pack-indicator';
+        packIndicator.textContent = 'Pack';
+        playerImage.appendChild(packIndicator);
     } else {
         alert('Player not found.');
     }
 }
+
 
 // Add a click event listener to the search button
 const searchButton = document.getElementById('searchButton');

@@ -149,7 +149,7 @@ document.getElementById("openPackButton").addEventListener("click", function() {
 	{ name: "Nolet", image: "players/noletfbsbc.png", rating: 85 },
 	{ name: "van Bever", image: "players/vanbevertotw.png", rating: 80 },
 	{ name: "Vissers", image: "players/visserstotw.png", rating: 80 },
-	{ name: "de Gruiter", image: "players/degruitertotw.png", rating: 80 },
+	{ name: "de Gruijter", image: "players/degruitertotw.png", rating: 80 },
 	{ name: "Dekle", image: "players/deklebronze.png", rating: 68 },
 
     ];
