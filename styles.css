@@ -151,7 +151,7 @@ body {
     background-color: Black; /* Add a background color with transparency */
     color: white;
     position: fixed;
-    left: 50%; /* Center horizontally */
+    left: 51%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
     bottom: 195px;
     height: 15px;
@@ -241,3 +241,8 @@ body {
     border: none;
     border-radius: 5px;
   }
+
+.altumcode altumcode-middle_right widgetsquad- altumcode-clickable on-fadeIn {
+
+    top: 235px; /* Pas de bovenste positie aan naar wens */
+    right: 10px;
