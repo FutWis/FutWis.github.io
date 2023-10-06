@@ -68,18 +68,6 @@ body {
     z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
         }
 
-	footer2 {
-                background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0px; /* Onderaan de pagina */
-    left: 0; /* Links uitgelijnd */
-    width: 100%; /* Volledige breedte van de pagina */
-    z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
-        }
-
         .pack-container {
             display: flex;
             flex-direction: column;
@@ -258,71 +246,3 @@ body {
 
     top: 235px; /* Pas de bovenste positie aan naar wens */
     right: 10px;
-}
-
-nav {
-    background-color: #333;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    display: inline;
-    margin-right: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-style: italic;
-    text-shadow: 4px 4px 10px green;
-}
-
-a:hover {
-    color: green; /* Change color on hover */
-}
-
-playerName {
-
-	    text-shadow: 4px 4px 10px green;
-	    font-weight: bold;
-	    font-style: italic;
-}
-
-/* Add this CSS rule to make player images smaller */
-#playerImage img {
-    width: 200px; /* Adjust the width as per your preference */
-    height: auto; /* To maintain the aspect ratio */
-}
-
-/* CSS for the logout button */
-.logout-button {
-    position: absolute;
-    top: 195px; /* Adjust the top position to move the button higher */
-    right: 540px; /* Adjust the right position to move the button to the upper right corner */
-    padding: 10px 20px;
-    background-color: Black;
-    color: white;
-    text-shadow: 4px 4px 10px green;
-    font-weight: bold;
-    font-style: italic;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 2; /* Ensure it's on top of other elements */
-}
-
-.logout-button:hover {
-    /* You can adjust the hover styles as needed */
-    background-color: Green; /* Change the background color on hover */
-    color: white; /* Change text color on hover */
-}
-
-
-
-	
