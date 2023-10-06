@@ -1,9 +1,9 @@
-const players = [
+const packContents = [
     { name: "Pelé", image: "players/peléicon.png", rating: 95 },
     { name: "Zidane", image: "players/zidaneicon.png", rating: 94 },
     { name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
     { name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 },
-    { name: "Hamm", image: "players/hammicon.png", rating: 93 },
+	{ name: "Hamm", image: "players/hammicon.png", rating: 93 },
 	{ name: "Cruyff", image: "players/cruyfficon.png", rating: 93 },
 	{ name: "Yashin", image: "players/yashinicon.png", rating: 92 },
 	{ name: "Puskás", image: "players/puskásicon.png", rating: 92 },
@@ -143,14 +143,20 @@ const players = [
 	{ name: "Fernando Hierro", image: "players/fernandohierroicon.png", rating: 88 },
 	{ name: "Hagi", image: "players/hagiicon.png", rating: 88 },
 	{ name: "Koeman", image: "players/koemanicon.png", rating: 88 },
+	{ name: "Laudrup", image: "players/laudrupicon.png", rating: 88 },
+	{ name: "Vieira", image: "players/vieiraicon.png", rating: 88 },
+	{ name: "Blanc", image: "players/blancicon.png", rating: 88 },
+	{ name: "Klose", image: "players/kloseicon.png", rating: 88 },
+	{ name: "van Persie", image: "players/vanpersieicon.png", rating: 88 },
 	{ name: "van Puijvelde", image: "players/vanpuijveldefbsbc.png", rating: 85 },
 	{ name: "Nolet", image: "players/noletfbsbc.png", rating: 85 },
 	{ name: "van Bever", image: "players/vanbevertotw.png", rating: 80 },
 	{ name: "Vissers", image: "players/visserstotw.png", rating: 80 },
-	{ name: "de Gruiter", image: "players/degruitertotw.png", rating: 80 },
+	{ name: "de Gruijter", image: "players/degruitertotw.png", rating: 80 },
 	{ name: "Dekle", image: "players/deklebronze.png", rating: 68 },
 	{ name: "Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
-];
+
+    ];
 
 // Function to search for players by name
 function searchPlayers() {
