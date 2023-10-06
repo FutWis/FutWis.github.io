@@ -36,6 +36,7 @@ document.getElementById("openPackButton").addEventListener("click", function() {
 	{ name: "Kane", image: "players/kanegold.png", rating: 90 },
 	{ name: "Courtois", image: "players/courtoisgold.png", rating: 90 },
 	{ name: "Lewandoski", image: "players/lewandoskigold.png", rating: 90 },
+	{ name: "Borgt", image: "players/borgtnike.png", rating: 90 },
 	{ name: "Messi", image: "players/messigold.png", rating: 90 },
 	{ name: "Bonmatí", image: "players/bonmatígold.png", rating: 90 },
 	{ name: "Hansen", image: "players/hansengold.png", rating: 90 },
