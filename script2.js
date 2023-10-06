@@ -1,9 +1,9 @@
-const packContents = [
+const players = [
     { name: "Pelé", image: "players/peléicon.png", rating: 95 },
     { name: "Zidane", image: "players/zidaneicon.png", rating: 94 },
     { name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
     { name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 },
-	{ name: "Hamm", image: "players/hammicon.png", rating: 93 },
+    { name: "Hamm", image: "players/hammicon.png", rating: 93 },
 	{ name: "Cruyff", image: "players/cruyfficon.png", rating: 93 },
 	{ name: "Yashin", image: "players/yashinicon.png", rating: 92 },
 	{ name: "Puskás", image: "players/puskásicon.png", rating: 92 },
@@ -147,71 +147,71 @@ const packContents = [
 	{ name: "Nolet", image: "players/noletfbsbc.png", rating: 85 },
 	{ name: "van Bever", image: "players/vanbevertotw.png", rating: 80 },
 	{ name: "Vissers", image: "players/visserstotw.png", rating: 80 },
-	{ name: "de Gruijter", image: "players/degruitertotw.png", rating: 80 },
+	{ name: "de Gruiter", image: "players/degruitertotw.png", rating: 80 },
 	{ name: "Dekle", image: "players/deklebronze.png", rating: 68 },
 	{ name: "Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
+];
 
-    ];
-
-// Define a function to handle the player search
-function searchPlayer() {
-    // Get the player name input element
+// Function to search for players by name
+function searchPlayers() {
     const playerNameInput = document.getElementById('playerName');
+    const playerName = playerNameInput.value.trim().toLowerCase();
+    const playerInfo = document.getElementById('playerInfo');
+    
+    // Clear previous player information
+    playerInfo.innerHTML = '';
 
-    // Get the player info container elements
-    const playerImage = document.getElementById('playerImage');
-    const playerRating = document.getElementById('playerRating');
+    // Search for players with matching names
+    const matchingPlayers = players.filter(player => player.name.toLowerCase().includes(playerName));
 
-    // Get the player name from the input field
-    const playerName = playerNameInput.value.trim();
-
-    // Check if the player name is empty
-    if (!playerName) {
-        alert('Please enter a player name.');
-        return;
-    }
-
-    // Find the player object with the matching name
-    const player = packContents.find(p => p.name.toLowerCase() === playerName.toLowerCase());
-
-    // Check if the player was found
-    if (player) {
-        // Display player info
-        playerImage.innerHTML = `<img src="${player.image}" alt="${player.name}">`;
-        playerRating.textContent = `Rating: ${player.rating}`;
-        
-        // Add a pack indicator next to the player's image
-        const packIndicator = document.createElement('div');
-        packIndicator.className = 'pack-indicator';
-        packIndicator.textContent = 'Pack';
-        playerImage.appendChild(packIndicator);
+    if (matchingPlayers.length === 0) {
+        // If no matching players are found, display a message
+        const noResultsMessage = document.createElement('p');
+        noResultsMessage.textContent = 'No players found with this name.';
+        playerInfo.appendChild(noResultsMessage);
     } else {
-        alert('Player not found.');
+        // Display player information
+        matchingPlayers.forEach(player => {
+            const playerCard = document.createElement('div');
+            playerCard.className = 'player-card';
+
+            const playerImage = document.createElement('img');
+            playerImage.src = player.image;
+            playerImage.alt = player.name;
+
+            const playerNameElement = document.createElement('h3');
+            playerNameElement.textContent = player.name;
+
+            const playerRatingElement = document.createElement('p');
+            playerRatingElement.textContent = `Rating: ${player.rating}`;
+
+            // Append elements to the player card
+            playerCard.appendChild(playerImage);
+            playerCard.appendChild(playerNameElement);
+            playerCard.appendChild(playerRatingElement);
+
+            // Append the player card to the player info section
+            playerInfo.appendChild(playerCard);
+        });
     }
 }
 
+// Function to handle the search button click
+function handleSearchButtonClick() {
+    searchPlayers();
+}
 
-// Add a click event listener to the search button
+// Add an event listener to the search button
 const searchButton = document.getElementById('searchButton');
-searchButton.addEventListener('click', searchPlayer);
+searchButton.addEventListener('click', handleSearchButtonClick);
 
-// Handle the Enter key press in the player name input field
+// Allow pressing Enter to trigger the search
 const playerNameInput = document.getElementById('playerName');
-playerNameInput.addEventListener('keyup', function(event) {
+playerNameInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-        searchPlayer();
+        searchPlayers();
     }
 });
-
-// Define a function to refresh the page
-function refreshPage() {
-    location.reload();
-}
-
-// Add a click event listener to the "Refresh Page" button
-const refreshPageButton = document.getElementById('refreshPage2Button');
-refreshPageButton.addEventListener('click', refreshPage);
-
 
 // Initialize the page
 function init() {
