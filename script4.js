@@ -12,23 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Ronaldo - YOU", rating: 94 },
         { name: "de Gruijter - YOU", rating: 80 }
     ];
-    const selectedPlayers = [];
-    const goalList = document.getElementById("goal-list");
-    const matchTimeElement = document.getElementById("match-time");
-    const matchWinnerElement = document.getElementById("match-winner");
 
-    let matchTime = 0;
-    let matchInterval;
-    let goals = [];
-
-    const selectedPlayersList = document.getElementById("selected-players");
-    const playerNameInput = document.getElementById("player-name");
-    const addButton = document.getElementById("add-button");
-    const randomButton = document.getElementById("random-button");
-    const startMatchButton = document.getElementById("start-match-button");
-
-    // AI Team
-    const aiTeam = [
+    // Define an array of AI players
+    const aiPlayers = [
         { name: "Haaland - AI", rating: 91 },
         { name: "Baresi - AI", rating: 91 },
         { name: "van Dijk - AI", rating: 89 },
@@ -41,6 +27,26 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Sócrates - AI", rating: 89 },
         { name: "van Bever - AI", rating: 80 }
     ];
+
+    const selectedPlayers = [];
+    const goalList = document.getElementById("goal-list");
+    const matchTimeElement = document.getElementById("match-time");
+    const matchWinnerElement = document.getElementById("match-winner");
+    const yellowCardList = document.getElementById("yellow-card-list");
+    const freeKickList = document.getElementById("free-kick-list");
+    const penaltyList = document.getElementById("penalty-list");
+    const offsideList = document.getElementById("offside-list");
+
+    let matchTime = 0;
+    let matchInterval;
+    let goals = [];
+    let yellowCards = new Map(); // Map to track yellow cards per player
+
+    const selectedPlayersList = document.getElementById("selected-players");
+    const playerNameInput = document.getElementById("player-name");
+    const addButton = document.getElementById("add-button");
+    const randomButton = document.getElementById("random-button");
+    const startMatchButton = document.getElementById("start-match-button");
 
     // Function to add a player to the selected players list
     function addPlayer(player) {
@@ -103,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (matchTime >= 90) {
                 clearInterval(matchInterval);
                 matchWinner();
+                resetMatch();
             }
 
             updateMatchTime(matchTime);
@@ -119,15 +126,24 @@ document.addEventListener("DOMContentLoaded", function () {
         matchTimeElement.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
     }
 
-    // Function to simulate a goal
+    // Function to simulate a goal, yellow cards, free kicks, penalties, offside
+    let goalsScored = 0;
     function simulateGoal() {
+        if (goalsScored >= 6) {
+            clearInterval(matchInterval);
+            matchWinner();
+            resetMatch();
+            return;
+        }
+
         // Simulate AI goals
         if (Math.random() < 0.2) { // Adjust the probability as needed
-            const randomAiPlayer = aiTeam[Math.floor(Math.random() * aiTeam.length)];
+            const randomAiPlayer = aiPlayers[Math.floor(Math.random() * aiPlayers.length)];
             goals.push(randomAiPlayer);
             const goalItem = document.createElement("li");
             goalItem.textContent = `${matchTime}' - ${randomAiPlayer.name}`;
             goalList.appendChild(goalItem);
+            goalsScored++;
         }
 
         // Simulate player goals based on rating
@@ -137,25 +153,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 const goalItem = document.createElement("li");
                 goalItem.textContent = `${matchTime}' - ${player.name}`;
                 goalList.appendChild(goalItem);
+                goalsScored++;
             }
         });
+
+        // Simulate yellow card
+        selectedPlayers.forEach(player => {
+            if (Math.random() < 0.1 && !yellowCards.has(player)) { // Adjust the probability as needed
+                yellowCards.set(player, 1);
+                const yellowCardItem = document.createElement("li");
+                yellowCardItem.textContent = `${matchTime}' - Yellow Card: ${player.name}`;
+                yellowCardList.appendChild(yellowCardItem);
+            } else if (yellowCards.has(player) && yellowCards.get(player) === 1) {
+                yellowCards.set(player, 2);
+                const redCardItem = document.createElement("li");
+                redCardItem.textContent = `${matchTime}' - Red Card: ${player.name}`;
+                yellowCardList.appendChild(redCardItem);
+            }
+        });
+
+        // Simulate free kicks
+        selectedPlayers.forEach(player => {
+            if (Math.random() < 0.05) { // Adjust the probability as needed
+                const freeKickItem = document.createElement("li");
+                freeKickItem.textContent = `${matchTime}' - Free Kick: ${player.name}`;
+                freeKickList.appendChild(freeKickItem);
+            }
+        });
+
+        // Simulate penalties
+        if (Math.random() < 0.02) { // Adjust the probability as needed
+            const penaltyPlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
+            const penaltyItem = document.createElement("li");
+            penaltyItem.textContent = `${matchTime}' - Penalty: ${penaltyPlayer.name}`;
+            penaltyList.appendChild(penaltyItem);
+        }
+
+        // Simulate offside
+        if (Math.random() < 0.05) { // Adjust the probability as needed
+            const offsidePlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
+            const offsideItem = document.createElement("li");
+            offsideItem.textContent = `${matchTime}' - Offside: ${offsidePlayer.name}`;
+            offsideList.appendChild(offsideItem);
+        }
     }
-
-    // JavaScript code to add match results
-const matchResultsContainer = document.getElementById("match-results");
-
-function addMatchResult(resultText) {
-    const matchResultElement = document.createElement("div");
-    matchResultElement.classList.add("match-result");
-    matchResultElement.textContent = resultText;
-    matchResultsContainer.appendChild(matchResultElement);
-}
-
-// Usage:
-addMatchResult("Home Team 2 - 1 Away Team");
-addMatchResult("Player 1 scored in the 60th minute.");
-addMatchResult("Player 2 scored in the 75th minute.");
-
 
     // Function to determine the match winner
     function matchWinner() {
@@ -170,5 +211,30 @@ addMatchResult("Player 2 scored in the 75th minute.");
         } else {
             matchWinnerElement.textContent = "Draw";
         }
+    }
+
+    // Function to reset the match
+    function resetMatch() {
+        selectedPlayers.length = 0;
+        goals = [];
+        yellowCards.clear();
+        goalsScored = 0;
+        matchTime = 0;
+        updateMatchTime(matchTime);
+        startMatchButton.disabled = false;
+        clearLists();
+    }
+
+    // Function to clear the lists of events
+    function clearLists() {
+        const lists = [
+            goalList, yellowCardList, freeKickList, penaltyList, offsideList
+        ];
+
+        lists.forEach(list => {
+            while (list.firstChild) {
+                list.removeChild(list.firstChild);
+            }
+        });
     }
 });
