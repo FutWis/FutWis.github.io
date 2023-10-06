@@ -57,10 +57,15 @@ body {
         }
 
         footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+                background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 240px; /* Onderaan de pagina */
+    left: 0; /* Links uitgelijnd */
+    width: 100%; /* Volledige breedte van de pagina */
+    z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
         }
 
         .pack-container {
@@ -148,7 +153,7 @@ body {
     position: fixed;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
-    bottom: 10px;
+    bottom: 195px;
     height: 15px;
     padding: 10px 20px;
     border-radius: 5px;
@@ -179,4 +184,60 @@ body {
         color: White;
     }
 
+.fixed-text-box {
+    background-color: black;
+    color: white; /* Pas de tekstkleur naar wens aan */
+    border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 11px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px; /* Pas de breedte aan naar wens */
+    height: 230px; /* Stel de hoogte in op een waarde die overeenkomt met de hoogte van de spelerkaarten */
+    overflow: none; /* Voeg scrollen toe als de inhoud groter is dan het tekstvak */
+    position: fixed;
+    top: 235px; /* Pas de bovenste positie aan naar wens */
+    left: 10px; /* Pas de linker positie aan naar wens */
+    z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
+}
 
+  /* Stijl voor de tabel binnen het tekstvak */
+  .fixed-text-box table {
+    width: 100%;
+    border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border-collapse: collapse;
+  }
+
+  .fixed-text-box table, .fixed-text-box th, .fixed-text-box td {
+    border: none;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 5px;
+  }
+
+  .fixed-text-box th, .fixed-text-box td {
+    padding: 8px;
+    text-align: left;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .fixed-text-box th {
+
+    background-color: black;
+    color: white;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    border: none;
+    border-radius: 5px;
+  }
