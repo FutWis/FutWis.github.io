@@ -1,0 +1,67 @@
+/* Add your CSS styles for the website here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px; /* Add padding to create a border */
+    display: flex; /* Use flexbox for positioning */
+    align-items: center; /* Center items vertically within the header */
+}
+
+#logo {
+    width: 50px; /* Adjust the width of your logo as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some space to the right of the logo */
+}
+
+h1 {
+    margin: 0; /* Remove margin around the h1 element */
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.pack-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pack-feed {
+    margin-bottom: 10px;
+}
+
+.player-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    max-width: 200px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}

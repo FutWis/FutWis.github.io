@@ -1,0 +1,144 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px; /* Add padding to create a border */
+            display: flex; /* Use flexbox for positioning */
+            align-items: center; /* Center items vertically within the header */
+        }
+
+        #logo {
+            width: 50px; /* Adjust the width of your logo as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Add some space to the right of the logo */
+        }
+
+        h1 {
+            margin: 0; /* Remove margin around the h1 element */
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .pack-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pack-feed {
+            margin-bottom: 10px;
+        }
+
+        .player-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            max-width: 200px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add styles for the button container */
+        .buttoncards-container {
+            position: absolute;
+            top: 290px; /* Adjust the top position to your liking */
+            right: 10px; /* Adjust the right position to your liking */
+            z-index: 1; /* Ensure it's on top of other elements */
+        }
+
+	 /* Add styles for the button container */
+        .buttonpage-container {
+            position: absolute;
+            top: 290px; /* Adjust the top position to your liking */
+            left: 10px; /* Adjust the right position to your liking */
+            z-index: 1; /* Ensure it's on top of other elements */
+        }
+
+	.openpack-button {
+            background-color: green; /* Green background */
+            color: white; /* White text color */
+        }
+
+        /* Style the Refresh Cards button */
+        .refreshcards-button {
+    background-color: black; /* Black background */
+    color: white; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed;
+    border-radius: 5px;
+    bottom: 10px; /* Adjust the bottom position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    z-index: 1; /* Ensure it's on top of other elements */
+}
+
+/* Style the Refresh Page button */
+.refreshpage-button {
+    background-color: black; /* Black background */
+    color: white; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px; /* Adjust the bottom position as needed */
+    left: 10px; /* Adjust the left position as needed */
+    z-index: 1; /* Ensure it's on top of other elements */
+}
+
+
+/* Style the pop-up container */
+/* Style the pop-up container */
+.popup {
+    background-color: Black; /* Add a background color with transparency */
+    color: white;
+    position: fixed;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    bottom: 10px;
+    height: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px; /* Set the width of the pop-up as needed */
+    z-index: 1;
+}
+
+
+/* Style the close button within the pop-up */
+.popup span {
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
