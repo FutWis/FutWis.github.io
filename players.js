@@ -1,8 +1,8 @@
 const packContents = [
-    { name: "Pelé", image: "players/peléicon.png", rating: 95 },
-    { name: "Zidane", image: "players/zidaneicon.png", rating: 94 },
-    { name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
-    { name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 },
+    	{ name: "Pelé", image: "players/peléicon.png", rating: 95 },
+    	{ name: "Zidane", image: "players/zidaneicon.png", rating: 94 },
+    	{ name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
+    	{ name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 },
 	{ name: "Hamm", image: "players/hammicon.png", rating: 93 },
 	{ name: "Cruyff", image: "players/cruyfficon.png", rating: 93 },
 	{ name: "Yashin", image: "players/yashinicon.png", rating: 92 },
@@ -159,13 +159,13 @@ const packContents = [
     ];
 
 // Sort players by rating in descending order
-players.sort((a, b) => b.rating - a.rating);
+packContents.sort((a, b) => b.rating - a.rating);
 
 // Function to create and populate player cards
 function createPlayerCards() {
     const playerCardsContainer = document.getElementById('playerCards');
 
-    players.forEach(player => {
+    packContents.forEach(player => {
         const card = document.createElement('div');
         card.classList.add('player-card'); // Add CSS class for styling
 

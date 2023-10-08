@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FutWis</title>
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="search.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <script async src="https://www.widgetsquad.com/pixel/75l9tdr0cvmvsogcy56d69cxx1cnl6il"></script>
 </head>
@@ -28,15 +28,13 @@
             <input type="text" id="playerName" placeholder="Type player name...">
             <button id="searchButton">Search</button>
             <div id="playerInfo">
-                <div id="playerImage"></div>
-                <div id="playerRating"></div>
-		<div id="playerWorth"></div>
+                <!-- Player information will be displayed here -->
             </div>
         </section>
     </main>
     <button id="refreshCards2Button" class="refreshcards-button">Refresh Cards</button>
-<button id="refreshPage2Button" class="refreshpage-button">Refresh Page</button>
-    <script src="script2.js"></script>
+    <button id="refreshPage2Button" class="refreshpage-button">Refresh Page</button>
+    <script src="search.js"></script>
     <script>
         function updateTime() {
             const now = new Date();

@@ -1,10 +1,9 @@
-document.getElementById("openPackButton").addEventListener("click", function() {
-    // Simulate pack opening (replace with your logic)
-     const packContents = [
-    { name: "Pelé", image: "players/peléicon.png", rating: 95 },
-    { name: "Zidane", image: "players/zidaneicon.png", rating: 94 },
-    { name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
-    { name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 },
+// Your player data
+const packContents = [
+    	{ name: "Pelé", image: "players/peléicon.png", rating: 95 },
+    	{ name: "Zidane", image: "players/zidaneicon.png", rating: 94 },
+    	{ name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
+    	{ name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 },
 	{ name: "Hamm", image: "players/hammicon.png", rating: 93 },
 	{ name: "Cruyff", image: "players/cruyfficon.png", rating: 93 },
 	{ name: "Yashin", image: "players/yashinicon.png", rating: 92 },
@@ -160,164 +159,78 @@ document.getElementById("openPackButton").addEventListener("click", function() {
 
     ];
 
-    const selectedPlayers = getRandomUniquePlayers(packContents, 6);
+// Function to search for players by name
+function searchPlayers() {
+    const playerNameInput = document.getElementById('playerName');
+    const playerName = playerNameInput.value.trim().toLowerCase();
+    const playerInfo = document.getElementById('playerInfo');
 
-    const packContentsDiv = document.getElementById("packContents");
-    const openPackButton = document.getElementById("openPackButton");
+    // Clear previous player information
+    playerInfo.innerHTML = '';
 
-    // Function to clear existing player cards
-    function clearPlayerCards() {
-        while (packContentsDiv.firstChild) {
-            packContentsDiv.removeChild(packContentsDiv.firstChild);
-        }
-    }
+    // Search for players with matching names
+    const matchingPlayers = packContents.filter(player => player.name.toLowerCase().includes(playerName));
 
-    // Function to create a professional pop-up at the bottom of the page
-function createPopup(message) {
-    const popup = document.createElement("div");
-    popup.classList.add("popup");
-    
-    const popupMessage = document.createElement("p");
-    popupMessage.textContent = message;
-    
-    const closeButton = document.createElement("span");
-    closeButton.addEventListener("click", function () {
-        popup.remove(); // Close the pop-up when the close button is clicked
-    });
-    
-    popup.appendChild(popupMessage);
-    popup.appendChild(closeButton);
-    
-    document.body.appendChild(popup);
+    if (matchingPlayers.length === 0) {
+        // If no matching players are found, display a message
+        const noResultsMessage = document.createElement('p');
+        noResultsMessage.textContent = 'No players found with this name.';
+        playerInfo.appendChild(noResultsMessage);
+    } else {
+        // Display player information
+        matchingPlayers.forEach(player => {
+            const playerCard = document.createElement('div');
+            playerCard.className = 'player-card';
 
-    // Auto-close the popup after 3 seconds
-    setTimeout(() => {
-        popup.remove();
-    }, 3000); // 3000 milliseconds = 3 seconds
-}
+            const playerImage = document.createElement('img');
+            playerImage.src = player.image;
+            playerImage.alt = player.name;
 
-    // Disable the "Open Pack" button to prevent multiple clicks
-    openPackButton.disabled = true;
+            const playerNameElement = document.createElement('h3');
+            playerNameElement.textContent = player.name;
 
-    // Clear existing player cards
-    clearPlayerCards();
+            const playerRatingElement = document.createElement('p');
+            playerRatingElement.textContent = `Rating: ${player.rating}`;
 
-    // Function to select random unique players from the array
-    function getRandomUniquePlayers(array, numPlayers) {
-        const uniquePlayers = [];
-        const shuffled = array.slice().sort(() => 0.5 - Math.random());
+            // Append elements to the player card
+            playerCard.appendChild(playerImage);
+            playerCard.appendChild(playerNameElement);
+            playerCard.appendChild(playerRatingElement);
 
-        for (const player of shuffled) {
-            if (uniquePlayers.length === numPlayers) {
-                break; // Stop when you have enough unique players
-            }
-
-            if (!uniquePlayers.some(p => p.name === player.name)) {
-                // Adjust the probabilities based on player ratings
-                const probability = Math.random(); // Random number between 0 and 1
-                if (player.rating <= 80) {
-                    // 80 and lower have a 100% chance
-                    uniquePlayers.push(player);
-                } else if (player.rating <= 85) {
-                    // 81 to 85 have a 50% chance
-                    if (probability < 0.50) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 89) {
-                    // 86 to 89 have a 10% chance
-                    if (probability < 0.10) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 93) {
-                    // 90 to 93 have a 8% chance
-                    if (probability < 0.08) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 96) {
-                    // 94 to 96 have a 5% chance
-                    if (probability < 0.0,5) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating <= 98) {
-                    // 97 to 98 have a 3% chance
-                    if (probability < 0.03) {
-                        uniquePlayers.push(player);
-                    }
-                } else if (player.rating === 99) {
-                    // 99 has a 1% chance
-                    if (probability < 0.01) {
-                        uniquePlayers.push(player);
-                    }
-                }
-            }
-        }
-
-        return uniquePlayers;
-    }
-
-    // Function to determine if a player is a walkout
-    function isWalkout(player) {
-        // Add or remove conditions to customize walkout logic
-        // In this example, all players are considered walkouts
-        return true;
-    }
-
-    // Function to reveal player cards with animations
-    function revealPlayerCards() {
-        // Sort selectedPlayers by rating in descending order
-        selectedPlayers.sort((a, b) => b.rating - a.rating);
-
-        let highestWalkout = null; // Track the highest-rated walkout
-
-        selectedPlayers.forEach((player, index) => {
-            const isPlayerWalkout = isWalkout(player); // Check if it's a walkout player
-
-            // Create card element with animation
-            const card = document.createElement("div");
-            card.classList.add("player-card");
-            card.innerHTML = `
-                <div class="card-front">
-                    <img src="${player.image}" alt="${player.name}" width="90" height="120">
-                    <p>${player.name}</p>
-                </div>
-                <div class="card-back">
-                    <p>Rating: ${player.rating}</p>
-                </div>
-            `;
-
-            // Append the card to the packContentsDiv with animation
-            setTimeout(() => {
-                card.classList.add("reveal-animation");
-                packContentsDiv.appendChild(card);
-                // Scroll to the newly added card
-                card.scrollIntoView({ behavior: "smooth" });
-
-                // Enable the "Open Pack" button after animation is complete
-                if (index === 5) { // Only enable after the last card for a maximum of 3 cards
-                    openPackButton.disabled = false;
-                    // Display a professional pop-up with the name of the highest-rated walkout
-                    if (highestWalkout) {
-                        createPopup(`Highest Walkout: ${highestWalkout.name}`);
-                    }
-                }
-            }, 1000 * index); // Adjust the delay as needed for your animation
-
-            // Update the highestWalkout if the current player is higher-rated
-            if (isPlayerWalkout && (!highestWalkout || player.rating > highestWalkout.rating)) {
-                highestWalkout = player;
-            }
+            // Append the player card to the player info section
+            playerInfo.appendChild(playerCard);
         });
     }
+}
 
-    // Start revealing player cards
-    revealPlayerCards();
+// Function to handle the search button click
+function handleSearchButtonClick() {
+    searchPlayers();
+}
+
+// Add an event listener to the search button
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', handleSearchButtonClick);
+
+// Allow pressing Enter to trigger the search
+const playerNameInput = document.getElementById('playerName');
+playerNameInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        searchPlayers();
+    }
 });
 
-document.getElementById("refreshCardsButton").addEventListener("click", function () {
-    // Reload the webpage when the "Refresh Cards" button is clicked
-    location.reload();
-});
-document.getElementById("refreshPageButton").addEventListener("click", function () {
-    // Reload the webpage when the "Refresh Page" button is clicked
-    location.reload();
-});
+// Initialize the page
+function init() {
+    const timeElement = document.getElementById('time');
+
+    function updateTime() {
+        const now = new Date();
+        timeElement.textContent = now.toLocaleTimeString();
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+}
+
+init();

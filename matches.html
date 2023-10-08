@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Match Simulator</title>
-    <link rel="stylesheet" href="styles4.css">
+    <link rel="stylesheet" href="matches.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-	          <li><a href="players.html">Players</a></li>
+            <li><a href="players.html">Players</a></li>
             <li><a href="search.html">Player Search</a></li>
             <li><a href="matches.html">Play Matches</a></li>
         </ul>
@@ -27,21 +27,11 @@
     <div>
         <h2>Match Time: <span id="match-time">0:00</span></h2>
         <ul id="goal-list"></ul>
-        <ul id="yellow-card-list"></ul>
-        <ul id="free-kick-list"></ul>
-        <ul id="penalty-list"></ul>
-        <ul id="offside-list"></ul>
-        <ul id="var-decision-list"></ul>
-        <ul id="referee-list"></ul>
-        <ul id="linesman-list"></ul>
-        <ul id="injury-list"></ul>
-        <ul id="handball-list"></ul>
-        <ul id="foul-list"></ul>
         <h2>Match Winner: <span id="match-winner"></span></h2>
     </div>
-    <div id="match-results">
-        <!-- Match results will be added here -->
-    </div>
-    <script src="script4.js"></script>
+    <!-- Add this message element to your HTML file -->
+    <div id="message"></div>
+    <button id="restart-button" disabled>Restart Match</button>
+    <script src="matches.js"></script>
 </body>
 </html>
