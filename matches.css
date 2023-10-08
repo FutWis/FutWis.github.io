@@ -127,22 +127,10 @@ li {
     font-weight: bold;
 }
 
-#selected-players:hover {
-    color: gold; /* Change text color to white on hover */
-    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
-    font-weight: bold;
-}
-
 #goal-list {
     cursor: pointer; /* Add a pointer cursor for hover effect */
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     color: white;
-    font-weight: bold;
-}
-
-#goal-list:hover {
-    color: gold; /* Change text color to white on hover */
-    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     font-weight: bold;
 }
 
@@ -152,10 +140,22 @@ li {
     color: white;
 }
 
+#match-time:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+}
+
 #match-winner {
     font-size: 24px;
     font-weight: bold;
     color: white;
+}
+
+#match-winner:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
 }
 
 #message {
@@ -165,9 +165,21 @@ li {
     text-align: center;
 }
 
+#message:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+}
+
 #countdown {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     color: white;
+}
+
+#countdown:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
 }

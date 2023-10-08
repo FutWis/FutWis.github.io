@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const freeKickProbability = 0.02; // Probability of a free kick in a minute
     const penaltyProbability = 0.01; // Probability of a penalty in a minute
 
+    // Probability of a corner kick occurring
+    const cornerKickProbability = 0.02; // Adjust as needed
+    // Probability of a corner kick resulting in a goal
+    const cornerKickGoalProbability = 0.2; // Adjust as needed
+
     const selectedPlayers = [];
     const events = [];
     const goalList = document.getElementById("goal-list");
@@ -162,12 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
         matchTimeElement.textContent = `${minutes}`;
     }
 
-    // Function to simulate events (goals, free kicks, penalties)
+    // Function to simulate events (goals, free kicks, penalties, corner kicks)
     function simulateEvent() {
         // Simulate goal
         if (Math.random() < goalScoringProbability) {
             const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
-            const scorer = scoringTeam[Math.floor(Math.random() * scoringTeam.length)];
+            const scorer = selectScorer(scoringTeam);
             goals.push(scorer);
             const goalItem = document.createElement("li");
             goalItem.textContent = `${formatTime(matchTime)} - GOAL! ${scorer.name}`;
@@ -178,9 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Simulate free kick
         if (Math.random() < freeKickProbability) {
             const freeKickPlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
-            const scored = Math.random() < 0.5;
+            const scored = Math.random() < calculateScoringProbability(freeKickPlayer);
             const freeKickItem = document.createElement("li");
-            freeKickItem.textContent = `${formatTime(matchTime)} - Free Kick: ${freeKickPlayer.name} ${scored ? "- GOAL!" : "- Missed"}`;
+            freeKickItem.textContent = `${formatTime(matchTime)} - Free Kick: ${freeKickPlayer.name} ${scored ? "- GOAL!" : "- Missed!"}`;
             events.push(freeKickItem);
             if (scored) {
                 const scorer = freeKickPlayer;
@@ -192,9 +197,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Simulate penalty
         if (Math.random() < penaltyProbability) {
             const penaltyPlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
-            const scored = Math.random() < 0.5;
+            const scored = Math.random() < calculatePenaltyScoringProbability(penaltyPlayer);
             const penaltyItem = document.createElement("li");
-            penaltyItem.textContent = `${formatTime(matchTime)} - Penalty: ${penaltyPlayer.name} ${scored ? "- GOAL!" : "- Missed"}`;
+            penaltyItem.textContent = `${formatTime(matchTime)} - Penalty: ${penaltyPlayer.name} ${scored ? "- GOAL!" : "- Missed!"}`;
             events.push(penaltyItem);
             if (scored) {
                 const scorer = penaltyPlayer;
@@ -202,6 +207,64 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             updateEventList();
         }
+
+        // Simulate corner kick with a low chance
+        if (Math.random() < cornerKickProbability) {
+            const kickingTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
+            const scorer = kickingTeam[Math.floor(Math.random() * kickingTeam.length)];
+
+            // Determine if the corner kick results in a goal
+            const cornerKickGoal = Math.random() < cornerKickGoalProbability;
+
+            if (cornerKickGoal) {
+                goals.push(scorer);
+                const cornerKickGoalItem = document.createElement("li");
+                cornerKickGoalItem.textContent = `${formatTime(matchTime)} - Corner Kick: ${scorer.name} GOAL!`;
+                events.push(cornerKickGoalItem);
+                updateEventList();
+            } else {
+                const cornerKickMissItem = document.createElement("li");
+                cornerKickMissItem.textContent = `${formatTime(matchTime)} - Corner Kick: ${scorer.name} Missed!`;
+                events.push(cornerKickMissItem);
+                updateEventList();
+            }
+        }
+    }
+
+    // Function to select a scorer based on player ratings
+    function selectScorer(team) {
+        // Sort the team by rating in descending order
+        team.sort((a, b) => b.rating - a.rating);
+
+        // Calculate the total rating of the team
+        const totalRating = team.reduce((total, player) => total + player.rating, 0);
+
+        // Calculate a random threshold based on the total rating
+        const threshold = Math.random() * totalRating;
+
+        // Find the player whose cumulative rating exceeds the threshold
+        let cumulativeRating = 0;
+        for (const player of team) {
+            cumulativeRating += player.rating;
+            if (cumulativeRating >= threshold) {
+                return player;
+            }
+        }
+
+        // Return the last player as a fallback (shouldn't reach here)
+        return team[team.length - 1];
+    }
+
+    // Function to calculate the scoring probability for free kicks based on player rating
+    function calculateScoringProbability(player) {
+        // Adjust this formula as needed to make higher-rated players perform better
+        return player.rating / 99;
+    }
+
+    // Function to calculate the scoring probability for penalties based on player rating
+    function calculatePenaltyScoringProbability(player) {
+        // Adjust this formula as needed to make higher-rated players perform better
+        return player.rating / 86;
     }
 
     // Function to format time as mm:ss
@@ -264,3 +327,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
