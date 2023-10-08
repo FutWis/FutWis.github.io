@@ -64,7 +64,7 @@ const packContents = [
 	{ name: "Smith", image: "players/smithicon.png", rating: 89 },
 	{ name: "Shearer", image: "players/shearericon.png", rating: 89 },
 	{ name: "Zanetti", image: "players/zanettiicon.png", rating: 89 },
-	{ name: "Roodhuizen", image: "players/roodhuizennike.png", rating: 89 },
+	{ name: "Wesley Roodhuizen", image: "players/roodhuizennike.png", rating: 89 },
 	{ name: "Nesta", image: "players/nestaicon.png", rating: 89 },
 	{ name: "Cannavaro", image: "players/cannavaroicon.png", rating: 89 },
 	{ name: "Stoichkov", image: "players/stoichkovicon.png", rating: 89 },

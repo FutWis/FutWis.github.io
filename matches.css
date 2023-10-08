@@ -1,151 +1,171 @@
-/* Reset some default styles to ensure consistency */
-body, h1, h2, ul {
+/* Reset some default styles for better consistency */
+body, h2, ul {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
-/* Style the top header */
-.top-header {
-    background-color: #333;
-    color: #fff;
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('backgroundmatches.jpg') center center/cover no-repeat fixed;
+    color: #333;
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
 }
 
-/* Style the header title "Football Draft" */
-.top-header h1 {
-    font-size: 36px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-/* Style the navigation menu */
-nav ul {
-    list-style: none;
-    display: flex;
+nav {
     background-color: #333;
     padding: 10px 0;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
 nav li {
+    display: inline-block;
     margin-right: 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: white;
     font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #f4f4f4;
+    color: #FFD700; /* Change color on hover (gold) */
 }
 
-/* Style the main content area */
-main {
-    max-width: 1200px;
-    margin: 120px auto 20px;
-    padding: 20px;
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Style the player box */
-.player-box {
-    border: 2px solid #333;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #f4f4f4;
-    margin: 10px 0;
-    text-align: center;
+}
+
+.column {
+    flex: 0 0 30%; /* Set column width */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: background-color 0.3s;
 }
 
-/* Style the player name inside the box */
-.player-name {
-    font-weight: bold;
-    font-size: 20px;
+.column:hover {
+    background-color: #F5F5F5; /* Change background color on hover */
+}
+
+h2 {
+    font-size: 24px;
     margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
 }
 
-/* Style the player rating inside the box */
-.player-rating {
-    font-size: 18px;
-    color: #777;
+h2:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
 }
 
-/* Style the player search input */
-#player-name {
+input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+input[type="text"]:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFD700; /* Change background color on hover (gold) */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 5px 0;
+    padding: 0;
+    border-radius: 50px; /* Add round border */
     font-size: 16px;
 }
 
-/* Style the search results list */
-#search-results {
-    list-style-type: none;
-    padding: 0;
+#selected-players {
+    cursor: pointer; /* Add a pointer cursor for hover effect */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    color: white;
+    font-weight: bold;
 }
 
-/* Style individual search result items */
-#search-results li {
-    margin-bottom: 10px;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+#selected-players:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
 }
 
-#search-results li:hover {
-    background-color: #f4f4f4;
+#goal-list {
+    cursor: pointer; /* Add a pointer cursor for hover effect */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    color: white;
+    font-weight: bold;
 }
 
-/* Style the match results box */
-#match-results {
-    border: 2px solid #333;
-    padding: 20px;
-    background-color: #f4f4f4;
-    margin: 20px 0;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+#goal-list:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
 }
 
-/* Style the match results title */
-#match-results h2 {
+#match-time {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
-/* Style individual match results items */
-.match-result {
+#match-winner {
     font-size: 18px;
-    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
 }
 
-/* Style the footer */
-footer {
-    background-color: #333;
-    color: #fff;
+#message {
+    font-size: 18px;
+    color: #FF4500; /* Dark orange color for messages */
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+}
+
+#countdown {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
 }

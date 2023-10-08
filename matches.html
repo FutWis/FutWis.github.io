@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Match Simulator</title>
+    <title>FutWis</title>
     <link rel="stylesheet" href="matches.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
@@ -25,13 +25,16 @@
     </div>
     <button id="start-match-button" disabled>Start Match</button>
     <div>
-        <h2>Match Time: <span id="match-time">0:00</span></h2>
+        <h2>Match Time: <span id="match-time">0</span></h2>
         <ul id="goal-list"></ul>
         <h2>Match Winner: <span id="match-winner"></span></h2>
+        <!-- Add this message element to your HTML file -->
+        <div id="message"></div>
+        <!-- Add this countdown element to your HTML file -->
+        <div id="countdown"></div>
     </div>
-    <!-- Add this message element to your HTML file -->
-    <div id="message"></div>
-    <button id="restart-button" disabled>Restart Match</button>
+    <!-- Remove the old restart button -->
+    <!-- <button id="restart-button" disabled>Restart Match</button> -->
     <script src="matches.js"></script>
 </body>
 </html>
