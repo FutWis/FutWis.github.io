@@ -149,23 +149,25 @@ li {
 #match-time {
     font-size: 24px;
     font-weight: bold;
+    color: white;
 }
 
 #match-winner {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: white;
 }
 
 #message {
-    font-size: 18px;
-    color: #FF4500; /* Dark orange color for messages */
+    font-size: 24px;
+    color: white; /* Dark orange color for messages */
+    font-weight: bold;
     text-align: center;
 }
 
 #countdown {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
-    color: #333;
+    color: white;
 }
