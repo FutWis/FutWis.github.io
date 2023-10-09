@@ -11,6 +11,12 @@ body {
     text-align: center;
 }
 
+h1, h2, p {
+    margin: 0;
+    text-shadow: 4px 4px 10px green;
+    font-style: italic;
+}
+
 nav {
     background-color: #333;
     padding: 10px 0;
@@ -19,11 +25,14 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
+    color: white;
+    text-shadow: 4px 4px 10px green;
 }
 
 nav li {
     display: inline-block;
     margin-right: 20px;
+    color: white;
 }
 
 nav a {
@@ -34,7 +43,10 @@ nav a {
 }
 
 nav a:hover {
-    color: #FFD700; /* Change color on hover (gold) */
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 .container {
@@ -58,6 +70,10 @@ nav a:hover {
 
 .column:hover {
     background-color: #F5F5F5; /* Change background color on hover */
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 h2 {
@@ -65,12 +81,14 @@ h2 {
     margin-bottom: 10px;
     color: white;
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 h2:hover {
     color: gold; /* Change text color to white on hover */
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 input[type="text"] {
@@ -81,6 +99,7 @@ input[type="text"] {
     margin-bottom: 10px;
     background-color: black;
     color: white;
+    text-shadow: 4px 4px 10px green;
     font-weight: bold;
 }
 
@@ -88,6 +107,7 @@ input[type="text"]:hover {
     color: gold; /* Change text color to white on hover */
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 button {
@@ -100,11 +120,15 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #FFD700; /* Change background color on hover (gold) */
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 ul {
@@ -125,6 +149,7 @@ li {
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     color: white;
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 #goal-list {
@@ -132,30 +157,35 @@ li {
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     color: white;
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 #match-time {
     font-size: 24px;
     font-weight: bold;
     color: white;
+    text-shadow: 4px 4px 10px green;
 }
 
 #match-time:hover {
     color: gold; /* Change text color to white on hover */
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 #match-winner {
     font-size: 24px;
     font-weight: bold;
     color: white;
+    text-shadow: 4px 4px 10px green;
 }
 
 #match-winner:hover {
     color: gold; /* Change text color to white on hover */
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 #message {
@@ -163,12 +193,14 @@ li {
     color: white; /* Dark orange color for messages */
     font-weight: bold;
     text-align: center;
+    text-shadow: 4px 4px 10px green;
 }
 
 #message:hover {
     color: gold; /* Change text color to white on hover */
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }
 
 #countdown {
@@ -176,10 +208,32 @@ li {
     font-weight: bold;
     text-align: center;
     color: white;
+    text-shadow: 4px 4px 10px green;
 }
 
 #countdown:hover {
     color: gold; /* Change text color to white on hover */
     transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
     font-weight: bold;
+    text-shadow: 4px 4px 10px green;
+}
+/* CSS for the time display */
+#time {
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    margin: 5px 0;
+    padding: 0;
+    font-size: 16px;
+    color: white;
+}
+
+#time:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+    text-shadow: 4px 4px 10px green;
 }

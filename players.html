@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Players</title>
-    <link rel="stylesheet" href="players.css"> <!-- Include your CSS file here -->
+    <title>FutWis</title>
+    <link rel="stylesheet" href="players.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script async src="https://www.widgetsquad.com/pixel/75l9tdr0cvmvsogcy56d69cxx1cnl6il"></script>
 </head>
 <body>
     <header>
-        <h1>List of Players</h1>
+        <img src="futwis.png" alt="FutWis Logo" id="logo">
+        <h1>Welcome to FutWis</h1>
     </header>
+    <div id="time"></div>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -26,6 +30,16 @@
             </div>
         </section>
     </main>
-    <script src="players.js"></script> <!-- Include your JavaScript file here -->
+    <script src="players.js"></script>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
