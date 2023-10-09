@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function searchPlayer(playerName) {
         const searchQuery = encodeURIComponent(playerName);
-        const searchUrl = `https://futwis.github.io/search.html?q=${searchQuery}`; // Replace with your search engine's URL
+        const searchUrl = `https://futwis.github.io/search.html?q=${searchQuery}`;
         window.open(searchUrl, '_blank');
     }
     
