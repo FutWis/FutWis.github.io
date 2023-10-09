@@ -97,22 +97,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Event listener for the "Random" button
     randomButton.addEventListener("click", function () {
-        if (matchInterval) {
-            messageElement.textContent = "You can't randomize players while the match is in progress.";
-            return;
-        }
+    if (matchInterval) {
+        messageElement.textContent = "You can't randomize players while the match is in progress.";
+        return;
+    }
 
-        selectedPlayers.length = 0; // Clear the selected players
-        while (selectedPlayers.length < 11) {
-            const randomIndex = Math.floor(Math.random() * players.length);
-            const randomPlayer = players[randomIndex];
-            if (!selectedPlayers.includes(randomPlayer)) {
-                addPlayer(randomPlayer);
-            }
+    if (selectedPlayers.length === 11) {
+        alert("You already have 11 players selected.");
+        return;
+    }
+
+    while (selectedPlayers.length < 11) {
+        const randomIndex = Math.floor(Math.random() * players.length);
+        const randomPlayer = players[randomIndex];
+
+        // Check if the random player is not already in the selectedPlayers array
+        if (!selectedPlayers.some(player => player.name === randomPlayer.name)) {
+            addPlayer(randomPlayer);
         }
-    });
+    }
+});
 
     // Event listener for the "Start Match" button
     startMatchButton.addEventListener("click", function () {
