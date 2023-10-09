@@ -268,7 +268,7 @@ const packContents = [
 		{ name: "Steef de Gruijter", image: "players/degruitertotw.png", rating: 80 },
 		{ name: "Wegihu Tekle", image: "players/deklebronze.png", rating: 68 },
 		{ name: "Stephanie Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
-		{ name: "Naatje", image: "players/naatjebronzenr.png", rating: 47 },
+		{ name: "Naatje", image: "players/naatjebronzenr.png", rating: 47 }
 
 
 	];
