@@ -305,3 +305,13 @@ function createPlayerCards() {
 
 // Call the function to create player cards when the page loads
 window.addEventListener('load', createPlayerCards);
+
+document.getElementById("refreshCards3Button").addEventListener("click", function () {
+	// Reload the webpage when the "Refresh Cards" button is clicked
+	location.reload();
+});
+
+document.getElementById("refreshPage3Button").addEventListener("click", function () {
+	// Reload the webpage when the "Refresh Page" button is clicked
+	location.reload();
+});

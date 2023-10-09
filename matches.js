@@ -412,20 +412,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function searchPlayer(playerName) {
-        const searchQuery = encodeURIComponent(playerName);
-        const searchUrl = `https://futwis.github.io/search.html?q=${searchQuery}`;
-        window.open(searchUrl, '_blank');
-    }
-    
-    // Event listener for player names
-    selectedPlayersList.addEventListener("click", function (event) {
-        if (event.target && event.target.nodeName === "LI") {
-            const playerName = event.target.textContent;
-            searchPlayer(playerName);
-        }
-    });
-
     function simulateEvent() {
         if (Math.random() < goalScoringProbability) {
             const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
