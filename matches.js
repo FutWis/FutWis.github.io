@@ -11,10 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Carlos Alberto ", rating: 91 },
         { name: "Ronaldo", rating: 94 },
         { name: "Steef de Gruijter", rating: 80 },
-	{ name: "Mo Alkassar", rating: 92 }
-    ];
-
-    const aiPlayers = [
+	{ name: "Mo Alkassar", rating: 92 },
         { name: "Erling Haaland", rating: 91 },
         { name: "Franco Baresi", rating: 91 },
         { name: "Virgil van Dijk", rating: 89 },
@@ -26,6 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Raúl", rating: 90 },
         { name: "Sócrates", rating: 89 },
         { name: "Ad van Bever", rating: 80 }
+    ];
+
+    const aiPlayers = [
+        { name: "AI PLAYER 1", rating: 91 },
+        { name: "AI PLAYER 2", rating: 91 },
+        { name: "AI PLAYER 3", rating: 89 },
+        { name: "AI PLAYER 4", rating: 88 },
+        { name: "AI PLAYER 5", rating: 64 },
+        { name: "AI PLAYER 6", rating: 88 },
+        { name: "AI PLAYER 7", rating: 89 },
+        { name: "AI PLAYER 8", rating: 80 },
+        { name: "AI PLAYER 9", rating: 90 },
+        { name: "AI PLAYER 10", rating: 89 },
+        { name: "AI PLAYER 11", rating: 80 }
     ];
 
     const matchDuration = 90; // Duration in in-game minutes
