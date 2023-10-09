@@ -225,6 +225,7 @@ function updateMatchTime(time) {
     // Remove "Half Time" at 44 minutes
     if (minutes === 44) {
         matchTimeElement.textContent = `${minutes}`;
+    }
 
     // Announce "Half Time" at 45 minutes
     if (minutes === 45) {
