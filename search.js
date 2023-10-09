@@ -1,3 +1,5 @@
+// Add this code inside your script tag in search.js
+document.getElementById('searchButton').addEventListener('click', searchPlayer);
 const packContents = [
 		{ name: "Pelé", image: "players/peléicon.png", rating: 95 },
 		{ name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
@@ -346,5 +348,36 @@ function init() {
 	updateTime();
 	setInterval(updateTime, 1000);
 }
+
+function searchPlayer() {
+    const playerName = document.getElementById('playerName').value;
+
+    // Loop through the packContents array to find the player
+    for (const player of packContents) {
+        if (player.name.toLowerCase() === playerName.toLowerCase()) {
+            // Player found, display player information
+            displayPlayerInfo(player);
+            return; // Exit the loop once a match is found
+        }
+    }
+
+    // If no player is found, display a message
+    displayPlayerNotFound();
+}
+
+function displayPlayerInfo(player) {
+    const playerInfo = document.getElementById('playerInfo');
+    playerInfo.innerHTML = `
+        <h3>${player.name}</h3>
+        <img src="${player.image}" alt="${player.name}" />
+        <p>Rating: ${player.rating}</p>
+    `;
+}
+
+function displayPlayerNotFound() {
+    const playerInfo = document.getElementById('playerInfo');
+    playerInfo.innerHTML = '<p>Player not found</p>';
+}
+
 
 init();

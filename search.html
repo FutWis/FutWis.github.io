@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="search.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
+
 <body>
     <header>
         <img src="futwis.png" alt="FutWis Logo" id="logo">
@@ -24,11 +26,10 @@
     <main>
         <section id="playerSearchSection">
             <h2>Player Search</h2>
+            <!-- Add this code inside the #playerSearchSection div -->
             <input type="text" id="playerName" placeholder="Type player name...">
             <button id="searchButton">Search</button>
-            <div id="playerInfo">
-                <!-- Player information will be displayed here -->
-            </div>
+            <div id="playerInfo"></div>
         </section>
     </main>
     <button id="refreshCards2Button" class="refreshcards-button">Refresh Cards</button>
@@ -45,4 +46,5 @@
         setInterval(updateTime, 1000);
     </script>
 </body>
+
 </html>

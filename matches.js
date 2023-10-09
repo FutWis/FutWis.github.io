@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Ronaldinho", rating: 93 },
         { name: "Johan Cruyff", rating: 93 },
         { name: "Birgit Prinz", rating: 92 },
-	{ name: "Bobby Charlton", rating: 92 },
+        { name: "Bobby Charlton", rating: 92 },
         { name: "Gerd Müller", rating: 92 },
         { name: "Lev Yashin", rating: 92 },
         { name: "Paolo Maldini", rating: 92 },
@@ -28,48 +28,48 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Eusébio", rating: 91 },
         { name: "Alexia Putellas", rating: 91 },
         { name: "Kevin De Bruyne", rating: 91 },
-	{ name: "Harry Kane", rating: 91 },
-	{ name: "Luka Modric", rating: 91 },
-	{ name: "Kylian Mbappé", rating: 91 },
-	{ name: "Wesley Sneijder", rating: 91 },
+        { name: "Harry Kane", rating: 91 },
+        { name: "Luka Modric", rating: 91 },
+        { name: "Kylian Mbappé", rating: 91 },
+        { name: "Wesley Sneijder", rating: 91 },
         { name: "Keano van Eck", rating: 91 },
-	{ name: "Karim Benzema", rating: 90 },
-	{ name: "Thibaut Courtois", rating: 90 },
-	{ name: "Lionel Messi", rating: 90 },
-	{ name: "Aitana Bonmatí", rating: 90 },
-	{ name: "Carolina Graham Hansen", rating: 90 },
-	{ name: "Samantha May Kerr", rating: 90 },
-	{ name: "Carlos Tévez", rating: 90 },
-	{ name: "Camille Abily", rating: 90 },
-	{ name: "Rivaldo", rating: 90 },
-	{ name: "Casillas", rating: 90 },
-	{ name: "Andrea Pirlo", rating: 90 },
-	{ name: "Xavi", rating: 90 },
-	{ name: "Raúl", rating: 90 },
-	{ name: "Bobby Moore", rating: 90 },
-	{ name: "Ruud Gullit", rating: 90 },
-	{ name: "George Best", rating: 90 },
-	{ name: "Alessandro Del Piero", rating: 90 },
-	{ name: "Dennis Bergkamp", rating: 90 },
-	{ name: "Damian Borgt", rating: 90 },
-	{ name: "Wesley Roodhuizen", rating: 89 },
-	{ name: "Davy Roodhuizen", rating: 87 },
-	{ name: "Joris van Puijvelde", rating: 85 },
-	{ name: "Gabriel Nolet", rating: 85 },
-	{ name: "Ad van Bever", rating: 80 },
-	{ name: "Leon Vissers", rating: 80 },
-	{ name: "Steef de Gruijter", rating: 80 },
-	{ name: "Wegihu Tekle", rating: 68 },
-	{ name: "Stephanie Roodhuizen", rating: 64 },
-	{ name: "Bram Fokkens", rating: 86 },
-	{ name: "Sam Van Den Boom", rating: 86 },
-	{ name: "Heinrich Bierman", rating: 86 }
+        { name: "Karim Benzema", rating: 90 },
+        { name: "Thibaut Courtois", rating: 90 },
+        { name: "Lionel Messi", rating: 90 },
+        { name: "Aitana Bonmatí", rating: 90 },
+        { name: "Carolina Graham Hansen", rating: 90 },
+        { name: "Samantha May Kerr", rating: 90 },
+        { name: "Carlos Tévez", rating: 90 },
+        { name: "Camille Abily", rating: 90 },
+        { name: "Rivaldo", rating: 90 },
+        { name: "Casillas", rating: 90 },
+        { name: "Andrea Pirlo", rating: 90 },
+        { name: "Xavi", rating: 90 },
+        { name: "Raúl", rating: 90 },
+        { name: "Bobby Moore", rating: 90 },
+        { name: "Ruud Gullit", rating: 90 },
+        { name: "George Best", rating: 90 },
+        { name: "Alessandro Del Piero", rating: 90 },
+        { name: "Dennis Bergkamp", rating: 90 },
+        { name: "Damian Borgt", rating: 90 },
+        { name: "Wesley Roodhuizen", rating: 89 },
+        { name: "Davy Roodhuizen", rating: 87 },
+        { name: "Joris van Puijvelde", rating: 85 },
+        { name: "Gabriel Nolet", rating: 85 },
+        { name: "Ad van Bever", rating: 80 },
+        { name: "Leon Vissers", rating: 80 },
+        { name: "Steef de Gruijter", rating: 80 },
+        { name: "Wegihu Tekle", rating: 68 },
+        { name: "Stephanie Roodhuizen", rating: 64 },
+        { name: "Bram Fokkens", rating: 86 },
+        { name: "Sam Van Den Boom", rating: 86 },
+        { name: "Heinrich Bierman", rating: 86 }
 
     ];
 
     const aiPlayers = [
         { name: "AI PLAYER 1", rating: 91 },
-        { name: "AI PLAYER 2", rating: 91},
+        { name: "AI PLAYER 2", rating: 91 },
         { name: "AI PLAYER 3", rating: 89 },
         { name: "AI PLAYER 4", rating: 88 },
         { name: "AI PLAYER 5", rating: 84 },
@@ -121,16 +121,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ];
 
-    const matchDuration = 90; // Duration in in-game minutes
-    const realisticTimeMinutes = 5; // Realistic time in minutes
-    const goalScoringProbability = 0.05; // Probability of scoring a goal in a minute
-    const freeKickProbability = 0.02; // Probability of a free kick in a minute
-    const penaltyProbability = 0.01; // Probability of a penalty in a minute
+    const matchDuration = 90;
+    const realisticTimeMinutes = 5;
+    const goalScoringProbability = 0.05;
+    const freeKickProbability = 0.02;
+    const penaltyProbability = 0.01;
 
-    // Probability of a corner kick occurring
-    const cornerKickProbability = 0.02; // Adjust as needed
-    // Probability of a corner kick resulting in a goal
-    const cornerKickGoalProbability = 0.2; // Adjust as needed
+    const cornerKickProbability = 0.02;
+    const cornerKickGoalProbability = 0.2;
 
     const selectedPlayers = [];
     const events = [];
@@ -145,13 +143,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let matchInterval;
     let goals = [];
     let countdownInterval;
+    let homeGoals = 0;
+    let awayGoals = 0;
+    const homeTeamName = "Home Team";
+    const awayTeamName = "Away Team";
+    const goalCounterElement = document.getElementById("goal-counter");
 
     const selectedPlayersList = document.getElementById("selected-players");
     const playerNameInput = document.getElementById("player-name");
     const addButton = document.getElementById("add-button");
     const randomButton = document.getElementById("random-button");
 
-    // Function to add a player to the selected players list
     function addPlayer(player) {
         if (selectedPlayers.length < 11) {
             selectedPlayers.push(player);
@@ -161,15 +163,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (selectedPlayers.length === 11) {
                 startMatchButton.disabled = false;
-                addButton.disabled = true; // Disable the "Add Player" button
-                randomButton.disabled = true; // Disable the "Random" button
+                addButton.disabled = true;
+                randomButton.disabled = true;
             }
         } else {
             alert("You can only select 11 players.");
         }
     }
 
-    // Event listener for the "Add Player" button
     addButton.addEventListener("click", function () {
         if (matchInterval) {
             messageElement.textContent = "You can't add players while the match is in progress.";
@@ -191,28 +192,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     randomButton.addEventListener("click", function () {
-    if (matchInterval) {
-        messageElement.textContent = "You can't randomize players while the match is in progress.";
-        return;
-    }
-
-    if (selectedPlayers.length === 11) {
-        alert("You already have 11 players selected.");
-        return;
-    }
-
-    while (selectedPlayers.length < 11) {
-        const randomIndex = Math.floor(Math.random() * players.length);
-        const randomPlayer = players[randomIndex];
-
-        // Check if the random player is not already in the selectedPlayers array
-        if (!selectedPlayers.some(player => player.name === randomPlayer.name)) {
-            addPlayer(randomPlayer);
+        if (matchInterval) {
+            messageElement.textContent = "You can't randomize players while the match is in progress.";
+            return;
         }
-    }
-});
 
-    // Event listener for the "Start Match" button
+        if (selectedPlayers.length === 11) {
+            alert("You already have 11 players selected.");
+            return;
+        }
+
+        while (selectedPlayers.length < 11) {
+            const randomIndex = Math.floor(Math.random() * players.length);
+            const randomPlayer = players[randomIndex];
+
+            if (!selectedPlayers.some(player => player.name === randomPlayer.name)) {
+                addPlayer(randomPlayer);
+            }
+        }
+    });
+
     startMatchButton.addEventListener("click", function () {
         if (selectedPlayers.length === 11) {
             startMatch();
@@ -221,7 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Function to start the match simulation
     function startMatch() {
         if (matchInterval) {
             messageElement.textContent = "You can't start the match while it's already in progress.";
@@ -235,18 +233,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 matchWinner();
                 startRestartCountdown();
             } else {
-                matchTime += 1; // Increment match time by 1 in-game minute
+                matchTime += 1;
                 updateMatchTime(matchTime);
                 simulateEvent();
             }
-        }, (realisticTimeMinutes * 60 * 1000) / matchDuration); // Adjusted interval to match realistic time
+        }, (realisticTimeMinutes * 60 * 1000) / matchDuration);
 
         startMatchButton.disabled = true;
     }
 
-    // Function to start the match restart countdown
     function startRestartCountdown() {
-        let countdownTime = 30; // 30 seconds countdown
+        let countdownTime = 30;
 
         countdownInterval = setInterval(function () {
             if (countdownTime <= 0) {
@@ -256,39 +253,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 countdownElement.textContent = `${countdownTime} seconds until restart`;
                 countdownTime -= 1;
             }
-        }, 1000); // 1-second interval
+        }, 1000);
     }
 
-    // Function to update the match time with only minutes
-function updateMatchTime(time) {
-    const minutes = Math.floor(time);
-    matchTimeElement.textContent = `${minutes}`;
-
-    // Remove "Half Time" at 44 minutes
-    if (minutes === 44) {
+    function updateMatchTime(time) {
+        const minutes = Math.floor(time);
         matchTimeElement.textContent = `${minutes}`;
+
+        if (minutes === 44) {
+            matchTimeElement.textContent = `${minutes}`;
+        }
+
+        if (minutes === 45) {
+            matchTimeElement.textContent = `${minutes} Half Time!`;
+        }
+
+        if (minutes === 46) {
+            matchTimeElement.textContent = `${minutes}`;
+        }
+
+        if (minutes === 90) {
+            matchTimeElement.textContent = `${minutes} Full Time!`;
+        }
     }
 
-    // Announce "Half Time" at 45 minutes
-    if (minutes === 45) {
-        matchTimeElement.textContent = `${minutes} Half Time!`;
-    }
-
-    // Remove "Half Time" at 46 minutes
-    if (minutes === 46) {
-        matchTimeElement.textContent = `${minutes}`;
-    }
-
-    // Announce "Full Time" at 90 minutes
-    if (minutes === 90) {
-	matchTimeElement.textContent = `${minutes} Full Time!`;
-    }
-}
-
-
-    // Function to simulate events (goals, free kicks, penalties, corner kicks)
     function simulateEvent() {
-        // Simulate goal
         if (Math.random() < goalScoringProbability) {
             const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
             const scorer = selectScorer(scoringTeam);
@@ -299,7 +288,6 @@ function updateMatchTime(time) {
             updateEventList();
         }
 
-        // Simulate free kick
         if (Math.random() < freeKickProbability) {
             const freeKickPlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
             const scored = Math.random() < calculateScoringProbability(freeKickPlayer);
@@ -313,7 +301,6 @@ function updateMatchTime(time) {
             updateEventList();
         }
 
-        // Simulate penalty
         if (Math.random() < penaltyProbability) {
             const penaltyPlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
             const scored = Math.random() < calculatePenaltyScoringProbability(penaltyPlayer);
@@ -327,12 +314,10 @@ function updateMatchTime(time) {
             updateEventList();
         }
 
-        // Simulate corner kick with a low chance
         if (Math.random() < cornerKickProbability) {
             const kickingTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
             const scorer = kickingTeam[Math.floor(Math.random() * kickingTeam.length)];
 
-            // Determine if the corner kick results in a goal
             const cornerKickGoal = Math.random() < cornerKickGoalProbability;
 
             if (cornerKickGoal) {
@@ -350,18 +335,13 @@ function updateMatchTime(time) {
         }
     }
 
-    // Function to select a scorer based on player ratings
     function selectScorer(team) {
-        // Sort the team by rating in descending order
         team.sort((a, b) => b.rating - a.rating);
 
-        // Calculate the total rating of the team
         const totalRating = team.reduce((total, player) => total + player.rating, 0);
 
-        // Calculate a random threshold based on the total rating
         const threshold = Math.random() * totalRating;
 
-        // Find the player whose cumulative rating exceeds the threshold
         let cumulativeRating = 0;
         for (const player of team) {
             cumulativeRating += player.rating;
@@ -370,36 +350,28 @@ function updateMatchTime(time) {
             }
         }
 
-        // Return the last player as a fallback (shouldn't reach here)
         return team[team.length - 1];
     }
 
-    // Function to calculate the scoring probability for free kicks based on player rating
     function calculateScoringProbability(player) {
-        // Adjust this formula as needed to make higher-rated players perform better
         return player.rating / 99;
     }
 
-    // Function to calculate the scoring probability for penalties based on player rating
     function calculatePenaltyScoringProbability(player) {
-        // Adjust this formula as needed to make higher-rated players perform better
         return player.rating / 86;
     }
 
-    // Function to format time as mm:ss
     function formatTime(time) {
         const minutes = Math.floor(time);
         return `${minutes}`;
     }
 
-    // Function to update the event list
     function updateEventList() {
         events.forEach(event => {
             goalList.appendChild(event);
         });
     }
 
-    // Function to determine the match winner
     function matchWinner() {
         clearInterval(matchInterval);
         const homeGoals = goals.filter(player => selectedPlayers.includes(player)).length;
@@ -413,7 +385,6 @@ function updateMatchTime(time) {
         }
     }
 
-    // Function to restart the match
     function restartMatch() {
         clearInterval(countdownInterval);
         selectedPlayers.length = 0;
@@ -421,29 +392,61 @@ function updateMatchTime(time) {
         matchTime = 0;
         updateMatchTime(matchTime);
         startMatchButton.disabled = false;
-        addButton.disabled = false; // Enable the "Add Player" button
-        randomButton.disabled = false; // Enable the "Random" button
-        countdownElement.textContent = ""; // Clear the countdown text
+        addButton.disabled = false;
+        randomButton.disabled = false;
+        countdownElement.textContent = "";
 
-        // Clear event list
         clearEventList();
 
-        // Clear match winner
         matchWinnerElement.textContent = "";
 
-        // Clear message
         messageElement.textContent = "";
 
-        // Reload the page to start a new match
         location.reload();
     }
 
-    // Function to clear the event list
     function clearEventList() {
         events.length = 0;
         while (goalList.firstChild) {
             goalList.removeChild(goalList.firstChild);
         }
     }
-});
 
+    function searchPlayer(playerName) {
+        const searchQuery = encodeURIComponent(playerName);
+        const searchUrl = `https://futwis.github.io/search.html?q=${searchQuery}`; // Replace with your search engine's URL
+        window.open(searchUrl, '_blank');
+    }
+    
+    // Event listener for player names
+    selectedPlayersList.addEventListener("click", function (event) {
+        if (event.target && event.target.nodeName === "LI") {
+            const playerName = event.target.textContent;
+            searchPlayer(playerName);
+        }
+    });
+
+    function simulateEvent() {
+        if (Math.random() < goalScoringProbability) {
+            const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
+            const scorer = selectScorer(scoringTeam);
+            goals.push(scorer);
+            const goalItem = document.createElement("li");
+            goalItem.textContent = `${formatTime(matchTime)} - GOAL! ${scorer.name}`;
+            events.push(goalItem);
+            updateEventList();
+
+            if (scoringTeam === selectedPlayers) {
+                homeGoals++;
+            } else {
+                awayGoals++;
+            }
+            updateGoalCounter();
+        }
+        function updateGoalCounter() {
+            goalCounterElement.textContent = `${homeTeamName} ${homeGoals} - ${awayGoals} ${awayTeamName}`;
+        }
+
+        updateGoalCounter();
+    }
+});

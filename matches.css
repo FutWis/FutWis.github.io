@@ -237,3 +237,17 @@ li {
     font-weight: bold;
     text-shadow: 4px 4px 10px green;
 }
+
+#goal-counter {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 4px 4px 10px green;
+}
+
+#goal-counter:hover {
+    color: gold; /* Change text color to white on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    font-weight: bold;
+    text-shadow: 4px 4px 10px green;
+}
