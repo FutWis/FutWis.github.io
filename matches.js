@@ -218,10 +218,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to update the match time with only minutes
-    function updateMatchTime(time) {
-        const minutes = Math.floor(time);
+function updateMatchTime(time) {
+    const minutes = Math.floor(time);
+    matchTimeElement.textContent = `${minutes}`;
+
+    // Announce "Half Time" at 45 minutes
+    if (minutes === 45) {
+        matchTimeElement.textContent = `${minutes} Half Time!`;
+    }
+
+    // Remove "Half Time" at 46 minutes
+    if (minutes === 46) {
         matchTimeElement.textContent = `${minutes}`;
     }
+
+    // Announce "Full Time" at 90 minutes
+    if (minutes === 90) {
+	matchTimeElement.textContent = `${minutes} Full Time!`;
+    }
+}
+
 
     // Function to simulate events (goals, free kicks, penalties, corner kicks)
     function simulateEvent() {
