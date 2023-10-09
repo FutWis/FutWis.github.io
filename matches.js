@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Ronaldinho", rating: 93 },
         { name: "Johan Cruyff", rating: 93 },
         { name: "Birgit Prinz", rating: 92 },
-        { name: "Bobby Charlton", rating: 92/mul },
+	{ name: "Bobby Charlton", rating: 92 },
         { name: "Gerd Müller", rating: 92 },
         { name: "Lev Yashin", rating: 92 },
         { name: "Paolo Maldini", rating: 92 },
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	{ name: "Steef de Gruijter", rating: 80 },
 	{ name: "Wegihu Tekle", rating: 68 },
 	{ name: "Stephanie Roodhuizen", rating: 64 },
-	{ name: "Cristiano Ronaldo", rating: 86 },
+	{ name: "Cristiano Ronaldo", rating: 86 }
 
     ];
 
