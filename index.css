@@ -155,7 +155,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px; /* Set the width of the pop-up as needed */
+    width: 450px; /* Set the width of the pop-up as needed */
     z-index: 1;
 }
 
