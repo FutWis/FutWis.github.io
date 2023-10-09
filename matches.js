@@ -222,6 +222,10 @@ function updateMatchTime(time) {
     const minutes = Math.floor(time);
     matchTimeElement.textContent = `${minutes}`;
 
+    // Remove "Half Time" at 44 minutes
+    if (minutes === 44) {
+        matchTimeElement.textContent = `${minutes}`;
+
     // Announce "Half Time" at 45 minutes
     if (minutes === 45) {
         matchTimeElement.textContent = `${minutes} Half Time!`;
