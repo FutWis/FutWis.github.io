@@ -230,6 +230,7 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Gianluigi Donnarumma", image: "players/donnarummagold.png", rating: 87 },
 		{ name: "Mike Maignan", image: "players/maignangold.png", rating: 87 },
 		{ name: "Lautaro Martínez", image: "players/martínezgold.png", rating: 87 },
+		{ name: "Davy Roodhuizen", image: "players/roodhuizenicon.png", rating: 87 },
 		{ name: "Jude Bellingham", image: "players/bellinghamgold.png", rating: 86 },
 		{ name: "Sonia Bompastor", image: "players/bompastorutheroes.png", rating: 86 },
 		{ name: "Ludovic Giuly", image: "players/giulyutheroes.png", rating: 86 },
@@ -259,13 +260,20 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Riyad Mahrez", image: "players/mahrezgold.png", rating: 86 },
 		{ name: "Sadio Mané", image: "players/manégold.png", rating: 86 },
 		{ name: "Sergej Milinković-Savić", image: "players/milinkovićsavićgold.png", rating: 86 },
+		{ name: "Lea Schüller", image: "players/schüllergold.png", rating: 86 },
+		{ name: "Rob Goedegebure", image: "players/goedegeburetotw.png", rating: 86 },
+
 		{ name: "Joris van Puijvelde", image: "players/vanpuijveldefbsbc.png", rating: 85 },
 		{ name: "Gabriel Nolet", image: "players/noletfbsbc.png", rating: 85 },
+		{ name: "Heinrich Bierman", image: "players/biermanicon.png", rating: 84 },
 		{ name: "Ad van Bever", image: "players/vanbevertotw.png", rating: 80 },
 		{ name: "Leon Vissers", image: "players/visserstotw.png", rating: 80 },
 		{ name: "Steef de Gruijter", image: "players/degruitertotw.png", rating: 80 },
 		{ name: "Wegihu Tekle", image: "players/deklebronze.png", rating: 68 },
 		{ name: "Stephanie Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
+		{ name: "Naatje", image: "players/naatjebronzenr.png", rating: 47 },
+
+
 	];
 
 	const selectedPlayers = getRandomUniquePlayers(packContents, 6);

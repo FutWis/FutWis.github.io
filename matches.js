@@ -61,7 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	{ name: "Steef de Gruijter", rating: 80 },
 	{ name: "Wegihu Tekle", rating: 68 },
 	{ name: "Stephanie Roodhuizen", rating: 64 },
-	{ name: "Cristiano Ronaldo", rating: 86 }
+	{ name: "Bram Fokkens", rating: 86 },
+	{ name: "Sam Van Den Boom", rating: 86 },
+	{ name: "Heinrich Bierman", rating: 86 }
 
     ];
 
