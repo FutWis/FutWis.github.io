@@ -175,6 +175,15 @@ const packContents = [
 		{ name: "Robert Pirès", image: "players/pirèsicon.png", rating: 87 },
 		{ name: "Emmanuel Petit", image: "players/petiticon.png", rating: 87 },
 		{ name: "Claude Makélélé", image: "players/makéléléicon.png", rating: 87 },
+		{ name: "Michael Ballack", image: "players/ballackicon.png", rating: 87 },
+		{ name: "Frank Lampard", image: "players/lampardicon.png", rating: 87 },
+		{ name: "David Trezeguet", image: "players/trezegueticon.png", rating: 87 },
+		{ name: "Xabi Alonso", image: "players/alonsoicon.png", rating: 87 },
+		{ name: "Fernando Torres", image: "players/torresicon.png", rating: 87 },
+		{ name: "Nemanja Vidić", image: "players/vidićicon.png", rating: 87 },
+		{ name: "Frank Rijkaard", image: "players/rijkaardicon.png", rating: 87 },
+		{ name: "Davor Šuker", image: "players/šukericon.png", rating: 87 },
+		{ name: "Patrick Kluivert", image: "players/kluiverticon.png", rating: 87 },
 		{ name: "Joris van Puijvelde", image: "players/vanpuijveldefbsbc.png", rating: 85 },
 		{ name: "Gabriel Nolet", image: "players/noletfbsbc.png", rating: 85 },
 		{ name: "Ad van Bever", image: "players/vanbevertotw.png", rating: 80 },
@@ -182,7 +191,6 @@ const packContents = [
 		{ name: "Steef de Gruijter", image: "players/degruitertotw.png", rating: 80 },
 		{ name: "Wegihu Tekle", image: "players/deklebronze.png", rating: 68 },
 		{ name: "Stephanie Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
-
 	];
 
 // Function to search for players by name
