@@ -237,58 +237,59 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 	// Clear existing player cards
 	clearPlayerCards();
 
-	// Function to select random unique players from the array
-	function getRandomUniquePlayers(array, numPlayers) {
-		const uniquePlayers = [];
-		const shuffled = array.slice().sort(() => 0.5 - Math.random());
+// Function to select random unique players from the array
+function getRandomUniquePlayers(array, numPlayers) {
+  const uniquePlayers = [];
+  const shuffled = array.slice().sort(() => 0.5 - Math.random());
 
-		for (const player of shuffled) {
-			if (uniquePlayers.length === numPlayers) {
-				break; // Stop when you have enough unique players
-			}
+  for (const player of shuffled) {
+    if (uniquePlayers.length === numPlayers) {
+      break; // Stop when you have enough unique players
+    }
 
-			if (!uniquePlayers.some(p => p.name === player.name)) {
-				// Adjust the probabilities based on player ratings
-				const probability = Math.random(); // Random number between 0 and 1
-				if (player.rating <= 80) {
-					// 80 and lower have a 100% chance
-					uniquePlayers.push(player);
-				} else if (player.rating <= 85) {
-					// 81 to 85 have a 50% chance
-					if (probability < 0.50) {
-						uniquePlayers.push(player);
-					}
-				} else if (player.rating <= 89) {
-					// 86 to 89 have a 10% chance
-					if (probability < 0.10) {
-						uniquePlayers.push(player);
-					}
-				} else if (player.rating <= 93) {
-					// 90 to 93 have a 8% chance
-					if (probability < 0.08) {
-						uniquePlayers.push(player);
-					}
-				} else if (player.rating <= 96) {
-					// 94 to 96 have a 5% chance
-					if (probability < 0.0, 5) {
-						uniquePlayers.push(player);
-					}
-				} else if (player.rating <= 98) {
-					// 97 to 98 have a 3% chance
-					if (probability < 0.03) {
-						uniquePlayers.push(player);
-					}
-				} else if (player.rating === 99) {
-					// 99 has a 1% chance
-					if (probability < 0.01) {
-						uniquePlayers.push(player);
-					}
-				}
-			}
-		}
+    if (!uniquePlayers.some(p => p.name === player.name)) {
+      // Adjust the probabilities based on player ratings
+      const probability = Math.random(); // Random number between 0 and 1
 
-		return uniquePlayers;
-	}
+      if (player.rating <= 80) {
+        // 80 and lower have a 100% chance
+        uniquePlayers.push(player);
+      } else if (player.rating <= 85) {
+        // 81 to 85 have a 50% chance
+        if (probability < 0.5) {
+          uniquePlayers.push(player);
+        }
+      } else if (player.rating <= 89) {
+        // 86 to 89 have a 10% chance
+        if (probability < 0.1) {
+          uniquePlayers.push(player);
+        }
+      } else if (player.rating <= 93) {
+        // 90 to 93 have a 8% chance
+        if (probability < 0.08) {
+          uniquePlayers.push(player);
+        }
+      } else if (player.rating <= 96) {
+        // 94 to 96 have a 5% chance
+        if (probability < 0.05) {
+          uniquePlayers.push(player);
+        }
+      } else if (player.rating <= 98) {
+        // 97 to 98 have a 3% chance
+        if (probability < 0.03) {
+          uniquePlayers.push(player);
+        }
+      } else if (player.rating === 99) {
+        // 99 has a 1% chance
+        if (probability < 0.01) {
+          uniquePlayers.push(player);
+        }
+      }
+    }
+  }
+
+  return uniquePlayers;
+}
 
 	// Function to determine if a player is a walkout
 	function isWalkout(player) {
