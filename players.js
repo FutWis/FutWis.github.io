@@ -257,6 +257,10 @@ const packContents = [
 		{ name: "Jamal Musiala", image: "players/musialagold.png", rating: 86 },
 		{ name: "Mallory Swanson", image: "players/swansongold.png", rating: 86 },
 		{ name: "Grace Geyoro", image: "players/geyorogold.png", rating: 86 },
+		{ name: "Lindsey Horan", image: "players/horangold.png", rating: 86 },
+		{ name: "Sakina Karchaoui", image: "players/karchaouigold.png", rating: 86 },
+		{ name: "Ousmane Dembélé", image: "players/dembélégold.png", rating: 86 },
+		{ name: "Wojciech Szczęsny", image: "players/szczęsnygold.png", rating: 86 },
 	];
 // Sort players by rating in descending order
 packContents.sort((a, b) => b.rating - a.rating);

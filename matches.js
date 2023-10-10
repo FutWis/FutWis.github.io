@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "AI PLAYER 29", rating: 85 },
         { name: "AI PLAYER 30", rating: 83 },
         { name: "AI PLAYER 31", rating: 84 },
-        { name: "AI PLAYER 32", rating: 89 },
+        { name: "AI PLAYER 32", rating: 96 },
         { name: "AI PLAYER 33", rating: 83 },
         { name: "AI PLAYER 34", rating: 81 },
         { name: "AI PLAYER 35", rating: 82 },

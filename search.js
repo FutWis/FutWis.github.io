@@ -1,3 +1,4 @@
+
 const packContents = [
 		{ name: "Pelé", image: "players/peléicon.png", rating: 95 },
 		{ name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
@@ -259,6 +260,8 @@ const packContents = [
 		{ name: "Grace Geyoro", image: "players/geyorogold.png", rating: 86 },
 		{ name: "Lindsey Horan", image: "players/horangold.png", rating: 86 },
 		{ name: "Sakina Karchaoui", image: "players/karchaouigold.png", rating: 86 },
+		{ name: "Ousmane Dembélé", image: "players/dembélégold.png", rating: 86 },
+		{ name: "Wojciech Szczęsny", image: "players/szczęsnygold.png", rating: 86 },
 	];
 
 // Function to search for players by name
