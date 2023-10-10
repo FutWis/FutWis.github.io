@@ -16,8 +16,6 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Mané Garrincha", image: "players/garrinchaicon.png", rating: 92 },
 		{ name: "Ferenc Puskás", image: "players/puskásicon.png", rating: 92 },
 		{ name: "Lev Yashin", image: "players/yashinicon.png", rating: 92 },
-		{ name: "Mo Alkassar", image: "players/alkassaricon.png", rating: 92 },
-		{ name: "Khalil Almasri", image: "players/almasrigold.png", rating: 92 },
 		{ name: "Luka Modric", image: "players/modrićuclrttk.png", rating: 91 },
 		{ name: "Harry Kane", image: "players/kanetotw.png", rating: 91 },
 		{ name: "Alexia Putellas", image: "players/putellasnike.png", rating: 91 },
@@ -30,7 +28,6 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Carlos Alberto", image: "players/albertoicon.png", rating: 91 },
 		{ name: "Thierry Henry", image: "players/henryicon.png", rating: 91 },
 		{ name: "Franco Baresi", image: "players/baresiicon.png", rating: 91 },
-		{ name: "Keano van Eck", image: "players/vanecktotw.png", rating: 91 },
 		{ name: "Robert Lewandowski", image: "players/lewandoskitotw.png", rating: 91 },
 		{ name: "Erling Haaland", image: "players/haalandgold.png", rating: 91 },
 		{ name: "Kevin De Bruyne", image: "players/debruynegold.png", rating: 91 },
@@ -41,7 +38,6 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Harry Kane", image: "players/kanegold.png", rating: 90 },
 		{ name: "Thibaut Courtois", image: "players/courtoisgold.png", rating: 90 },
 		{ name: "Robert Lewandowski", image: "players/lewandoskigold.png", rating: 90 },
-		{ name: "Damian Borgt", image: "players/borgtnike.png", rating: 90 },
 		{ name: "Lionel Messi", image: "players/messigold.png", rating: 90 },
 		{ name: "Aitana Bonmatí", image: "players/bonmatígold.png", rating: 90 },
 		{ name: "Carolina Graham Hansen", image: "players/hansengold.png", rating: 90 },
@@ -67,7 +63,6 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Kelly Smith", image: "players/smithicon.png", rating: 89 },
 		{ name: "Alan Shearer", image: "players/shearericon.png", rating: 89 },
 		{ name: "Javier Zanetti", image: "players/zanettiicon.png", rating: 89 },
-		{ name: "Wesley Roodhuizen", image: "players/roodhuizennike.png", rating: 89 },
 		{ name: "Alessandro Nesta", image: "players/nestaicon.png", rating: 89 },
 		{ name: "Fabio Cannavaro", image: "players/cannavaroicon.png", rating: 89 },
 		{ name: "Hristo Stoichkov", image: "players/stoichkovicon.png", rating: 89 },
@@ -230,7 +225,6 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Gianluigi Donnarumma", image: "players/donnarummagold.png", rating: 87 },
 		{ name: "Mike Maignan", image: "players/maignangold.png", rating: 87 },
 		{ name: "Lautaro Martínez", image: "players/martínezgold.png", rating: 87 },
-		{ name: "Davy Roodhuizen", image: "players/roodhuizenicon.png", rating: 87 },
 		{ name: "Jude Bellingham", image: "players/bellinghamgold.png", rating: 86 },
 		{ name: "Sonia Bompastor", image: "players/bompastorutheroes.png", rating: 86 },
 		{ name: "Ludovic Giuly", image: "players/giulyutheroes.png", rating: 86 },
@@ -261,19 +255,6 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Sadio Mané", image: "players/manégold.png", rating: 86 },
 		{ name: "Sergej Milinković-Savić", image: "players/milinkovićsavićgold.png", rating: 86 },
 		{ name: "Lea Schüller", image: "players/schüllergold.png", rating: 86 },
-		{ name: "Rob Goedegebure", image: "players/goedegeburetotw.png", rating: 86 },
-
-		{ name: "Joris van Puijvelde", image: "players/vanpuijveldefbsbc.png", rating: 85 },
-		{ name: "Gabriel Nolet", image: "players/noletfbsbc.png", rating: 85 },
-		{ name: "Heinrich Bierman", image: "players/biermanicon.png", rating: 84 },
-		{ name: "Ad van Bever", image: "players/vanbevertotw.png", rating: 80 },
-		{ name: "Leon Vissers", image: "players/visserstotw.png", rating: 80 },
-		{ name: "Steef de Gruijter", image: "players/degruitertotw.png", rating: 80 },
-		{ name: "Wegihu Tekle", image: "players/deklebronze.png", rating: 68 },
-		{ name: "Stephanie Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
-		{ name: "Naatje", image: "players/naatjebronzenr.png", rating: 47 }
-
-
 	];
 
 	const selectedPlayers = getRandomUniquePlayers(packContents, 6);

@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Ferenc Puskás", rating: 92 },
         { name: "Erling Haaland", rating: 92 },
         { name: "Robert Lewandowski", rating: 92 },
-        { name: "Mo Alkassar", rating: 92 },
-        { name: "Khalil Almasri", rating: 92 },
         { name: "Zico", rating: 91 },
         { name: "Homare Sawa", rating: 91 },
         { name: "Roberto Baggio", rating: 91 },
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Luka Modric", rating: 91 },
         { name: "Kylian Mbappé", rating: 91 },
         { name: "Wesley Sneijder", rating: 91 },
-        { name: "Keano van Eck", rating: 91 },
         { name: "Karim Benzema", rating: 90 },
         { name: "Thibaut Courtois", rating: 90 },
         { name: "Lionel Messi", rating: 90 },
@@ -51,20 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "George Best", rating: 90 },
         { name: "Alessandro Del Piero", rating: 90 },
         { name: "Dennis Bergkamp", rating: 90 },
-        { name: "Damian Borgt", rating: 90 },
-        { name: "Wesley Roodhuizen", rating: 89 },
-        { name: "Davy Roodhuizen", rating: 87 },
-        { name: "Joris van Puijvelde", rating: 85 },
-        { name: "Gabriel Nolet", rating: 85 },
-        { name: "Ad van Bever", rating: 80 },
-        { name: "Leon Vissers", rating: 80 },
-        { name: "Steef de Gruijter", rating: 80 },
-        { name: "Wegihu Tekle", rating: 68 },
-        { name: "Stephanie Roodhuizen", rating: 64 },
-        { name: "Bram Fokkens", rating: 86 },
-        { name: "Sam Van Den Boom", rating: 86 },
-        { name: "Heinrich Bierman", rating: 86 }
-
     ];
 
     const aiPlayers = [
