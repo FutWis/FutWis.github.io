@@ -395,7 +395,7 @@ function getRandomUniquePlayers(array, numPlayers) {
 				card.scrollIntoView({ behavior: "smooth" });
 
 				// Enable the "Open Pack" button after animation is complete
-				if (index === 5) { // Only enable after the last card for a maximum of 3 cards
+				if (index === 7) { // Only enable after the last card for a maximum of 3 cards
 					openPackButton.disabled = false;
 					// Display a professional pop-up with the name of the highest-rated walkout
 					if (highestWalkout) {
