@@ -75,5 +75,15 @@
     <button id="refreshCardsButton" class="refreshcards-button">Refresh Cards</button>
     <button id="refreshPageButton" class="refreshpage-button">Refresh Page</button>
     <script src="index.js"></script>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
