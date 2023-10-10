@@ -257,6 +257,7 @@ const packContents = [
 		{ name: "Jamal Musiala", image: "players/musialagold.png", rating: 86 },
 		{ name: "Mallory Swanson", image: "players/swansongold.png", rating: 86 },
 		{ name: "Grace Geyoro", image: "players/geyorogold.png", rating: 86 },
+		{ name: "Lindsey Horan", image: "players/horangold.png", rating: 86 },
 	];
 
 // Function to search for players by name
