@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function simulateEvent() {
         if (Math.random() < goalScoringProbability) {
-            const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
+            const scoringTeam = Math.random() < 1.0 ? selectedPlayers : aiPlayers;
             const scorer = selectScorer(scoringTeam);
             goals.push(scorer);
             const goalItem = document.createElement("li");
