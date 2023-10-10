@@ -56,6 +56,15 @@ body {
             cursor: pointer;
         }
 
+        img {
+            padding: 10px 20px;
+            color: white;
+	    text-shadow: 4px 4px 10px green;
+	    font-weight: bold;
+	    font-style: italic;
+            cursor: pointer;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -100,8 +109,7 @@ body {
             z-index: 1; /* Ensure it's on top of other elements */
         }
 
-	.openPackButton {
-            background-color: Black; /* Black background */
+        .openPackImage {
             color: white; /* White text color */
         }
 

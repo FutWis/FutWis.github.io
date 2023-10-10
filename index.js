@@ -1,4 +1,4 @@
-document.getElementById("openPackButton").addEventListener("click", function () {
+document.getElementById("openPackImage").addEventListener("click", function () {
 	// Simulate pack opening (replace with your logic)
 	const packContents = [
 		{ name: "Pelé", image: "players/peléicon.png", rating: 95 },
@@ -268,7 +268,7 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 	const selectedPlayers = getRandomUniquePlayers(packContents, 8);
 
 	const packContentsDiv = document.getElementById("packContents");
-	const openPackButton = document.getElementById("openPackButton");
+	const openPackImage = document.getElementById("openPackImage");
 
 	// Function to clear existing player cards
 	function clearPlayerCards() {
@@ -302,7 +302,7 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 	}
 
 	// Disable the "Open Pack" button to prevent multiple clicks
-	openPackButton.disabled = true;
+	openPackImage.disabled = true;
 
 	// Clear existing player cards
 	clearPlayerCards();
@@ -400,7 +400,7 @@ function getRandomUniquePlayers(array, numPlayers) {
 
 				// Enable the "Open Pack" button after animation is complete
 				if (index === 7) { // Only enable after the last card for a maximum of 8 cards
-					openPackButton.disabled = false;
+					openPackImage.disabled = false;
 					// Display a professional pop-up with the name of the highest-rated walkout
 					if (highestWalkout) {
 						createPopup(`Highest Walkout: ${highestWalkout.name}`);
