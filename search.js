@@ -253,6 +253,10 @@ const packContents = [
 		{ name: "Sadio Mané", image: "players/manégold.png", rating: 86 },
 		{ name: "Sergej Milinković-Savić", image: "players/milinkovićsavićgold.png", rating: 86 },
 		{ name: "Lea Schüller", image: "players/schüllergold.png", rating: 86 },
+		{ name: "Matthijs de Ligt", image: "players/deligtgold.png", rating: 86 },
+		{ name: "Jamal Musiala", image: "players/musialagold.png", rating: 86 },
+		{ name: "Mallory Swanson", image: "players/swansongold.png", rating: 86 },
+		{ name: "Grace Geyoro", image: "players/geyorogold.png", rating: 86 },
 	];
 
 // Function to search for players by name

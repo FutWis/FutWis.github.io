@@ -193,8 +193,8 @@ body {
     height: 230px; /* Stel de hoogte in op een waarde die overeenkomt met de hoogte van de spelerkaarten */
     overflow: none; /* Voeg scrollen toe als de inhoud groter is dan het tekstvak */
     position: fixed;
-    top: 251px; /* Pas de bovenste positie aan naar wens */
-    left: 10px; /* Pas de linker positie aan naar wens */
+    top: 50px; /* Pas de bovenste positie aan naar wens */
+    right: 10px; /* Pas de linker positie aan naar wens */
     z-index: 1; /* Zorg ervoor dat het boven andere elementen ligt */
 }
 
