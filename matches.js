@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "George Best", rating: 90 },
         { name: "Alessandro Del Piero", rating: 90 },
         { name: "Dennis Bergkamp", rating: 90 },
+        { name: "Ruud van Nistelrooy", rating: 89 },
     ];
 
     const aiPlayers = [
