@@ -45,62 +45,63 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Raúl", rating: 90, position: "CF" },
         { name: "Bobby Moore", rating: 90, position: "CB" },
         { name: "Ruud Gullit", rating: 90, position: "CF" },
-        { name: "George Best", rating: 90, position: "RW" },
-        { name: "Alessandro Del Piero", rating: 90, position: "CF" },
-        { name: "Dennis Bergkamp", rating: 90, position: "CF" },
+        { name: "George Best", rating: 90 },
+        { name: "Alessandro Del Piero", rating: 90 },
+        { name: "Dennis Bergkamp", rating: 90 },
+        { name: "Ruud van Nistelrooy", rating: 89 },
     ];
 
     const aiPlayers = [
-        { name: "AI PLAYER 1 - 91", rating: 91, position: "GK" },
-        { name: "AI PLAYER 2 - 91", rating: 91, position: "GK" },
-        { name: "AI PLAYER 3 - 89", rating: 89, position: "GK" },
-        { name: "AI PLAYER 4 - 88", rating: 88, position: "LB" },
-        { name: "AI PLAYER 5 - 84", rating: 84, position: "LB" },
-        { name: "AI PLAYER 6 - 88", rating: 88, position: "RB" },
-        { name: "AI PLAYER 7 - 89", rating: 89, position: "RB" },
-        { name: "AI PLAYER 8 - 83", rating: 83, position: "CB" },
-        { name: "AI PLAYER 9 - 90", rating: 90, position: "CB" },
-        { name: "AI PLAYER 10 - 89", rating: 89, position: "CB" },
-        { name: "AI PLAYER 11 - 85", rating: 85, position: "CB" },
-        { name: "AI PLAYER 12 - 86", rating: 86, position: "CB" },
-        { name: "AI PLAYER 13 - 82", rating: 82, position: "RWB" },
-        { name: "AI PLAYER 14 - 89", rating: 89, position: "RWB" },
-        { name: "AI PLAYER 15 - 88", rating: 88, position: "LWB" },
-        { name: "AI PLAYER 16 - 95", rating: 95, position: "LWB" },
-        { name: "AI PLAYER 17 - 88", rating: 88, position: "CDM" },
-        { name: "AI PLAYER 18 - 89", rating: 89, position: "CDM" },
-        { name: "AI PLAYER 19 - 88", rating: 88, position: "CDM" },
-        { name: "AI PLAYER 20 - 93", rating: 93, position: "CDM" },
-        { name: "AI PLAYER 21 - 89", rating: 89, position: "CM" },
-        { name: "AI PLAYER 22 - 83", rating: 83, position: "CM" },
-        { name: "AI PLAYER 23 - 92", rating: 92, position: "CM" },
-        { name: "AI PLAYER 24 - 89", rating: 89, position: "CM" },
-        { name: "AI PLAYER 25 - 81", rating: 81, position: "RM" },
-        { name: "AI PLAYER 26 - 88", rating: 88, position: "RM" },
-        { name: "AI PLAYER 27 - 80", rating: 80, position: "LM" },
-        { name: "AI PLAYER 28 - 88", rating: 88, position: "LM" },
-        { name: "AI PLAYER 29 - 85", rating: 85, position: "LW" },
-        { name: "AI PLAYER 30 - 83", rating: 83, position: "RW" },
-        { name: "AI PLAYER 31 - 84", rating: 84, position: "LW" },
-        { name: "AI PLAYER 32 - 89", rating: 89, position: "RW" },
-        { name: "AI PLAYER 33 - 83", rating: 83, position: "CAM" },
-        { name: "AI PLAYER 34 - 81", rating: 81, position: "CAM" },
-        { name: "AI PLAYER 35 - 82", rating: 82, position: "CAM" },
-        { name: "AI PLAYER 36 - 89", rating: 89, position: "CF" },
-        { name: "AI PLAYER 37 - 88", rating: 88, position: "CF"},
-        { name: "AI PLAYER 38 - 79", rating: 79, position: "ST" },
-        { name: "AI PLAYER 39 - 88", rating: 88, position: "ST" },
-        { name: "AI PLAYER 40 - 89", rating: 89, position: "ST" },
-        { name: "AI PLAYER 41 - 82", rating: 82, position: "RF" },
-        { name: "AI PLAYER 42 - 79", rating: 79, position: "RF" },
-        { name: "AI PLAYER 43 - 89", rating: 89, position: "RF" },
-        { name: "AI PLAYER 44 - 79", rating: 79, position: "LF" },
-        { name: "AI PLAYER 45 - 81", rating: 81, position: "LF" },
-        { name: "AI PLAYER 46 - 83", rating: 83, position: "LF" },
-        { name: "AI PLAYER 47 - 89", rating: 89, position: "CB" },
-        { name: "AI PLAYER 48 - 88", rating: 88, position: "GK" },
-        { name: "AI PLAYER 49 - 79", rating: 79, position: "CDM" },
-        { name: "AI PLAYER 50 - 88", rating: 88, position: "CF" }
+        { name: "AI PLAYER 1", rating: 91 },
+        { name: "AI PLAYER 2", rating: 91 },
+        { name: "AI PLAYER 3", rating: 89 },
+        { name: "AI PLAYER 4", rating: 88 },
+        { name: "AI PLAYER 5", rating: 84 },
+        { name: "AI PLAYER 6", rating: 88 },
+        { name: "AI PLAYER 7", rating: 89 },
+        { name: "AI PLAYER 8", rating: 83 },
+        { name: "AI PLAYER 9", rating: 90 },
+        { name: "AI PLAYER 10", rating: 89 },
+        { name: "AI PLAYER 11", rating: 85 },
+        { name: "AI PLAYER 12", rating: 86 },
+        { name: "AI PLAYER 13", rating: 82 },
+        { name: "AI PLAYER 14", rating: 89 },
+        { name: "AI PLAYER 15", rating: 88 },
+        { name: "AI PLAYER 16", rating: 95 },
+        { name: "AI PLAYER 17", rating: 88 },
+        { name: "AI PLAYER 18", rating: 89 },
+        { name: "AI PLAYER 19", rating: 88 },
+        { name: "AI PLAYER 20", rating: 93 },
+        { name: "AI PLAYER 21", rating: 89 },
+        { name: "AI PLAYER 22", rating: 83 },
+        { name: "AI PLAYER 23", rating: 92 },
+        { name: "AI PLAYER 24", rating: 89 },
+        { name: "AI PLAYER 25", rating: 81 },
+        { name: "AI PLAYER 26", rating: 88 },
+        { name: "AI PLAYER 27", rating: 80 },
+        { name: "AI PLAYER 28", rating: 88 },
+        { name: "AI PLAYER 29", rating: 85 },
+        { name: "AI PLAYER 30", rating: 83 },
+        { name: "AI PLAYER 31", rating: 84 },
+        { name: "AI PLAYER 32", rating: 89 },
+        { name: "AI PLAYER 33", rating: 83 },
+        { name: "AI PLAYER 34", rating: 81 },
+        { name: "AI PLAYER 35", rating: 82 },
+        { name: "AI PLAYER 36", rating: 89 },
+        { name: "AI PLAYER 37", rating: 88 },
+        { name: "AI PLAYER 38", rating: 79 },
+        { name: "AI PLAYER 39", rating: 88 },
+        { name: "AI PLAYER 40", rating: 89 },
+        { name: "AI PLAYER 41", rating: 82 },
+        { name: "AI PLAYER 42", rating: 79 },
+        { name: "AI PLAYER 43", rating: 89 },
+        { name: "AI PLAYER 44", rating: 79 },
+        { name: "AI PLAYER 45", rating: 81 },
+        { name: "AI PLAYER 46", rating: 83 },
+        { name: "AI PLAYER 47", rating: 89 },
+        { name: "AI PLAYER 48", rating: 88 },
+        { name: "AI PLAYER 49", rating: 79 },
+        { name: "AI PLAYER 50", rating: 88 }
 
     ];
 
@@ -395,60 +396,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    const positionGoalScoringProbabilities = {
-        "GK": 0.00,
-        "LB": 0.05,
-        "RB": 0.05,
-        "LWB": 0.05,
-        "RWB": 0.05,
-        "CB": 0.05,
-        "CDM": 0.10,
-        "CM": 0.20,
-        "CAM": 0.35,
-        "LM": 0.30,
-        "RM": 0.30,
-        "LW": 0.40,
-        "RW": 0.40,
-        "LF": 0.40,
-        "RF": 0.40,
-        "CF": 0.45,
-        "ST": 0.5,
-    };
-
     function simulateEvent() {
         if (Math.random() < goalScoringProbability) {
-            const aiScoringProbability = 0.5;
-            const selectedPlayersScoringProbability = 0.5;
-            
-            const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
+            const scoringTeam = Math.random() < 1.0 ? selectedPlayers : aiPlayers;
             const scorer = selectScorer(scoringTeam);
-            
-            let scoringProbability = selectedPlayersScoringProbability; // Default to selected players
-            
-            // If the scorer has a position defined, use the corresponding goal scoring probability
-            if (scorer.position && positionGoalScoringProbabilities[scorer.position]) {
-                scoringProbability = positionGoalScoringProbabilities[scorer.position];
+            goals.push(scorer);
+            const goalItem = document.createElement("li");
+            goalItem.textContent = `${formatTime(matchTime)} - GOAL! ${scorer.name}`;
+            events.push(goalItem);
+            updateEventList();
+
+            if (scoringTeam === selectedPlayers) {
+                homeGoals++;
+            } else {
+                awayGoals++;
             }
-            
-            if (Math.random() < scoringProbability) {
-                goals.push(scorer);
-                const goalItem = document.createElement("li");
-                goalItem.textContent = `${formatTime(matchTime)} - GOAL! ${scorer.name}`;
-                events.push(goalItem);
-                updateEventList();
-                
-                if (scoringTeam === selectedPlayers) {
-                    homeGoals++;
-                } else {
-                    awayGoals++;
-                }
-                updateGoalCounter();
-            }
-            function updateGoalCounter() {
-                goalCounterElement.textContent = `${homeTeamName} ${homeGoals} - ${awayGoals} ${awayTeamName}`;
-            }
-    
             updateGoalCounter();
         }
+        function updateGoalCounter() {
+            goalCounterElement.textContent = `${homeTeamName} ${homeGoals} - ${awayGoals} ${awayTeamName}`;
+        }
+
+        updateGoalCounter();
     }
 });
