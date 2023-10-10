@@ -1,107 +1,106 @@
 document.addEventListener("DOMContentLoaded", function () {
     const players = [
-        { name: "Pelé", rating: 95 },
-        { name: "Zinedine Zidane", rating: 94 },
-        { name: "Ronaldo", rating: 94 },
-        { name: "Mia Hamm", rating: 93 },
-        { name: "Ronaldinho", rating: 93 },
-        { name: "Johan Cruyff", rating: 93 },
-        { name: "Birgit Prinz", rating: 92 },
-        { name: "Bobby Charlton", rating: 92 },
-        { name: "Gerd Müller", rating: 92 },
-        { name: "Lev Yashin", rating: 92 },
-        { name: "Paolo Maldini", rating: 92 },
-        { name: "Mané Garrincha", rating: 92 },
-        { name: "Ferenc Puskás", rating: 92 },
-        { name: "Erling Haaland", rating: 92 },
-        { name: "Robert Lewandowski", rating: 92 },
-        { name: "Zico", rating: 91 },
-        { name: "Homare Sawa", rating: 91 },
-        { name: "Roberto Baggio", rating: 91 },
-        { name: "Thierry Henry", rating: 91 },
-        { name: "Marcos Cafu", rating: 91 },
-        { name: "Franco Baresi", rating: 91 },
-        { name: "Carlos Alberto", rating: 91 },
-        { name: "Marco van Basten", rating: 91 },
-        { name: "Eusébio", rating: 91 },
-        { name: "Alexia Putellas", rating: 91 },
-        { name: "Kevin De Bruyne", rating: 91 },
-        { name: "Harry Kane", rating: 91 },
-        { name: "Luka Modric", rating: 91 },
-        { name: "Kylian Mbappé", rating: 91 },
-        { name: "Wesley Sneijder", rating: 91 },
-        { name: "Karim Benzema", rating: 90 },
-        { name: "Thibaut Courtois", rating: 90 },
-        { name: "Lionel Messi", rating: 90 },
-        { name: "Aitana Bonmatí", rating: 90 },
-        { name: "Carolina Graham Hansen", rating: 90 },
-        { name: "Samantha May Kerr", rating: 90 },
-        { name: "Carlos Tévez", rating: 90 },
-        { name: "Camille Abily", rating: 90 },
-        { name: "Rivaldo", rating: 90 },
-        { name: "Casillas", rating: 90 },
-        { name: "Andrea Pirlo", rating: 90 },
-        { name: "Xavi", rating: 90 },
-        { name: "Raúl", rating: 90 },
-        { name: "Bobby Moore", rating: 90 },
-        { name: "Ruud Gullit", rating: 90 },
-        { name: "George Best", rating: 90 },
-        { name: "Alessandro Del Piero", rating: 90 },
-        { name: "Dennis Bergkamp", rating: 90 },
-        { name: "Ruud van Nistelrooy", rating: 89 },
+        { name: "Pelé", rating: 95, position: "CAM" },
+        { name: "Zinedine Zidane", rating: 94, position: "CAM" },
+        { name: "Ronaldo", rating: 94, position: "ST" },
+        { name: "Mia Hamm", rating: 9, position: "ST" },
+        { name: "Ronaldinho", rating: 93, position: "LW" },
+        { name: "Johan Cruyff", rating: 93, position: "CF" },
+        { name: "Birgit Prinz", rating: 92, position: "ST" },
+        { name: "Bobby Charlton", rating: 92, position: "CAM" },
+        { name: "Gerd Müller", rating: 92, position: "ST" },
+        { name: "Lev Yashin", rating: 92, position: "GK" },
+        { name: "Paolo Maldini", rating: 92, position: "CB" },
+        { name: "Mané Garrincha", rating: 92, position: "RW" },
+        { name: "Ferenc Puskás", rating: 92, position: "CF" },
+        { name: "Erling Haaland", rating: 92, position: "ST" },
+        { name: "Robert Lewandowski", rating: 92, position: "ST" },
+        { name: "Zico", rating: 91, position: "CAM" },
+        { name: "Homare Sawa", rating: 91, position: "CM" },
+        { name: "Roberto Baggio", rating: 91, position: "CAM" },
+        { name: "Thierry Henry", rating: 91, position: "ST" },
+        { name: "Marcos Cafu", rating: 91, position: "RWB" },
+        { name: "Franco Baresi", rating: 91, position: "CB" },
+        { name: "Carlos Alberto", rating: 91, position: "RB" },
+        { name: "Marco van Basten", rating: 91, position: "ST" },
+        { name: "Eusébio", rating: 91, position: "CF" },
+        { name: "Alexia Putellas", rating: 91, position: "CM" },
+        { name: "Kevin De Bruyne", rating: 91, position: "CM" },
+        { name: "Harry Kane", rating: 91, position: "ST" },
+        { name: "Luka Modric", rating: 91, position: "CM" },
+        { name: "Kylian Mbappé", rating: 91, position: "ST" },
+        { name: "Wesley Sneijder", rating: 91, position: "CAM" },
+        { name: "Karim Benzema", rating: 90, position: "CF" },
+        { name: "Thibaut Courtois", rating: 90, position: "GK" },
+        { name: "Lionel Messi", rating: 90, position: "CF" },
+        { name: "Aitana Bonmatí", rating: 90, position: "CM" },
+        { name: "Carolina Graham Hansen", rating: 90, position: "RW" },
+        { name: "Samantha May Kerr", rating: 90, position: "ST" },
+        { name: "Carlos Tévez", rating: 90, position: "ST" },
+        { name: "Camille Abily", rating: 90, position: "CM" },
+        { name: "Rivaldo", rating: 90, position: "LW" },
+        { name: "Casillas", rating: 90, position: "GK" },
+        { name: "Andrea Pirlo", rating: 90, position: "CM" },
+        { name: "Xavi", rating: 90, position: "CM" },
+        { name: "Raúl", rating: 90, position: "CF" },
+        { name: "Bobby Moore", rating: 90, position: "CB" },
+        { name: "Ruud Gullit", rating: 90, position: "CF" },
+        { name: "George Best", rating: 90, position: "RW" },
+        { name: "Alessandro Del Piero", rating: 90, position: "CF" },
+        { name: "Dennis Bergkamp", rating: 90, position: "CF" },
     ];
 
     const aiPlayers = [
-        { name: "AI PLAYER 1", rating: 91 },
-        { name: "AI PLAYER 2", rating: 91 },
-        { name: "AI PLAYER 3", rating: 89 },
-        { name: "AI PLAYER 4", rating: 88 },
-        { name: "AI PLAYER 5", rating: 84 },
-        { name: "AI PLAYER 6", rating: 88 },
-        { name: "AI PLAYER 7", rating: 89 },
-        { name: "AI PLAYER 8", rating: 83 },
-        { name: "AI PLAYER 9", rating: 90 },
-        { name: "AI PLAYER 10", rating: 89 },
-        { name: "AI PLAYER 11", rating: 85 },
-        { name: "AI PLAYER 12", rating: 86 },
-        { name: "AI PLAYER 13", rating: 82 },
-        { name: "AI PLAYER 14", rating: 89 },
-        { name: "AI PLAYER 15", rating: 88 },
-        { name: "AI PLAYER 16", rating: 95 },
-        { name: "AI PLAYER 17", rating: 88 },
-        { name: "AI PLAYER 18", rating: 89 },
-        { name: "AI PLAYER 19", rating: 88 },
-        { name: "AI PLAYER 20", rating: 93 },
-        { name: "AI PLAYER 21", rating: 89 },
-        { name: "AI PLAYER 22", rating: 83 },
-        { name: "AI PLAYER 23", rating: 92 },
-        { name: "AI PLAYER 24", rating: 89 },
-        { name: "AI PLAYER 25", rating: 81 },
-        { name: "AI PLAYER 26", rating: 88 },
-        { name: "AI PLAYER 27", rating: 80 },
-        { name: "AI PLAYER 28", rating: 88 },
-        { name: "AI PLAYER 29", rating: 85 },
-        { name: "AI PLAYER 30", rating: 83 },
-        { name: "AI PLAYER 31", rating: 84 },
-        { name: "AI PLAYER 32", rating: 89 },
-        { name: "AI PLAYER 33", rating: 83 },
-        { name: "AI PLAYER 34", rating: 81 },
-        { name: "AI PLAYER 35", rating: 82 },
-        { name: "AI PLAYER 36", rating: 89 },
-        { name: "AI PLAYER 37", rating: 88 },
-        { name: "AI PLAYER 38", rating: 79 },
-        { name: "AI PLAYER 39", rating: 88 },
-        { name: "AI PLAYER 40", rating: 89 },
-        { name: "AI PLAYER 41", rating: 82 },
-        { name: "AI PLAYER 42", rating: 79 },
-        { name: "AI PLAYER 43", rating: 89 },
-        { name: "AI PLAYER 44", rating: 79 },
-        { name: "AI PLAYER 45", rating: 81 },
-        { name: "AI PLAYER 46", rating: 83 },
-        { name: "AI PLAYER 47", rating: 89 },
-        { name: "AI PLAYER 48", rating: 88 },
-        { name: "AI PLAYER 49", rating: 79 },
-        { name: "AI PLAYER 50", rating: 88 }
+        { name: "AI PLAYER 1", rating: 91, position: "GK" },
+        { name: "AI PLAYER 2", rating: 91, position: "GK" },
+        { name: "AI PLAYER 3", rating: 89, position: "GK" },
+        { name: "AI PLAYER 4", rating: 88, position: "LB" },
+        { name: "AI PLAYER 5", rating: 84, position: "LB" },
+        { name: "AI PLAYER 6", rating: 88, position: "RB" },
+        { name: "AI PLAYER 7", rating: 89, position: "RB" },
+        { name: "AI PLAYER 8", rating: 83, position: "CB" },
+        { name: "AI PLAYER 9", rating: 90, position: "CB" },
+        { name: "AI PLAYER 10", rating: 89, position: "CB" },
+        { name: "AI PLAYER 11", rating: 85, position: "CB" },
+        { name: "AI PLAYER 12", rating: 86, position: "CB" },
+        { name: "AI PLAYER 13", rating: 82, position: "RWB" },
+        { name: "AI PLAYER 14", rating: 89, position: "RWB" },
+        { name: "AI PLAYER 15", rating: 88, position: "LWB" },
+        { name: "AI PLAYER 16", rating: 95, position: "LWB" },
+        { name: "AI PLAYER 17", rating: 88, position: "CDM" },
+        { name: "AI PLAYER 18", rating: 89, position: "CDM" },
+        { name: "AI PLAYER 19", rating: 88, position: "CDM" },
+        { name: "AI PLAYER 20", rating: 93, position: "CDM" },
+        { name: "AI PLAYER 21", rating: 89, position: "CM" },
+        { name: "AI PLAYER 22", rating: 83, position: "CM" },
+        { name: "AI PLAYER 23", rating: 92, position: "CM" },
+        { name: "AI PLAYER 24", rating: 89, position: "CM" },
+        { name: "AI PLAYER 25", rating: 81, position: "RM" },
+        { name: "AI PLAYER 26", rating: 88, position: "RM" },
+        { name: "AI PLAYER 27", rating: 80, position: "LM" },
+        { name: "AI PLAYER 28", rating: 88, position: "LM" },
+        { name: "AI PLAYER 29", rating: 85, position: "LW" },
+        { name: "AI PLAYER 30", rating: 83, position: "RW" },
+        { name: "AI PLAYER 31", rating: 84, position: "LW" },
+        { name: "AI PLAYER 32", rating: 89, position: "RW" },
+        { name: "AI PLAYER 33", rating: 83, position: "CAM" },
+        { name: "AI PLAYER 34", rating: 81, position: "CAM" },
+        { name: "AI PLAYER 35", rating: 82, position: "CAM" },
+        { name: "AI PLAYER 36", rating: 89, position: "CF" },
+        { name: "AI PLAYER 37", rating: 88, position: "CF"},
+        { name: "AI PLAYER 38", rating: 79, position: "ST" },
+        { name: "AI PLAYER 39", rating: 88, position: "ST" },
+        { name: "AI PLAYER 40", rating: 89, position: "ST" },
+        { name: "AI PLAYER 41", rating: 82, position: "RF" },
+        { name: "AI PLAYER 42", rating: 79, position: "RF" },
+        { name: "AI PLAYER 43", rating: 89, position: "RF" },
+        { name: "AI PLAYER 44", rating: 79, position: "LF" },
+        { name: "AI PLAYER 45", rating: 81, position: "LF" },
+        { name: "AI PLAYER 46", rating: 83, position: "LF" },
+        { name: "AI PLAYER 47", rating: 89, position: "CB" },
+        { name: "AI PLAYER 48", rating: 88, position: "GK" },
+        { name: "AI PLAYER 49", rating: 79, position: "CDM" },
+        { name: "AI PLAYER 50", rating: 88, position: "CF" }
 
     ];
 
@@ -263,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function simulateEvent() {
         if (Math.random() < goalScoringProbability) {
-            const scoringTeam = Math.random() < 1.0 ? selectedPlayers : aiPlayers;
+            const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
             const scorer = selectScorer(scoringTeam);
             goals.push(scorer);
             const goalItem = document.createElement("li");
@@ -396,27 +395,60 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    const positionGoalScoringProbabilities = {
+        "GK": 0.00,
+        "LB": 0.05,
+        "RB": 0.05,
+        "LWB": 0.05,
+        "RWB": 0.05,
+        "CB": 0.05,
+        "CDM": 0.10,
+        "CM": 0.20,
+        "CAM": 0.35,
+        "LM": 0.30,
+        "RM": 0.30,
+        "LW": 0.40,
+        "RW": 0.40,
+        "LF": 0.40,
+        "RF": 0.40,
+        "CF": 0.45,
+        "ST": 0.5,
+    };
+
     function simulateEvent() {
         if (Math.random() < goalScoringProbability) {
+            const aiScoringProbability = 0.5;
+            const selectedPlayersScoringProbability = 0.5;
+            
             const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
             const scorer = selectScorer(scoringTeam);
-            goals.push(scorer);
-            const goalItem = document.createElement("li");
-            goalItem.textContent = `${formatTime(matchTime)} - GOAL! ${scorer.name}`;
-            events.push(goalItem);
-            updateEventList();
-
-            if (scoringTeam === selectedPlayers) {
-                homeGoals++;
-            } else {
-                awayGoals++;
+            
+            let scoringProbability = selectedPlayersScoringProbability; // Default to selected players
+            
+            // If the scorer has a position defined, use the corresponding goal scoring probability
+            if (scorer.position && positionGoalScoringProbabilities[scorer.position]) {
+                scoringProbability = positionGoalScoringProbabilities[scorer.position];
             }
+            
+            if (Math.random() < scoringProbability) {
+                goals.push(scorer);
+                const goalItem = document.createElement("li");
+                goalItem.textContent = `${formatTime(matchTime)} - GOAL! ${scorer.name}`;
+                events.push(goalItem);
+                updateEventList();
+                
+                if (scoringTeam === selectedPlayers) {
+                    homeGoals++;
+                } else {
+                    awayGoals++;
+                }
+                updateGoalCounter();
+            }
+            function updateGoalCounter() {
+                goalCounterElement.textContent = `${homeTeamName} ${homeGoals} - ${awayGoals} ${awayTeamName}`;
+            }
+    
             updateGoalCounter();
         }
-        function updateGoalCounter() {
-            goalCounterElement.textContent = `${homeTeamName} ${homeGoals} - ${awayGoals} ${awayTeamName}`;
-        }
-
-        updateGoalCounter();
     }
 });
