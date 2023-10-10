@@ -262,7 +262,7 @@ document.getElementById("openPackButton").addEventListener("click", function () 
 		{ name: "Lindsey Horan", image: "players/horangold.png", rating: 86 },
 		{ name: "Sakina Karchaoui", image: "players/karchaouigold.png", rating: 86 },
 		{ name: "Ousmane Dembélé", image: "players/dembélégold.png", rating: 86 },
-		{ name: "Wojciech Szczęsny", image: "players/szczęsnygold.png", rating: 86 },
+		{ name: "Wojciech Szczęsny", image: "players/szczęsnygold.png", rating: 86 }
 	];
 
 	const selectedPlayers = getRandomUniquePlayers(packContents, 8);
