@@ -398,8 +398,6 @@ document.getElementById("openAllPlayersPackImage").addEventListener("click", fun
             setTimeout(() => {
                 card.classList.add("reveal-animation");
                 packContentsDiv.appendChild(card);
-                // Scroll to the newly added card
-                card.scrollIntoView({ behavior: "smooth" });
 
                 // Enable the "Open Pack" button after animation is complete
                 if (index === 7) { // Only enable after the last card for a maximum of 8 cards
@@ -534,8 +532,6 @@ document.getElementById("openIconPackImage").addEventListener("click", function 
             setTimeout(() => {
                 card.classList.add("reveal-animation");
                 packContentsDiv.appendChild(card);
-                // Scroll to the newly added card
-                card.scrollIntoView({ behavior: "smooth" });
 
                 // Enable the "Open Pack" button after animation is complete
                 if (index === 5) { // Only enable after the last card for a maximum of 6 cards
@@ -761,8 +757,6 @@ document.getElementById("openGoldPackImage").addEventListener("click", function 
             setTimeout(() => {
                 card.classList.add("reveal-animation");
                 packContentsDiv.appendChild(card);
-                // Scroll to the newly added card
-                card.scrollIntoView({ behavior: "smooth" });
 
                 // Enable the "Open Pack" button after animation is complete
                 if (index === 5) { // Only enable after the last card for a maximum of 6 cards
@@ -897,8 +891,6 @@ document.getElementById("openSilverPackImage").addEventListener("click", functio
             setTimeout(() => {
                 card.classList.add("reveal-animation");
                 packContentsDiv.appendChild(card);
-                // Scroll to the newly added card
-                card.scrollIntoView({ behavior: "smooth" });
 
                 // Enable the "Open Pack" button after animation is complete
                 if (index === 5) { // Only enable after the last card for a maximum of 6 cards
@@ -1033,8 +1025,6 @@ document.getElementById("openBronzePackImage").addEventListener("click", functio
             setTimeout(() => {
                 card.classList.add("reveal-animation");
                 packContentsDiv.appendChild(card);
-                // Scroll to the newly added card
-                card.scrollIntoView({ behavior: "smooth" });
 
                 // Enable the "Open Pack" button after animation is complete
                 if (index === 5) { // Only enable after the last card for a maximum of 6 cards
