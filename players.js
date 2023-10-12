@@ -1,32 +1,32 @@
 const packContents = [
-		{ name: "Pelé", image: "players/peléicon.png", rating: 95, website: "https://futwis.github.io/pelé.html" },
-		{ name: "Zinedine Zidane", image: "players/zidaneicon.png", rating: 94 },
+		{ name: "Pelé", image: "players/peléicon.png", rating: 95 },
 		{ name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
+		{ name: "Zinedine Zidane", image: "players/zidaneicon.png", rating: 94 },
+		{ name: "Johan Cruyff", image: "players/cruyfficon.png", rating: 93 },
 		{ name: "Mia Hamm", image: "players/hammicon.png", rating: 93 },
 		{ name: "Ronaldinho", image: "players/ronaldinhoicon.png", rating: 93 }, 
-		{ name: "Johan Cruyff", image: "players/cruyfficon.png", rating: 93 },
+		{ name: "Robert Lewandowski", image: "players/lewandoskiuclrttk.png", rating: 92 },
+		{ name: "Erling Haaland", image: "players/haalanduclrttk.png", rating: 92 },
 		{ name: "Birgit Prinz", image: "players/prinzicon.png", rating: 92 },
 		{ name: "Bobby Charlton", image: "players/charltonicon.png", rating: 92 },
 		{ name: "Gerd Müller", image: "players/müllericon.png", rating: 92 },
-		{ name: "Lev Yashin", image: "players/yashinicon.png", rating: 92 },
 		{ name: "Paolo Maldini", image: "players/maldiniicon.png", rating: 92 },
 		{ name: "Mané Garrincha", image: "players/garrinchaicon.png", rating: 92 },
 		{ name: "Ferenc Puskás", image: "players/puskásicon.png", rating: 92 },
-		{ name: "Erling Haaland", image: "players/haalanduclrttk.png", rating: 92 },
-		{ name: "Robert Lewandowski", image: "players/lewandoskiuclrttk.png", rating: 92 },
-		{ name: "Zico", image: "players/zicoicon.png", rating: 91 },
-		{ name: "Homare Sawa", image: "players/sawaicon.png", rating: 91 },
-		{ name: "Roberto Baggio", image: "players/baggioicon.png", rating: 91 },
-		{ name: "Thierry Henry", image: "players/henryicon.png", rating: 91 },
-		{ name: "Marcos Cafu", image: "players/cafuicon.png", rating: 91 },
-		{ name: "Franco Baresi", image: "players/baresiicon.png", rating: 91 },
-		{ name: "Carlos Alberto", image: "players/albertoicon.png", rating: 91 },
-		{ name: "Marco van Basten", image: "players/vanbastenicon.png", rating: 91 },
-		{ name: "Eusébio", image: "players/eusébioicon.png", rating: 91 },
-		{ name: "Robert Lewandowski", image: "players/lewandoskitotw.png", rating: 91 },
-		{ name: "Alexia Putellas", image: "players/putellasnike.png", rating: 91 },
-		{ name: "Harry Kane", image: "players/kanetotw.png", rating: 91 },
+		{ name: "Lev Yashin", image: "players/yashinicon.png", rating: 92 },
 		{ name: "Luka Modric", image: "players/modrićuclrttk.png", rating: 91 },
+		{ name: "Harry Kane", image: "players/kanetotw.png", rating: 91 },
+		{ name: "Alexia Putellas", image: "players/putellasnike.png", rating: 91 },
+		{ name: "Roberto Baggio", image: "players/baggioicon.png", rating: 91 },
+		{ name: "Homare Sawa", image: "players/sawaicon.png", rating: 91 },
+		{ name: "Zico", image: "players/zicoicon.png", rating: 91 },
+		{ name: "Eusébio", image: "players/eusébioicon.png", rating: 91 },
+		{ name: "Marco van Basten", image: "players/vanbastenicon.png", rating: 91 },
+		{ name: "Marcos Cafu", image: "players/cafuicon.png", rating: 91 },
+		{ name: "Carlos Alberto", image: "players/albertoicon.png", rating: 91 },
+		{ name: "Thierry Henry", image: "players/henryicon.png", rating: 91 },
+		{ name: "Franco Baresi", image: "players/baresiicon.png", rating: 91 },
+		{ name: "Robert Lewandowski", image: "players/lewandoskitotw.png", rating: 91 },
 		{ name: "Erling Haaland", image: "players/haalandgold.png", rating: 91 },
 		{ name: "Kevin De Bruyne", image: "players/debruynegold.png", rating: 91 },
 		{ name: "Kylian Mbappé", image: "players/mbappégold.png", rating: 91 },
@@ -260,72 +260,38 @@ const packContents = [
 		{ name: "Lindsey Horan", image: "players/horangold.png", rating: 86 },
 		{ name: "Sakina Karchaoui", image: "players/karchaouigold.png", rating: 86 },
 		{ name: "Ousmane Dembélé", image: "players/dembélégold.png", rating: 86 },
-		{ name: "Wojciech Szczęsny", image: "players/szczęsnygold.png", rating: 86 }
+		{ name: "Wojciech Szczęsny", image: "players/szczęsnygold.png", rating: 86 },
 	];
 // Sort players by rating in descending order
 packContents.sort((a, b) => b.rating - a.rating);
 
-function createPlayerCard(player) {
-    const card = document.createElement('div');
-    card.className = 'player-card';
+// Function to create and populate player cards
+function createPlayerCards() {
+	const playerCardsContainer = document.getElementById('playerCards');
 
-    const playerName = document.createElement('h2');
-    playerName.textContent = player.name;
+	packContents.forEach(player => {
+		const card = document.createElement('div');
+		card.classList.add('player-card'); // Add CSS class for styling
 
-    const playerImage = document.createElement('img');
-    playerImage.src = player.image;
+		const playerImage = document.createElement('img');
+		playerImage.src = player.image;
+		playerImage.alt = player.name;
 
-    const playerRating = document.createElement('p');
-    playerRating.textContent = `Rating: ${player.rating}`;
+		const playerName = document.createElement('p');
+		playerName.textContent = player.name;
 
-    const playerLink = document.createElement('a');
-    playerLink.href = player.website;
-    playerLink.target = '_blank';
-    playerLink.textContent = `About Me`;
-    playerLink.id = 'player-link';
+		const playerRating = document.createElement('p');
+		playerRating.textContent = `Rating: ${player.rating}`;
 
-    card.appendChild(playerName);
-    card.appendChild(playerImage);
-    card.appendChild(playerRating);
-    card.appendChild(playerLink);
+		// Append elements to the card
+		card.appendChild(playerImage);
+		card.appendChild(playerName);
+		card.appendChild(playerRating);
 
-    return card;
+		// Append the card to the container
+		playerCardsContainer.appendChild(card);
+	});
 }
-
-// Function to display player cards on the page
-function displayPlayerCards() {
-    const playerContainer = document.getElementById('player-cards');
-    
-    // Loop through the player data and create a card for each player
-    packContents.forEach(player => {
-        const card = createPlayerCard(player);
-        playerContainer.appendChild(card);
-    });
-}
-
-// Call the function to display player cards when the page loads
-window.addEventListener('load', displayPlayerCards);
-
-const playerProfile = document.getElementById('playerProfile');
-
-const player = packContents.find(player => player.name === 'Pelé'); // Replace 'Pelé' with the name of the player
-
-// Create image element
-const playerImage = document.createElement('img');
-playerImage.src = player.image;
-playerImage.alt = player.name;
-
-// Create elements for player information
-const playerName = document.createElement('h2');
-playerName.textContent = player.name;
-
-const playerRating = document.createElement('p');
-playerRating.textContent = `Rating: ${player.rating}`;
-
-// Append elements to playerProfile div
-playerProfile.appendChild(playerImage);
-playerProfile.appendChild(playerName);
-playerProfile.appendChild(playerRating);
 
 // Call the function to create player cards when the page loads
 window.addEventListener('load', createPlayerCards);

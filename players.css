@@ -1,45 +1,21 @@
-/* Example CSS styles for player cards */
 .player-cards {
     border: 1px solid #ccc;
-    border-radius: 5px;
     padding: 10px;
     margin: 10px;
-    max-width: 250px;
+    width: 200px;
     text-align: center;
     align-tems: center;
-    display: inline-block;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-img {
+.player-card img {
     max-width: 100%;
     height: 200px;
 }
 
-p {
-    font-size: 15px;
-    font-weight: bold;
-    font-style: italic;
+.player-card p {
+    font-size: 12px;
     margin: 5px 0;
 }
-
-.player-link {
-    font-size: 8px;
-    font-weight: bold;
-    font-style: italic;
-    margin: 5px 0;
-}
-
-h2 {
-    font-size: 15px;
-    font-weight: bold;
-    font-style: italic;
-    margin: 5px 0;
-}
-
 
 body {
     font-family: Arial, sans-serif;
@@ -73,6 +49,18 @@ h1 {
     margin: 0;
     /* Remove margin around the h1 element */
     text-shadow: 4px 4px 10px green;
+    font-style: italic;
+}
+
+h2 {
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+}
+
+p {
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
     font-style: italic;
 }
 
@@ -365,21 +353,6 @@ a {
 a:hover {
     color: green;
     /* Change color on hover */
-}
-
-playerName {
-
-    text-shadow: 4px 4px 10px green;
-    font-weight: bold;
-    font-style: italic;
-}
-
-/* Add this CSS rule to make player images smaller */
-#playerImage img {
-    width: 200px;
-    /* Adjust the width as per your preference */
-    height: auto;
-    /* To maintain the aspect ratio */
 }
 
 /* CSS for the logout button */
