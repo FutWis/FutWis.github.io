@@ -1021,6 +1021,85 @@ document.getElementById("openBronzePackImage").addEventListener("click", functio
 	
 });
 
+// Initialize Firebase with your configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDEklNr59OF3Dncht4MiwNIQN9X-oWwpuk",
+  authDomain: "futwis-32f19.firebaseapp.com",
+  projectId: "futwis-32f19",
+  storageBucket: "futwis-32f19.appspot.com",
+  messagingSenderId: "305911660382",
+  appId: "1:305911660382:web:0b9c2a942cf5df096a19cf",
+  measurementId: "G-08X9SY5RHD"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+
+// Listen for authentication state changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        // User is signed in; you can redirect or update the UI here
+        console.log("User is signed in:", user.email);
+    } else {
+        // User is signed out; handle this case as needed
+        console.log("User is signed out");
+    }
+});
+
+// Login Form
+document.getElementById('login-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const loginError = document.getElementById('login-error');
+
+    auth.signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+            // User signed in
+            const user = userCredential.user;
+        })
+        .catch(error => {
+            // Handle login errors
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            loginError.textContent = errorMessage;
+        });
+});
+
+// Signup Form
+document.getElementById('signup-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    const signupError = document.getElementById('signup-error');
+
+    auth.createUserWithEmailAndPassword(email, password)
+        .then(userCredential => {
+            // User signed up
+            const user = userCredential.user;
+        })
+        .catch(error => {
+            // Handle signup errors
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            signupError.textContent = errorMessage;
+        });
+});
+
+// Handle sign out
+document.getElementById('sign-out-button').addEventListener('click', () => {
+    auth.signOut()
+        .then(() => {
+            // User signed out
+        })
+        .catch(error => {
+            // Handle sign-out errors
+            console.error(error);
+        });
+});
+
 document.getElementById("refreshPacksButton").addEventListener("click", function () {
 	// Reload the webpage when the "Refresh Cards" button is clicked
 	location.reload();
