@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FutWis</title>
     <link rel="stylesheet" href="index.css">
-    <!-- Include Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js"></script>
 </head>
 <body>
     <header>
@@ -28,11 +23,6 @@
     <main>
         <section>
             <h2>Open a Pack</h2>
-            <div class="pack-container">
-                <h1>All Players Pack</h1>
-                <img id="openAllPlayersPackImage" src="allplayerspack.png" alt="All Players Pack">
-                <div class="pack-feed" id="allPlayersPackFeed"></div>
-                <div class="pack-contents" id="allPlayersPackContents"></div>
 			 <div class="pack-container">
                 <h1>Bronze Pack (SOON)</h1>
                 <img id="openBronzePackImage" src="bronze_pack.png" alt="Bronze Pack">
@@ -62,30 +52,8 @@
                 <h1>All Players Pack</h1>
                 <img id="openAllPlayersPackImage" src="allplayerspack.png" alt="All Players Pack">
                 <div class="pack-feed" id="allPlayersPackFeed"></div>
-                <div class="pack-contents" id="allPlayersPackContents"></div>
-            </div>
-        </section>
-        <section>
-            <h2>Log in or Sign up</h2>
-            <div id="login-signup-forms">
-                <!-- Login Form -->
-                <form id="login-form">
-                    <h3>Login</h3>
-                    <input type="email" id="login-email" placeholder="Email">
-                    <input type="password" id="login-password" placeholder="Password">
-                    <button type="submit">Login</button>
-                    <div class="error-message" id="login-error"></div>
-                </form>
-
-                <!-- Signup Form -->
-                <form id="signup-form">
-                    <h3>Sign Up</h3>
-                    <input type="email" id="signup-email" placeholder="Email">
-                    <input type="password" id="signup-password" placeholder="Password">
-                    <button type="submit">Sign Up</button>
-                    <div class="error-message" id="signup-error"></div>
-                </form>
-            </div>
+                <div class="pack-contents" id="allPlayersPackContents">
+				</div>
         </section>
     </main>
     <footer>
@@ -93,5 +61,194 @@
     </footer>
     <button id="refreshPacksButton" class="refreshpacks-button">Refresh Packs</button>
     <script src="index.js"></script>
+    
+<!-- Firebase Authentication -->
+<div id="auth-container">
+    <h2>Authentication</h2>
+    <div id="login-form">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-button">Log In</button>
+    </div>
+    <div id="sign-up-form">
+        <input type="email" id="signup-email" placeholder="Email">
+        <input type="password" id="signup-password" placeholder="Password">
+        <button id="signup-button">Sign Up</button>
+    </div>
+    <button id="logout-button">Log Out</button>
+    <div id="auth-status"></div> <!-- To display authentication status -->
+</div>
+
+    
+    <!-- Firebase JavaScript SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+
+<script type="module">
+    // Initialize Firebase
+    const firebaseConfig = {
+            apiKey: "AIzaSyDEklNr59OF3Dncht4MiwNIQN9X-oWwpuk",
+            authDomain: "futwis-32f19.firebaseapp.com",
+            projectId: "futwis-32f19",
+            storageBucket: "futwis-32f19.appspot.com",
+            messagingSenderId: "305911660382",
+            appId: "1:305911660382:web:0b9c2a942cf5df096a19cf",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Function to display authentication error messages
+    function displayErrorMessage(error) {
+        console.error("Authentication error:", error);
+        alert(error.message); // You can display errors in a more user-friendly way (e.g., in a div element).
+    }
+
+    // Check if a user is logged in
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is logged in
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("sign-up-form").style.display = "none";
+            document.getElementById("login-button").textContent = `Logged in as ${user.email}`;
+        } else {
+            // User is not logged in
+            document.getElementById("login-button").textContent = "Log In";
+        }
+    });
+
+// Add event listener for login
+document.getElementById("login-button").addEventListener("click", () => {
+    const user = firebase.auth().currentUser;
+
+    if (user) {
+        // User is already logged in, perform logout
+        document.getElementById("auth-status").textContent = "Logging out..."; // Display message
+        firebase.auth().signOut()
+            .then(() => {
+                console.log("Logged out");
+                document.getElementById("auth-status").textContent = "Logged out"; // Display message
+                document.getElementById("login-form").style.display = "block"; // Show login form
+                document.getElementById("sign-up-form").style.display = "block"; // Show sign-up form
+            })
+            .catch((error) => {
+                displayErrorMessage(error);
+            });
+    } else {
+        // User is not logged in, perform login
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        document.getElementById("auth-status").textContent = "Logging in..."; // Display message
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // User signed in
+                const user = userCredential.user;
+                console.log(`Logged in as ${user.email}`);
+                document.getElementById("auth-status").textContent = `Logged in as ${user.email}`; // Display message
+                document.getElementById("login-form").style.display = "none"; // Hide login form
+                document.getElementById("sign-up-form").style.display = "none"; // Hide sign-up form
+            })
+            .catch((error) => {
+                displayErrorMessage(error);
+            });
+    }
+});
+
+// Add event listener for sign up
+document.getElementById("signup-button").addEventListener("click", () => {
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+
+    document.getElementById("auth-status").textContent = "Signing up..."; // Display message
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // User signed up
+            const user = userCredential.user;
+            console.log(`Signed up as ${user.email}`);
+            document.getElementById("auth-status").textContent = `Signed up as ${user.email}`; // Display message
+            document.getElementById("login-form").style.display = "none"; // Hide login form
+            document.getElementById("sign-up-form").style.display = "none"; // Hide sign-up form
+        })
+        .catch((error) => {
+            displayErrorMessage(error);
+        });
+});
+// Add event listener for login
+// Add event listener for login
+document.getElementById("login-button").addEventListener("click", () => {
+    const user = firebase.auth().currentUser;
+
+    if (user) {
+        // User is already logged in, perform logout
+        document.getElementById("auth-status").textContent = "Logging out..."; // Display message
+        firebase.auth().signOut()
+            .then(() => {
+                console.log("Logged out");
+                document.getElementById("auth-status").textContent = "Logged out"; // Display message
+                document.getElementById("login-form").style.display = "block"; // Show login form
+                document.getElementById("sign-up-form").style.display = "block"; // Show sign-up form
+            })
+            .catch((error) => {
+                displayErrorMessage(error);
+            });
+    } else {
+        // User is not logged in, perform login
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        document.getElementById("auth-status").textContent = "Logging in..."; // Display message
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // User signed in
+                const user = userCredential.user;
+                console.log(`Logged in as ${user.email}`);
+                document.getElementById("auth-status").textContent = `Logged in as ${user.email}`; // Display message
+                document.getElementById("login-form").style.display = "none"; // Hide login form
+                document.getElementById("sign-up-form").style.display = "none"; // Hide sign-up form
+            })
+            .catch((error) => {
+                displayErrorMessage(error);
+            });
+    }
+});
+
+// Add event listener for sign up
+document.getElementById("signup-button").addEventListener("click", () => {
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+
+    document.getElementById("auth-status").textContent = "Signing up..."; // Display message
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // User signed up
+            const user = userCredential.user;
+            console.log(`Signed up as ${user.email}`);
+            document.getElementById("auth-status").textContent = `Signed up as ${user.email}`; // Display message
+            document.getElementById("login-form").style.display = "none"; // Hide login form
+            document.getElementById("sign-up-form").style.display = "none"; // Hide sign-up form
+        })
+        .catch((error) => {
+            displayErrorMessage(error);
+        });
+});
+
+// Add event listener for logout
+document.getElementById("logout-button").addEventListener("click", () => {
+    console.log("Logging out...");
+    
+    firebase.auth().signOut()
+        .then(() => {
+            console.log("Logged out");
+            document.getElementById("auth-status").textContent = "Logged out"; // Display message
+            document.getElementById("login-form").style.display = "block"; // Show login form
+            document.getElementById("sign-up-form").style.display = "block"; // Show sign-up form
+        })
+        .catch((error) => {
+            displayErrorMessage(error);
+        });
+});
+</script>
 </body>
 </html>
