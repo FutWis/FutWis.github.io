@@ -277,35 +277,8 @@ document.getElementById("openAllPlayersPackImage").addEventListener("click", fun
         }
     }
 
-    // Function to create a professional pop-up at the bottom of the page
-    function createPopup(message) {
-        const popup = document.createElement("div");
-        popup.classList.add("popup");
-
-        const popupMessage = document.createElement("p");
-        popupMessage.textContent = message;
-
-        const closeButton = document.createElement("span");
-        closeButton.classList.add("close-button");
-        closeButton.textContent = "×";
-
-        closeButton.addEventListener("click", function () {
-            popup.remove(); // Close the pop-up when the close button is clicked
-        });
-
-        popup.appendChild(popupMessage);
-        popup.appendChild(closeButton);
-
-        document.body.appendChild(popup);
-
-        // Auto-close the popup after 3 seconds
-        setTimeout(() => {
-            popup.remove();
-        }, 3000); // 3000 milliseconds = 3 seconds
-    }
-
     // Disable the "Open Pack" button to prevent multiple clicks
-    openPackImage.disabled = true;
+    openAllPlayersPackImage.disabled = true;
 
     // Clear existing player cards
     clearPlayerCards();
@@ -439,7 +412,7 @@ document.getElementById("openIconPackImage").addEventListener("click", function 
     }
 
     // Disable the "Open Pack" button to prevent multiple clicks
-    openPackImage.disabled = true;
+    openIconPackImage.disabled = true;
 
     // Clear existing player cards
     clearPlayerCards();
@@ -667,7 +640,7 @@ document.getElementById("openGoldPackImage").addEventListener("click", function 
     clearPlayerCards();
 
     // Disable the "Open Pack" button to prevent multiple clicks
-    openPackImage.disabled = true;
+    openGoldPackImage.disabled = true;
 
     // Function to select random unique players from the array
     function getRandomUniquePlayers(array, numPlayers) {
@@ -798,7 +771,7 @@ document.getElementById("openSilverPackImage").addEventListener("click", functio
     }
 
     // Disable the "Open Pack" button to prevent multiple clicks
-    openPackImage.disabled = true;
+    openSilverPackImage.disabled = true;
 
     // Clear existing player cards
     clearPlayerCards();
@@ -932,7 +905,7 @@ document.getElementById("openBronzePackImage").addEventListener("click", functio
     }
 
     // Disable the "Open Pack" button to prevent multiple clicks
-    openPackImage.disabled = true;
+    openBronzePackImage.disabled = true;
 
     // Clear existing player cards
     clearPlayerCards();
@@ -1045,6 +1018,7 @@ document.getElementById("openBronzePackImage").addEventListener("click", functio
 
     // Start revealing player cards
     revealPlayerCards();
+	
 });
 
 document.getElementById("refreshPacksButton").addEventListener("click", function () {
