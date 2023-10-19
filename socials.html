@@ -169,26 +169,26 @@
         &copy; 2023 FutWis
     </footer>
     <script>
-        // Function to reload the iframe every 30 seconds
-        function reloadIframe() {
-            var instagramIframe = document.getElementById('instagramfollowcounter');
-            instagramIframe.src = instagramIframe.src; // Reload the Instagram iframe
+    // Function to reload both iframes every 30 seconds
+    function reloadIframe() {
+        var instagramIframe = document.getElementById('instagramfollowcounter');
+        var tiktokIframe = document.getElementById('tiktokfollowcounter');
+        
+        instagramIframe.src = instagramIframe.src; // Reload the Instagram iframe
+        tiktokIframe.src = tiktokIframe.src; // Reload the TikTok iframe
+    }
 
-            var tiktokIframe = document.getElementById('tiktokfollowcounter');
-            tiktokIframe.src = tiktokIframe.src; // Reload the TikTok iframe
-        }
+    // Schedule the reload function to run every 10 minutes (600,000 milliseconds)
+    setInterval(reloadIframe, 600000);
 
-        // Schedule the reload function to run every 10 minutes (600,000 milliseconds)
-        setInterval(reloadIframe, 600000);
+    function updateTime() {
+        const now = new Date();
+        const timeElement = document.getElementById('time');
+        timeElement.textContent = now.toLocaleTimeString();
+    }
 
-        function updateTime() {
-            const now = new Date();
-            const timeElement = document.getElementById('time');
-            timeElement.textContent = now.toLocaleTimeString();
-        }
-
-        updateTime();
-        setInterval(updateTime, 1000);
-    </script>
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
 </body>
 </html>
