@@ -252,6 +252,15 @@ document.getElementById("logout-button").addEventListener("click", () => {
         .catch((error) => {
             displayErrorMessage(error);
         });
+
+        // Function to reload the iframe every 30 seconds
+        function reloadIframe() {
+            var iframe = document.getElementById('followcounter');
+            iframe.src = iframe.src; // Reload the iframe by setting its source again
+        }
+
+        // Schedule the reload function to run every 30 seconds (30,000 milliseconds)
+        setInterval(reloadIframe, 600000);
 });
 </script>
 </body>
