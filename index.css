@@ -93,7 +93,6 @@ input {
 		iframe {
 			width: 600px;
 			height: 410px;
-			padding: 10px;
 			margin: -150px;
 			transform: scale(0.3);
 		}

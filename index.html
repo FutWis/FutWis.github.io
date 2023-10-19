@@ -25,7 +25,7 @@
         <section>
             <h2>Open a Pack</h2>
  	    <h2>If pack is opening dont open a new one -> Result if you do -> BAN</h2>
-			 <iframe src="https://livecounts.nl/instagram-realtime/?u=futwis_official&t=0&o=0" scrolling="no">"</iframe>
+			 <iframe id="followcounter" src="https://livecounts.nl/instagram-realtime/?u=futwis_official&t=0&o=0" scrolling="no">"</iframe>
 			 <div class="pack-container">
                 <h1>Bronze Pack (SOON)</h1>
                 <img id="openBronzePackImage" src="bronze_pack.png" alt="Bronze Pack">
@@ -252,6 +252,15 @@ document.getElementById("logout-button").addEventListener("click", () => {
             displayErrorMessage(error);
         });
 });
+
+        // Function to reload the iframe every 30 seconds
+        function reloadIframe() {
+            var iframe = document.getElementById('followcounter');
+            iframe.src = iframe.src; // Reload the iframe by setting its source again
+        }
+
+        // Schedule the reload function to run every 30 seconds (30,000 milliseconds)
+        setInterval(reloadIframe, 30000);
 </script>
 </body>
 </html>
