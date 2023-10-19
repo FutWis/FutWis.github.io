@@ -84,6 +84,15 @@
             transition: background-color 0.3s;
             display: block;
             margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .follow-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
         }
 
         .follow-button:hover {
@@ -156,13 +165,17 @@
         <h2>Instagram Follower Counter</h2>
         <iframe class="instagramfollowcounter" id="instagramfollowcounter" src="https://livecounts.nl/instagram-realtime/?u=futwis_official&t=0&o=0" scrolling="no"></iframe>
         <a href="https://www.instagram.com/futwis_official" target="_blank">
-            <button class="follow-button">Follow us on Instagram</button>
+            <button class="follow-button">
+                <img src="instagram.png" alt="Instagram Logo" /> Follow us on Instagram
+            </button>
         </a>
 
         <h2>TikTok Follower Counter</h2>
         <iframe class="tiktokfollowcounter" src="https://livecounts.io/embed/tiktok-live-follower-counter/futwisfc24" scrolling="no"></iframe>
         <a href="https://www.tiktok.com/@futwisfc24" target="_blank">
-            <button class="follow-button">Follow us on TikTok</button>
+            <button class="follow-button">
+                <img src="tiktok.png" alt="Tiktok Logo" /> Follow us on Tiktok
+            </button>
         </a>
     </main>
     <footer>
