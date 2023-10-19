@@ -229,9 +229,11 @@
     function reloadIframe() {
         var instagramIframe = document.getElementById('instagramfollowcounter');
         var tiktokIframe = document.getElementById('tiktokfollowcounter');
+		vat tiktokvideosIframe = document.getElementById('tiktokvideocounter');
         
         instagramIframe.src = instagramIframe.src; // Reload the Instagram iframe
         tiktokIframe.src = tiktokIframe.src; // Reload the TikTok iframe
+		tiktokvideosIframe.src = tiktokvideosIframe.src; // Reload the Tiktok Videos iframe
     }
 
     // Schedule the reload function to run every 10 minutes (600,000 milliseconds)
