@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Futwis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            text-shadow: 4px 4px 10px green;
+            font-style: italic;
+        }
+
+        h2 {
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        p {
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .instagramfollowcounter {
+            width: 600px;
+            height: 410px;
+            margin: -150px;
+            transform: scale(0.3);
+        }
+
+        .tiktokfollowcounter {
+            width: 600px; /* Adjust width as needed */
+            height: 410px; /* Adjust height as needed */
+            border: 0;
+            margin: -150px auto; /* Center the TikTok counter */
+            display: block;
+			transform: scale(0.3);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .buttoncards-container {
+            position: absolute;
+            top: 290px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .buttonpage-container {
+            position: absolute;
+            top: 290px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .openPackImage {
+            color: white;
+        }
+
+        .refreshpacks-button {
+            background-color: Black;
+            color: white;
+            border: none;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            padding: 10px 20px;
+            cursor: pointer;
+            position: fixed;
+            border-radius: 5px;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .refreshpage-button {
+            background-color: Black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .popup {
+            background-color: Black;
+            color: white;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+            height: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 450px;
+            z-index: 1;
+        }
+
+        .popup span {
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        #time {
+            position: absolute;
+            top: 30px;
+            right: 15px;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 30px;
+            color: White;
+        }
+
+        .fixed-text-box {
+            background-color: black;
+            color: white;
+            border: none;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 11px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            height: 230px;
+            overflow: none;
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .fixed-text-box table {
+            width: 100%;
+            border: none;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            border-collapse: collapse;
+        }
+
+        .fixed-text-box table, .fixed-text-box th, .fixed-text-box td {
+            border: none;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .fixed-text-box th, .fixed-text-box td {
+            padding: 8px;
+            text-align: left;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .fixed-text-box th {
+            background-color: black;
+            color: white;
+            text-shadow: 4px 4px 10px green;
+            font-weight: bold;
+            font-style: italic;
+            border: none;
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 4px 4px 10px green;
+        }
+
+        a:hover {
+            color: green;
+        }
+    </style>
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+    <header>
+        <img id="logo" src="futwis.png" alt="Logo">
+        <h1>Social Media</h1>
+    </header>
+	<div id="time"></div>
+	<nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="search.html">Player Search</a></li>
+            <li><a href="matches.html">Play Matches</a></li>
+			<li><a href="socials.html">Socials</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Instagram Follower Counter</h2>
+        <iframe class="instagramfollowcounter" id="instagramfollowcounter" src="https://livecounts.nl/instagram-realtime/?u=futwis_official&t=0&o=0" scrolling="no"></iframe>
+        <h2>TikTok Follower Counter</h2>
+        <iframe class="tiktokfollowcounter" src="https://livecounts.io/embed/tiktok-live-follower-counter/futwisfc24"></iframe>
+    </main>
+    <footer>
+        &copy; 2023 FutWis
+    </footer>
+	<script>
+	        // Function to reload the iframe every 30 seconds
+        function reloadIframe() {
+            var iframe = document.getElementById('instagramfollowcounter');
+            iframe.src = iframe.src; // Reload the iframe by setting its source again
+        }
+
+        // Schedule the reload function to run every 10 minutes (600,000 milliseconds)
+        setInterval(reloadIframe, 600000);
+		
+			        // Function to reload the iframe every 30 seconds
+        function reloadIframe() {
+            var iframe = document.getElementById('tiktokfollowcounter');
+            iframe.src = iframe.src; // Reload the iframe by setting its source again
+        }
+
+        // Schedule the reload function to run every 10 minutes (600,000 milliseconds)
+        setInterval(reloadIframe, 600000);
+		
+		        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+	</script>
+</body>
+</html>

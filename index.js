@@ -1021,6 +1021,15 @@ document.getElementById("openBronzePackImage").addEventListener("click", functio
 	
 });
 
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+
 document.getElementById("refreshPacksButton").addEventListener("click", function () {
 	// Reload the webpage when the "Refresh Cards" button is clicked
 	location.reload();

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FutWis</title>
     <link rel="stylesheet" href="index.css">
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
     <script async src="https://www.widgetsquad.com/pixel/75l9tdr0cvmvsogcy56d69cxx1cnl6il"></script>
 </head>
 <body>
@@ -19,13 +20,13 @@
             <li><a href="players.html">Players</a></li>
             <li><a href="search.html">Player Search</a></li>
             <li><a href="matches.html">Play Matches</a></li>
+			<li><a href="socials.html">Socials</a></li>
         </ul>
     </nav>
     <main>
         <section>
             <h2>Open a Pack</h2>
  	    <h2>If pack is opening dont open a new one -> Result if you do -> BAN</h2>
-			 <iframe id="followcounter" src="https://livecounts.nl/instagram-realtime/?u=futwis_official&t=0&o=0" scrolling="no">"</iframe>
 			 <div class="pack-container">
                 <h1>Bronze Pack (SOON)</h1>
                 <img id="openBronzePackImage" src="bronze_pack.png" alt="Bronze Pack">
@@ -252,15 +253,6 @@ document.getElementById("logout-button").addEventListener("click", () => {
             displayErrorMessage(error);
         });
 });
-
-        // Function to reload the iframe every 30 seconds
-        function reloadIframe() {
-            var iframe = document.getElementById('followcounter');
-            iframe.src = iframe.src; // Reload the iframe by setting its source again
-        }
-
-        // Schedule the reload function to run every 30 seconds (30,000 milliseconds)
-        setInterval(reloadIframe, 30000);
 </script>
 </body>
 </html>
