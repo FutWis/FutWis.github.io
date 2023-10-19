@@ -61,6 +61,13 @@
             margin: -150px;
             transform: scale(0.3);
         }
+		
+		.tiktokvideocounter {
+            width: 600px;
+            height: 410px;
+            margin: -150px;
+            transform: scale(0.3);
+        }
 
         footer {
             bottom: 0;
@@ -88,14 +95,41 @@
             align-items: center;
             justify-content: center;
         }
+		
+		.video-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .follow-button img {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
+		
+		.video-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
 
         .follow-button:hover {
+            background-color: #000;
+        }
+		
+		.video-button:hover {
             background-color: #000;
         }
 
@@ -177,6 +211,15 @@
                 <img src="tiktok.png" alt="Tiktok Logo" /> Follow us on Tiktok
             </button>
         </a>
+		
+		<h2>TikTok Videos Counter</h2>
+		<a href="https://www.tiktok.com/@futwisfc24/" target="_blank">
+            <button class="video-button">
+                <img src="tiktok.png" alt="Tiktok Logo" /> Check our video on Tiktok
+            </button>
+        </a>
+        <iframe class="tiktokvideocounter" src="https://livecounts.io/embed/tiktok-live-view-counter/7291647254174141728" scrolling="no"></iframe>
+		<iframe class="tiktokvideocounter" src="https://livecounts.io/embed/tiktok-live-view-counter/7291609218396769569" scrolling="no"></iframe>
     </main>
     <footer>
         &copy; 2023 FutWis
