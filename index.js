@@ -396,10 +396,11 @@ document.getElementById("openAllPlayersPackImage").addEventListener("click", fun
 document.getElementById("openCustomPackImage").addEventListener("click", function () {
     // Simulate pack opening (replace with your logic)
     const packContents = [
+		{ name: "Levi Van den Bussche", image: "players/vandenbusschetrailblazers.png", rating: 94 },
 		{ name: "Mo Alkassar", image: "players/alkassaricon.png", rating: 92 },
 		{ name: "Khalil Almasri", image: "players/almasrigold.png", rating: 92 },		
 		{ name: "Keano van Eck", image: "players/vanecktotw.png", rating: 91 },		
-		{ name: "Damian Borgt", image: "players/borgtnike.png", rating: 90 },		
+		{ name: "Damian Borgt", image: "players/borgtnike.png", rating: 90 },	
 		{ name: "Wesley Roodhuizen", image: "players/roodhuizennike.png", rating: 89 },		
 		{ name: "Davy Roodhuizen", image: "players/roodhuizenicon.png", rating: 87 },
 		{ name: "Rob Goedegebure", image: "players/goedegeburetotw.png", rating: 86 },
@@ -409,6 +410,7 @@ document.getElementById("openCustomPackImage").addEventListener("click", functio
 		{ name: "Ad van Bever", image: "players/vanbevertotw.png", rating: 80 },
 		{ name: "Leon Vissers", image: "players/visserstotw.png", rating: 80 },
 		{ name: "Steef de Gruijter", image: "players/degruitertotw.png", rating: 80 },
+		{ name: "Kyra Mariman", image: "players/marimansilverif.png", rating: 74 },
 		{ name: "Wegihu Tekle", image: "players/deklebronze.png", rating: 68 },
 		{ name: "Stephanie Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
 		{ name: "Naatje", image: "players/naatjebronzenr.png", rating: 47 }
