@@ -411,6 +411,7 @@ document.getElementById("openCustomPackImage").addEventListener("click", functio
 		{ name: "Leon Vissers", image: "players/visserstotw.png", rating: 80 },
 		{ name: "Steef de Gruijter", image: "players/degruitertotw.png", rating: 80 },
 		{ name: "Kyra Mariman", image: "players/marimansilverif.png", rating: 74 },
+		{ name: "Mick Bogaert", image: "players/bogaertuclheromen.png", rating: 74 },
 		{ name: "Wegihu Tekle", image: "players/deklebronze.png", rating: 68 },
 		{ name: "Stephanie Roodhuizen", image: "players/roodhuizensbronze.png", rating: 64 },
 		{ name: "Naatje", image: "players/naatjebronzenr.png", rating: 47 }
