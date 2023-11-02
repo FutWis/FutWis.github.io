@@ -8,6 +8,7 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            overflow-X: hidden;
         }
 
         header {
@@ -48,21 +49,9 @@
             padding: 20px;
         }
 
-        .instagramfollowcounter {
-            width: 600px;
-            height: 410px;
-            margin: -150px;
-            transform: scale(0.3);
-        }
-
-        .tiktokfollowcounter {
-            width: 600px;
-            height: 410px;
-            margin: -150px;
-            transform: scale(0.3);
-        }
-		
-		.tiktokvideocounter {
+        .instagramfollowcounter,
+        .tiktokfollowcounter,
+        .tiktokvideocounter {
             width: 600px;
             height: 410px;
             margin: -150px;
@@ -197,7 +186,7 @@
     </nav>
     <main>
         <h2>Instagram Follower Counter</h2>
-        <iframe class="instagramfollowcounter" id="instagramfollowcounter" src="https://livecounts.nl/instagram-realtime/?u=futwis_official&t=0&o=0" scrolling="no"></iframe>
+        <iframe class="instagramfollowcounter" id="instagramfollowcounter" src="https://livecounts.nl/instagram-realtime/embed/?u=futwis_official" scrolling="no"></iframe>
         <a href="https://www.instagram.com/futwis_official" target="_blank">
             <button class="follow-button">
                 <img src="instagram.png" alt="Instagram Logo" /> Follow us on Instagram
@@ -230,7 +219,7 @@
     function reloadIframe() {
         var instagramIframe = document.getElementById('instagramfollowcounter');
         var tiktokIframe = document.getElementById('tiktokfollowcounter');
-		vat tiktokvideosIframe = document.getElementById('tiktokvideocounter');
+		var tiktokvideosIframe = document.getElementById('tiktokvideocounter');
         
         instagramIframe.src = instagramIframe.src; // Reload the Instagram iframe
         tiktokIframe.src = tiktokIframe.src; // Reload the TikTok iframe
