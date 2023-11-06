@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow-X: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    /* Add padding to create a border */
+    display: flex;
+    /* Use flexbox for positioning */
+    align-items: center;
+    /* Center items vertically within the header */
+}
+
+#time {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+    color: White;
+}
+
+nav {
+    background-color: #333;
+}
+
+#logo {
+    width: 50px;
+    /* Adjust the width of your logo as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-right: 10px;
+    /* Add some space to the right of the logo */
+}
+
+h1 {
+    margin: 0;
+    /* Remove margin around the h1 element */
+    text-shadow: 4px 4px 10px green;
+    font-style: italic;
+}
+
+h2 {
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+}
+
+p {
+    text-shadow: 4px 4px 10px green;
+    font-weight: bold;
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 4px 4px 10px green;
+}
+
+a:hover {
+    color: green;
+    /* Change color on hover */
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#contact-form h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#contact-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 11.6px;
+}
+
+#contact-form select,
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="card_version"],
+#contact-form input[type="club_search"],
+#contact-form input[type="nation_search"],
+#contact-form input[type="league_search"],
+#contact-form input[type="chemistry_style"],
+#contact-form input[type="club_search"],
+#contact-form input[type="image_file"],
+#contact-form input[type="rating"],
+#contact-form input[type="position"],
+#contact-form input[type="name"],
+#contact-form input[type="pace"],
+#contact-form input[type="sho"],
+#contact-form input[type="pas"],
+#contact-form input[type="dri"],
+#contact-form input[type="def"],
+#contact-form input[type="phy"],
+#contact-form input[type="email_provider"],
+#contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 11.6px;
+}
+
+#contact-form textarea {
+    height: 50px;
+}
+
+#contact-form input[type="submit"] {
+    background-color: #FF5737;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #FF4214;
+}

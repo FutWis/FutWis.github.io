@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>FutWis</title>
+
+    <link rel="apple-touch-icon" href="futwis.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="contact.css" media="screen and (max-width: 768px)">
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FutWis">
+    <meta property="og:description" content="Contact us for more information!">
+    <meta property="og:image" content="">
+</head>
+
+<body>
+    <header>
+        <img src="futwis.png" alt="FutWis Logo" id="logo">
+        <h1>Welcome to FutWis</h1>
+    </header>
+    <div id="time"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="search.html">Player Search</a></li>
+            <li><a href="matches.html">Play Matches</a></li>
+			<li><a href="socials.html">Socials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="contact-form">
+        <h2>Questions & Information</h2>
+        <p></p>
+        <form id="contact-form">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name">
+            <label for="email">E-mailadres <sup style="color:red">*</sup></label>
+            <input type="email" id="email" name="email" required oninvalid="this.setCustomValidity('Fill in this field.')"
+                oninput="this.setCustomValidity('')"></input>
+            <label for="message">If you have any questions, you can ask them here</label>
+            <textarea id="message" name="message"></textarea>
+            <label for="email_provider">Choose an email provider:</label>
+            <select id="email_provider" name="email_provider">
+                <option value="Device Mail">Open in Device Mail</option>
+                <option value="gmail">Open in Gmail</option>
+                <option value="outlook">Open in Outlook</option>
+            </select>
+
+            <input type="button" value="Send request" onclick="submitForm()" id="open-email-button"
+                style="margin-top: 10px;">
+        </form>
+        <p id="success-message" style="display: none;">Email sent successfully.</p>
+    </div>
+
+    <script>
+        document.getElementById('open-email-button').addEventListener('click', function () {
+            const recipientEmail = 'futwisfc24@outlook.com'; // Replace with your email
+            const subject = 'Contact Request'; // You can customize the subject
+            const requiredInputs = document.querySelectorAll('#contact-form [required]');
+
+            // check if any required fields are empty
+            const emptyFields = [...requiredInputs].filter(input => !input.value.trim());
+            if (emptyFields.length > 0) {
+                alert('You forgot to enter your email address.');
+                return;
+            }
+
+            const first_name = document.getElementById('first_name').value;
+            const last_name = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const user_message = document.getElementById('message').value;
+
+            const emailProvider = document.getElementById('email_provider').value;
+
+            // Create the email message
+            const message = `First Name: ${first_name}\n\n` +
+                `Last Name: ${last_name}\n\n` +
+                `E-mailadres: ${email}\n\n` +
+                `Messsage: ${user_message}\n\n`;
+
+            if (emailProvider === 'Device Mail') {
+                // Encode the message and subject
+                const encodedMessage = encodeURIComponent(message);
+                const encodedSubject = encodeURIComponent(subject);
+
+                // Open the default email client with the mailto URL
+                const mailtoUrl = `mailto:${recipientEmail}?subject=${encodedSubject}&body=${encodedMessage}`;
+                window.location.href = mailtoUrl;
+            } else if (emailProvider === 'gmail') {
+                // Open Gmail in a new tab
+                const mailtoUrl = `mailto:${recipientEmail}?subject=${subject}&body=${message}`;
+                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${recipientEmail}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`);
+            } else if (emailProvider === 'outlook') {
+                // Open Outlook in a new tab
+                const mailtoUrl = `mailto:${recipientEmail}?subject=${subject}&body=${message}`;
+                window.open(`https://outlook.live.com/owa/?path=/mail/action/compose&to=${recipientEmail}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`);
+            }
+
+            // Reset the form after clicking "Open Email"
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v18.0"
+        nonce="v7elL2a5"></script>
+</body>
+
+</html>
