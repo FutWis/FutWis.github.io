@@ -162,3 +162,35 @@ document.getElementById("openPackButton").addEventListener("click", function () 
   // Reload the webpage when the "Refresh Cards" button is clicked
   location.reload();
   });
+
+// Define a function to show the sign-in confirmation dialog
+function showSignInDialog() {
+    const customDialog = document.getElementById("customDialog");
+    customDialog.style.display = "block";
+
+    // Add event listeners for the "Yes" and "No" buttons in the dialog
+    const confirmYesButton = document.getElementById("confirmYes");
+    const confirmNoButton = document.getElementById("confirmNo");
+
+    confirmYesButton.addEventListener("click", function () {
+        // Display a "Thanks" pop-up with the browser's built-in alert
+        alert("Thanks!");
+
+        // Hide the special button
+        document.getElementById("openSpecialPackButton").style.display = "none";
+
+        // Close the dialog
+        customDialog.style.display = "none";
+    });
+
+    confirmNoButton.addEventListener("click", function () {
+        // Redirect to the specified URL when the user selects "No"
+        window.location.href = "https://futwis.github.io";
+    });
+}
+
+// Add a click event listener to the "Open Special Pack" button
+document.getElementById("openSpecialPackButton").addEventListener("click", function () {
+    // Show the sign-in confirmation dialog
+    showSignInDialog();
+});
