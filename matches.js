@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const aiPlayers = [
         { name: "AI PLAYER 1", rating: 91 },
-        { name: "AI PLAYER 2", rating: 91 },
+        { name: "AI PLAYER 2", rating: 91},
         { name: "AI PLAYER 3", rating: 89 },
         { name: "AI PLAYER 4", rating: 88 },
         { name: "AI PLAYER 5", rating: 84 },
@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const addButton = document.getElementById("add-button");
     const randomButton = document.getElementById("random-button");
 
+    // Function to add a player to the selected players list
     function addPlayer(player) {
         if (selectedPlayers.length < 11) {
             selectedPlayers.push(player);
@@ -117,14 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (selectedPlayers.length === 11) {
                 startMatchButton.disabled = false;
-                addButton.disabled = true;
-                randomButton.disabled = true;
+                addButton.disabled = true; // Disable the "Add Player" button
+                randomButton.disabled = true; // Disable the "Random" button
             }
         } else {
             alert("You can only select 11 players.");
         }
     }
 
+    // Event listener for the "Add Player" button
     addButton.addEventListener("click", function () {
         if (matchInterval) {
             messageElement.textContent = "You can't add players while the match is in progress.";
@@ -146,26 +148,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     randomButton.addEventListener("click", function () {
-        if (matchInterval) {
-            messageElement.textContent = "You can't randomize players while the match is in progress.";
-            return;
+    if (matchInterval) {
+        messageElement.textContent = "You can't randomize players while the match is in progress.";
+        return;
+    }
+
+    if (selectedPlayers.length === 11) {
+        alert("You already have 11 players selected.");
+        return;
+    }
+
+    while (selectedPlayers.length < 11) {
+        const randomIndex = Math.floor(Math.random() * players.length);
+        const randomPlayer = players[randomIndex];
+
+        // Check if the random player is not already in the selectedPlayers array
+        if (!selectedPlayers.some(player => player.name === randomPlayer.name)) {
+            addPlayer(randomPlayer);
         }
+    }
+});
 
-        if (selectedPlayers.length === 11) {
-            alert("You already have 11 players selected.");
-            return;
-        }
-
-        while (selectedPlayers.length < 11) {
-            const randomIndex = Math.floor(Math.random() * players.length);
-            const randomPlayer = players[randomIndex];
-
-            if (!selectedPlayers.some(player => player.name === randomPlayer.name)) {
-                addPlayer(randomPlayer);
-            }
-        }
-    });
-
+    // Event listener for the "Start Match" button
     startMatchButton.addEventListener("click", function () {
         if (selectedPlayers.length === 11) {
             startMatch();
@@ -174,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Function to start the match simulation
     function startMatch() {
         if (matchInterval) {
             messageElement.textContent = "You can't start the match while it's already in progress.";
@@ -187,17 +192,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 matchWinner();
                 startRestartCountdown();
             } else {
-                matchTime += 1;
+                matchTime += 1; // Increment match time by 1 in-game minute
                 updateMatchTime(matchTime);
                 simulateEvent();
             }
-        }, (realisticTimeMinutes * 60 * 1000) / matchDuration);
+        }, (realisticTimeMinutes * 60 * 1000) / matchDuration); // Adjusted interval to match realistic time
 
         startMatchButton.disabled = true;
     }
 
+    // Function to start the match restart countdown
     function startRestartCountdown() {
-        let countdownTime = 30;
+        let countdownTime = 30; // 30 seconds countdown
 
         countdownInterval = setInterval(function () {
             if (countdownTime <= 0) {
@@ -207,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 countdownElement.textContent = `${countdownTime} seconds until restart`;
                 countdownTime -= 1;
             }
-        }, 1000);
+        }, 1000); // 1-second interval
     }
 
     function updateMatchTime(time) {
@@ -231,7 +237,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Function to simulate events (goals, free kicks, penalties, corner kicks)
     function simulateEvent() {
+        // Simulate goal
         if (Math.random() < goalScoringProbability) {
             const scoringTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
             const scorer = selectScorer(scoringTeam);
@@ -242,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateEventList();
         }
 
+        // Simulate free kick
         if (Math.random() < freeKickProbability) {
             const freeKickPlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
             const scored = Math.random() < calculateScoringProbability(freeKickPlayer);
@@ -255,6 +264,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateEventList();
         }
 
+        // Simulate penalty
         if (Math.random() < penaltyProbability) {
             const penaltyPlayer = selectedPlayers[Math.floor(Math.random() * selectedPlayers.length)];
             const scored = Math.random() < calculatePenaltyScoringProbability(penaltyPlayer);
@@ -268,10 +278,12 @@ document.addEventListener("DOMContentLoaded", function () {
             updateEventList();
         }
 
+        // Simulate corner kick with a low chance
         if (Math.random() < cornerKickProbability) {
             const kickingTeam = Math.random() < 0.5 ? selectedPlayers : aiPlayers;
             const scorer = kickingTeam[Math.floor(Math.random() * kickingTeam.length)];
 
+            // Determine if the corner kick results in a goal
             const cornerKickGoal = Math.random() < cornerKickGoalProbability;
 
             if (cornerKickGoal) {
@@ -289,13 +301,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Function to select a scorer based on player ratings
     function selectScorer(team) {
+        // Sort the team by rating in descending order
         team.sort((a, b) => b.rating - a.rating);
 
+        // Calculate the total rating of the team
         const totalRating = team.reduce((total, player) => total + player.rating, 0);
 
+        // Calculate a random threshold based on the total rating
         const threshold = Math.random() * totalRating;
 
+        // Find the player whose cumulative rating exceeds the threshold
         let cumulativeRating = 0;
         for (const player of team) {
             cumulativeRating += player.rating;
@@ -304,14 +321,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        // Return the last player as a fallback (shouldn't reach here)
         return team[team.length - 1];
     }
 
+    // Function to calculate the scoring probability for free kicks based on player rating
     function calculateScoringProbability(player) {
+        // Adjust this formula as needed to make higher-rated players perform better
         return player.rating / 99;
     }
 
+    // Function to calculate the scoring probability for penalties based on player rating
     function calculatePenaltyScoringProbability(player) {
+        // Adjust this formula as needed to make higher-rated players perform better
         return player.rating / 86;
     }
 
