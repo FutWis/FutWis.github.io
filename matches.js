@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		{ name: "Khalil Almasri", rating: 92, position: "CAM" },		
 		{ name: "Keano van Eck", rating: 91, position: "GK" },		
 		{ name: "Damian Borgt", rating: 90, position: "ST" },	
-		{ name: "Wesley Roodhuizen", rating: 89, position: "RW" },		
+		{ name: "Wesley Roodhuizen", rating: 99, position: "RW" },		
 		{ name: "Davy Roodhuizen", rating: 87, position: "CB" },
 		{ name: "Rob Goedegebure", rating: 86, position: "ST" },
 		{ name: "Joris van Puijvelde", rating: 85, position: "CDM" },
