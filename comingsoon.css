@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ header {
     text-align: center;
     padding: 20px; /* Add padding to create a border */
     display: flex; /* Use flexbox for positioning */
+    overflow: hidden;
     align-items: center; /* Center items vertically within the header */
 }
 
