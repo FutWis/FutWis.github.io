@@ -28,7 +28,7 @@ header {
 
 h1 {
     margin: 0; /* Remove margin around the h1 element */
-	font-style: italic;
+    font-style: italic;
 }
 
 nav {
@@ -107,6 +107,7 @@ main .content h1 span {
 @media screen and (min-width: 480px) {
   main .content h1 {
     font-size: 36px;
+	  
   }
 }
 @media screen and (min-width: 768px) {
@@ -157,22 +158,22 @@ main .content .countdown {
 }
 @media screen and (min-width: 480px) {
   main .content .countdown {
-    font-size: 42px;
+    font-size: 36px;
   }
 }
 @media screen and (min-width: 768px) {
   main .content .countdown {
-    font-size: 56px;
+    font-size: 42px;
   }
 }
 @media screen and (min-width: 1024px) {
   main .content .countdown {
-    font-size: 72px;
+    font-size: 56px;
   }
 }
 @media screen and (min-width: 1280px) {
   main .content .countdown {
-    font-size: 88px;
+    font-size: 72px;
   }
 }
 
