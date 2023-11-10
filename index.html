@@ -79,6 +79,14 @@
             alert("Forget password email sent successfully"); // You can display errors in a more user-friendly way (e.g., in a div element).
         }
 
+        function displaySignUpMessage(signup) {
+            alert("Signed Up succesfully please check you're mail for the verification link that was sent succesfully (Also check spam box).");
+        }
+
+        function displaySignInMessage(signin) {
+            alert("Sign In succesfully.");
+        }
+
         document.getElementById("forget-password-button").addEventListener("click", (event) => {
             event.preventDefault();
 
@@ -107,6 +115,7 @@
                     // Clear form fields
                     document.getElementById("email").value = "";
                     document.getElementById("password").value = "";
+                    displaySignInMessage(signin);
 
                     // Redirect immediately
                     window.location.href = "https://futwis.github.io/packopener.html";
@@ -132,6 +141,7 @@
                     // Send verification email
                     userCredential.user.sendEmailVerification().then(() => {
                         console.log('Verification email sent successfully.');
+                        displaySignUpMessage(signup);
                     }).catch((error) => {
                         displayErrorMessage(error);
                     });
