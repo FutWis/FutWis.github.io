@@ -13,7 +13,7 @@ const packContents = [
 	{ name: "Heinrich Bierman", image: "players/biermanicon.png", rating: 84 },
 	{ name: "Ad van Bever", image: "players/vanbevertotw.png", rating: 80 },
 	{ name: "Leon Vissers", image: "players/visserstotw.png", rating: 80 },
-	{ name: "Steef de Gruijter", image: "players/degruitertotw.png", rating: 80 },
+	{ name: "Steef Van de Gruiter", image: "players/degruitertotw.png", rating: 80 },
 	{ name: "Kyra Mariman", image: "players/marimansilverif.png", rating: 74 },
 	{ name: "Mick Bogaert", image: "players/bogaertuclheromen.png", rating: 74 },
 	{ name: "Wegihu Tekle", image: "players/deklebronze.png", rating: 68 },

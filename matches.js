@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		{ name: "Heinrich Bierman", rating: 84, position: "CM" },
 		{ name: "Ad van Bever", rating: 80, position: "CM" },
 		{ name: "Leon Vissers", rating: 80, position: "CM" },
-		{ name: "Steef de Gruijter", rating: 80, position: "CM" },
+		{ name: "Steef Van de Gruijter", rating: 80, position: "CM" },
 		{ name: "Kyra Mariman", rating: 74, position: "CB" },
 		{ name: "Mick Bogaert", rating: 74, position: "CB" },
 		{ name: "Wegihu Tekle", rating: 68, position: "CM" },
