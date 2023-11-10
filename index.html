@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <script async src="https://www.widgetsquad.com/pixel/75l9tdr0cvmvsogcy56d69cxx1cnl6il"></script>
 </head>
+
 <body>
     <header>
         <img src="futwis.png" alt="FutWis Logo" id="logo">
@@ -19,7 +21,7 @@
             <div id="auth-container">
                 <h2>Authentication</h2>
                 <div id="login-form">
-                    <button id="login-button">Log In</button>
+                    <button id="login-button">Sign In</button>
                     <br>
                     <input type="email" id="email" placeholder="Email">
                     <input type="password" id="password" placeholder="Password">
@@ -31,6 +33,13 @@
                     <br>
                     <input type="email" id="signup-email" placeholder="Email">
                     <input type="password" id="signup-password" placeholder="Password">
+                </div>
+                <br>
+                <br>
+                <div id="forget-password-form">
+                    <button id="forget-password-button">Forget Password</button>
+                    <br>
+                    <input type="email" id="forget-email" placeholder="Email">
                 </div>
                 <div id="auth-status"></div> <!-- To display authentication status -->
             </div>
@@ -66,9 +75,29 @@
             alert(error.message); // You can display errors in a more user-friendly way (e.g., in a div element).
         }
 
+        function displayPasswordMessage(password) {
+            alert("Forget password email sent successfully"); // You can display errors in a more user-friendly way (e.g., in a div element).
+        }
+
+        document.getElementById("forget-password-button").addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const forgetEmail = document.getElementById("forget-email").value;
+            document.getElementById("forget-email").value = "";
+
+            firebase.auth().sendPasswordResetEmail(forgetEmail)
+                .then(() => {
+                    console.log('Forget password email sent successfully');
+                    displayPasswordMessage(password);
+                })
+                .catch((error) => {
+                    displayErrorMessage(error);
+                });
+        });
+
         document.getElementById("login-button").addEventListener("click", (event) => {
             event.preventDefault();
-            
+
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
@@ -89,7 +118,7 @@
 
         document.getElementById("signup-button").addEventListener("click", (event) => {
             event.preventDefault();
-            
+
             const email = document.getElementById("signup-email").value;
             const password = document.getElementById("signup-password").value;
 
@@ -99,7 +128,7 @@
                     // Clear form fields
                     document.getElementById("signup-email").value = "";
                     document.getElementById("signup-password").value = "";
-                    
+
                     // Send verification email
                     userCredential.user.sendEmailVerification().then(() => {
                         console.log('Verification email sent successfully.');
@@ -111,19 +140,7 @@
                     displayErrorMessage(error);
                 });
         });
-        
-        firebase.auth().onAuthStateChanged((user) => {
-            const authStatus = document.getElementById("auth-status");
-            if (user) {
-                if (user.emailVerified) {
-                    authStatus.textContent = "Authenticated";
-                } else {
-                    authStatus.textContent = "Please verify your email";
-                }
-            } else {
-                authStatus.textContent = "Not authenticated";
-            }
-        });
     </script>
 </body>
+
 </html>
