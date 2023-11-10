@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <script async src="https://www.widgetsquad.com/pixel/75l9tdr0cvmvsogcy56d69cxx1cnl6il"></script>
 </head>
-
 <body>
     <header>
         <img src="futwis.png" alt="FutWis Logo" id="logo">
@@ -44,12 +42,12 @@
     <script src="index.js"></script>
 
     <!-- Firebase JavaScript SDK -->
-    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
 
-    <script type="module">
+    <script>
         // Initialize Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyDEklNr59OF3Dncht4MiwNIQN9X-oWwpuk",
@@ -68,50 +66,64 @@
             alert(error.message); // You can display errors in a more user-friendly way (e.g., in a div element).
         }
 
-        document.getElementById("login-button").addEventListener("click", () => {
-            const user = firebase.auth().currentUser;
-
-            if (!user) {
-                // User is not logged in, perform login
-                const email = document.getElementById("email").value;
-                const password = document.getElementById("password").value;
-
-                // Perform login
-                firebase.auth().signInWithEmailAndPassword(email, password)
-                    .then(() => {
-                        // Clear form fields
-                        document.getElementById("email").value = "";
-                        document.getElementById("password").value = "";
-                        // Redirect immediately
-                        window.location.href = "https://futwis.github.io/packopener.html";
-                    })
-                    .catch((error) => {
-                        displayErrorMessage(error);
-                    });
-            }
-            // Prevent the default behavior of the button (refreshing the page)
+        document.getElementById("login-button").addEventListener("click", (event) => {
             event.preventDefault();
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Perform login
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    // Clear form fields
+                    document.getElementById("email").value = "";
+                    document.getElementById("password").value = "";
+
+                    // Redirect immediately
+                    window.location.href = "https://futwis.github.io/packopener.html";
+                })
+                .catch((error) => {
+                    displayErrorMessage(error);
+                });
         });
 
-        document.getElementById("signup-button").addEventListener("click", () => {
-            // User is not logged in, perform sign-up
+        document.getElementById("signup-button").addEventListener("click", (event) => {
+            event.preventDefault();
+            
             const email = document.getElementById("signup-email").value;
             const password = document.getElementById("signup-password").value;
 
             // Perform sign-up
             firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then(() => {
+                .then((userCredential) => {
                     // Clear form fields
                     document.getElementById("signup-email").value = "";
                     document.getElementById("signup-password").value = "";
+                    
+                    // Send verification email
+                    userCredential.user.sendEmailVerification().then(() => {
+                        console.log('Verification email sent successfully.');
+                    }).catch((error) => {
+                        displayErrorMessage(error);
+                    });
                 })
                 .catch((error) => {
                     displayErrorMessage(error);
                 });
-            // Prevent the default behavior of the button (refreshing the page)
-            event.preventDefault();
+        });
+        
+        firebase.auth().onAuthStateChanged((user) => {
+            const authStatus = document.getElementById("auth-status");
+            if (user) {
+                if (user.emailVerified) {
+                    authStatus.textContent = "Authenticated";
+                } else {
+                    authStatus.textContent = "Please verify your email";
+                }
+            } else {
+                authStatus.textContent = "Not authenticated";
+            }
         });
     </script>
 </body>
-
 </html>
