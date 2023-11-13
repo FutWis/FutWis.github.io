@@ -28,6 +28,11 @@
       font-style: italic;
   }
   
+  p {
+    margin: 0; /* Remove margin around the h1 element */
+    font-style: italic;
+  }
+
   nav {
   background-color: #333;
   }
@@ -121,7 +126,6 @@
       font-size: 72px;
     }
   }
-
   main .content p {
     color: #FFF;
     font-size: 14px;

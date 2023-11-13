@@ -7,7 +7,6 @@
     <title>FutWis</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script async src="https://www.widgetsquad.com/pixel/75l9tdr0cvmvsogcy56d69cxx1cnl6il"></script>
 </head>
 
@@ -16,6 +15,12 @@
         <img src="futwis.png" alt="FutWis Logo" id="logo">
         <h1>Welcome to FutWis</h1>
     </header>
+    <nav>
+        <ul>
+          <li><a target="_blank" href="https://app.pulsetic.com/status/JhVmXyOM">Status</a></li>
+        </ul>
+    </nav>
+    <div id="time"></div>
     <main>
         <section>
             <div id="auth-container">
@@ -41,12 +46,7 @@
                     <br>
                     <input type="email" id="forget-email" placeholder="Email">
                 </div>
-                <div id="views">
-                    <div id="view_count_container">
-                        <p id="view_count_text"> </p>
-                    </div>
-                </div>
-                <div id="auth-status"></div>
+                <div id="auth-status"></div> <!-- To display authentication status -->
             </div>
         </section>
     </main>
@@ -57,7 +57,6 @@
 
     <!-- Firebase JavaScript SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
@@ -67,7 +66,6 @@
         const firebaseConfig = {
             apiKey: "AIzaSyDEklNr59OF3Dncht4MiwNIQN9X-oWwpuk",
             authDomain: "futwis-32f19.firebaseapp.com",
-            databaseURL: "https://futwis-32f19-default-rtdb.europe-west1.firebasedatabase.app",
             projectId: "futwis-32f19",
             storageBucket: "futwis-32f19.appspot.com",
             messagingSenderId: "305911660382",
@@ -82,16 +80,8 @@
             alert(error.message); // You can display errors in a more user-friendly way (e.g., in a div element).
         }
 
-        function displayPasswordMessage() {
-            alert("Forget password email sent successfully");
-        }
-
-        function displaySignupMessage() {
-            alert("Signed Up successfully. Please check your mail for the verification link that was sent successfully (Also check spam box).");
-        }
-
-        function displaySigninMessage() {
-            alert("Sign In successfully.");
+        function displayPasswordMessage(password) {
+            alert("Forget password email sent successfully"); // You can display errors in a more user-friendly way (e.g., in a div element).
         }
 
         document.getElementById("forget-password-button").addEventListener("click", (event) => {
@@ -103,7 +93,7 @@
             firebase.auth().sendPasswordResetEmail(forgetEmail)
                 .then(() => {
                     console.log('Forget password email sent successfully');
-                    displayPasswordMessage();
+                    displayPasswordMessage(password);
                 })
                 .catch((error) => {
                     displayErrorMessage(error);
@@ -122,7 +112,6 @@
                     // Clear form fields
                     document.getElementById("email").value = "";
                     document.getElementById("password").value = "";
-                    displaySigninMessage();
 
                     // Redirect immediately
                     window.location.href = "https://futwis.github.io/packopener.html";
@@ -148,7 +137,6 @@
                     // Send verification email
                     userCredential.user.sendEmailVerification().then(() => {
                         console.log('Verification email sent successfully.');
-                        displaySignupMessage();
                     }).catch((error) => {
                         displayErrorMessage(error);
                     });
@@ -157,32 +145,7 @@
                     displayErrorMessage(error);
                 });
         });
-
-        function get_viewers_ip(json){
-            viewers_ip = json.ip
-            // count view with ip 
-            count_view(viewers_ip);
-        }
-
-        function count_view(viewers_ip){
-            var views;
-            var ip_to_string = viewers_ip.toString();
-
-            for(var i, i = 0; i < ip_to_string.length; i++){
-                ip_to_string = ip_to_string.replace(".", "-");
-            }
-
-            firebase.database().ref().child("page_views/" + ip_to_string).set({
-                viewers_ip: viewers_ip
-            })
-
-            firebase.database().ref().child("page_views").on("value", function(snapshot){
-                views = snapshot.numChildren();
-                document.getElementById("view_count_text").innerHTML = "<i class='fa fa-eye'></i> " + views;
-            });
-        }
     </script>
-    <script src="https://api.ipify.org?format=jsonp&callback=get_viewers_ip"></script>
 </body>
 
 </html>
