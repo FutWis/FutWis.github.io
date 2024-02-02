@@ -1,6 +1,6 @@
 
 const packContents = [
-	{ name: "Kylian Mbappé", image: "players/mbappetoty.png", rating: 96 },
+	{ name: "Kylian Mbappé", image: "players/mbappetoty.png", rating: 97 },
                 { name: "Pelé", image: "players/peléicon.png", rating: 95 },
 		{ name: "Ronaldo", image: "players/ronaldoicon.png", rating: 94 },
 		{ name: "Zinedine Zidane", image: "players/zidaneicon.png", rating: 94 },
